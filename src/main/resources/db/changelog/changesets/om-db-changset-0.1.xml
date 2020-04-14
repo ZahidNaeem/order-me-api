@@ -1,0 +1,178 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="Zahid Naeem" id="create-table-roles">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="roles"/>
+            </not>
+        </preConditions>
+        <comment>Creating table "Roles"</comment>
+        <createTable schemaName="om" tableName="roles">
+            <column name="ID" type="INT">
+                <constraints primaryKey="true" primaryKeyName="roles_pk"/>
+            </column>
+            <column name="NAME" type="VARCHAR(20)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="roles_name_uk"/>
+            </column>
+            <column name="CREATED_BY" type="INT"/>
+            <column name="CREATION_DATE" type="TIMESTAMP"/>
+            <column name="LAST_UPDATED_BY" type="INT"/>
+            <column name="LAST_UPDATE_DATE" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="create-table-users">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="users"/>
+            </not>
+        </preConditions>
+        <comment>Creating table "Users"</comment>
+        <createTable schemaName="om" tableName="users">
+            <column name="ID" type="INT">
+                <constraints primaryKey="true" primaryKeyName="users_pk"/>
+            </column>
+            <column name="NAME" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EMAIL" type="VARCHAR(50)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="users_email_uk"/>
+            </column>
+            <column name="USERNAME" type="VARCHAR(50)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="users_username_uk"/>
+            </column>
+            <column name="PASSWORD" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="INT"/>
+            <column name="CREATION_DATE" type="TIMESTAMP"/>
+            <column name="LAST_UPDATED_BY" type="INT"/>
+            <column name="LAST_UPDATE_DATE" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="create-table-user_roles">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="user_roles"/>
+            </not>
+        </preConditions>
+        <comment>Creating table "User_Roles"</comment>
+        <createTable schemaName="om" tableName="user_roles">
+            <column name="USER_ID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ROLE_ID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addPrimaryKey columnNames="USER_ID, ROLE_ID" constraintName="USER_ROLES_PK" schemaName="om"
+                       tableName="user_roles"/>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-role-pm">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.roles WHERE name = 'ROLE_PM';
+            </sqlCheck>
+        </preConditions>
+        <comment>insert role "PM" into roles table</comment>
+        <insert schemaName="om" tableName="roles">
+            <column name="ID" value="1"/>
+            <column name="NAME" value="ROLE_PM"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-role-admin">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.roles WHERE name = 'ROLE_ADMIN';
+            </sqlCheck>
+        </preConditions>
+        <comment>insert role "ADMIN" into roles table</comment>
+        <insert schemaName="om" tableName="roles">
+            <column name="ID" value="2"/>
+            <column name="NAME" value="ROLE_ADMIN"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-role-user">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.roles WHERE name = 'ROLE_USER';
+            </sqlCheck>
+        </preConditions>
+        <comment>insert role "USER" into roles table</comment>
+        <insert schemaName="om" tableName="roles">
+            <column name="ID" value="3"/>
+            <column name="NAME" value="ROLE_USER"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-user-zahid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.users WHERE name = 'zahid';
+            </sqlCheck>
+        </preConditions>
+        <comment>insert user "zahid"</comment>
+        <insert schemaName="om" tableName="users">
+            <column name="ID" value="1"/>
+            <column name="NAME" value="Zahid Naeem"/>
+            <column name="EMAIL" value="abc@abc.com"/>
+            <column name="USERNAME" value="zahid"/>
+            <column name="PASSWORD" value="$2y$12$RonM07a5gzYti.hIqyiAC.fvl66hY8e/FrKqkrN5IIaOWD8ZHdd7e"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-user-abid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.users WHERE name = 'abid';
+            </sqlCheck>
+        </preConditions>
+        <comment>insert user "abid"</comment>
+        <insert schemaName="om" tableName="users">
+            <column name="ID" value="2"/>
+            <column name="NAME" value="Abid Naeem"/>
+            <column name="EMAIL" value="abc2@abc2.com"/>
+            <column name="USERNAME" value="abid"/>
+            <column name="PASSWORD" value="$2y$12$RonM07a5gzYti.hIqyiAC.fvl66hY8e/FrKqkrN5IIaOWD8ZHdd7e"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-role-pm-for-user-zahid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_roles WHERE user_id = 1 AND role_id = 1;
+            </sqlCheck>
+        </preConditions>
+        <comment>insert role PM for user zahid</comment>
+        <insert schemaName="om" tableName="user_roles">
+            <column name="USER_ID" value="1"/>
+            <column name="ROLE_ID" value="1"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-role-admin-for-user-zahid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_roles WHERE user_id = 1 AND role_id = 2;
+            </sqlCheck>
+        </preConditions>
+        <comment>insert role ADMIN for user zahid</comment>
+        <insert schemaName="om" tableName="user_roles">
+            <column name="USER_ID" value="1"/>
+            <column name="ROLE_ID" value="2"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-role-user-for-user-zahid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_roles WHERE user_id = 1 AND role_id = 3;
+            </sqlCheck>
+        </preConditions>
+        <comment>insert role USER for user zahid</comment>
+        <insert schemaName="om" tableName="user_roles">
+            <column name="USER_ID" value="1"/>
+            <column name="ROLE_ID" value="3"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-role-user-for-user-abid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_roles WHERE user_id = 2 AND role_id = 3;
+            </sqlCheck>
+        </preConditions>
+        <comment>insert role USER for user abid</comment>
+        <insert schemaName="om" tableName="user_roles">
+            <column name="USER_ID" value="2"/>
+            <column name="ROLE_ID" value="3"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
