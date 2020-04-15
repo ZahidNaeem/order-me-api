@@ -8,7 +8,7 @@ import com.alfauz.orderme.exception.InternalServerErrorException;
 import com.alfauz.orderme.mapper.UserMapper;
 import com.alfauz.orderme.model.UserModel;
 import com.alfauz.orderme.payload.request.LoginRequest;
-import com.alfauz.orderme.payload.request.SignUpRequest;
+import com.alfauz.orderme.payload.request.SignupRequest;
 import com.alfauz.orderme.payload.response.ApiResponse;
 import com.alfauz.orderme.payload.response.JwtAuthenticationResponse;
 import com.alfauz.orderme.security.jwt.JwtProvider;
@@ -76,7 +76,7 @@ public class AuthController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<ApiResponse<Boolean>> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
+    public ResponseEntity<ApiResponse<Boolean>> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
         if (userService.existsByUsername(signUpRequest.getUsername())) {
             throw new BadRequestException("Username is already taken!");
         }

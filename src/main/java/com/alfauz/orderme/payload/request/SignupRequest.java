@@ -19,7 +19,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SignUpRequest {
+public class SignupRequest {
 
     @NotBlank(message = "First name must not be blank")
     @Size(min = 1, max = 20, message = "First name should has min. 1 and max. 20 characters")
