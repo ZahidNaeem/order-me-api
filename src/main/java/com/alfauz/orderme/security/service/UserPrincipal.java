@@ -1,11 +1,11 @@
 package com.alfauz.orderme.security.service;
 
+import com.alfauz.orderme.entity.UserEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import com.alfauz.orderme.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -33,14 +33,16 @@ public class UserPrincipal implements UserDetails {
 
     private Collection<? extends GrantedAuthority> authorities;
 
-    public static UserPrincipal build(User user) {
+    public static UserPrincipal build(UserEntity user) {
         final List<GrantedAuthority> authorities = user.getRoles().stream().map(role ->
                 new SimpleGrantedAuthority(role.getName().name())
         ).collect(Collectors.toList());
 
+        final String name = user.getFirstName() + (user.getMiddleName() != null ? " " + user.getMiddleName() : "") + " " + user.getLastName();
+
         return new UserPrincipal(
                 user.getId(),
-                user.getName(),
+                name,
                 user.getUsername(),
                 user.getEmail(),
                 user.getPassword(),

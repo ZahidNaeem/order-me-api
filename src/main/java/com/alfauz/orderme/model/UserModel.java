@@ -5,9 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import com.alfauz.orderme.entity.Role;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Builder
@@ -16,9 +16,12 @@ import java.util.Set;
 @AllArgsConstructor
 public class UserModel extends Auditable<Long> {
     private Long id;
-    private String name;
+    private String firstName;
+    private String middleName;
+    private String lastName;
     private String username;
     private String email;
     private String password;
-    private Set<Role> roles = new HashSet<>();
+    private List<UserAddressModel> userAddresses;
+    private Set<RoleModel> roles = new HashSet<>();
 }

@@ -1,16 +1,16 @@
 package com.alfauz.orderme.controller;
 
-import lombok.RequiredArgsConstructor;
-import com.alfauz.orderme.entity.User;
+import com.alfauz.orderme.entity.UserEntity;
 import com.alfauz.orderme.exception.BadRequestException;
 import com.alfauz.orderme.exception.InternalServerErrorException;
 import com.alfauz.orderme.exception.ResourceNotFoundException;
 import com.alfauz.orderme.model.UserSummary;
 import com.alfauz.orderme.payload.request.ChangePasswordRequest;
 import com.alfauz.orderme.payload.response.ApiResponse;
-import com.alfauz.orderme.repo.UserRepo;
 import com.alfauz.orderme.security.CurrentUser;
 import com.alfauz.orderme.security.service.UserPrincipal;
+import com.alfauz.orderme.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,7 +28,7 @@ public class UserController {
 
     private static final Logger LOG = LogManager.getLogger(UserController.class);
 
-    private final UserRepo userRepo;
+    private final UserService userService;
 
     private final PasswordEncoder passwordEncoder;
 
@@ -62,7 +62,7 @@ public class UserController {
                         .<Boolean>builder()
                         .success(true)
                         .message("checkUsernameAvailability response")
-                        .entity(!userRepo.existsByUsername(username))
+                        .entity(!userService.existsByUsername(username))
                         .build()
         );
     }
@@ -74,23 +74,27 @@ public class UserController {
                         .<Boolean>builder()
                         .success(true)
                         .message("checkEmailAvailability response")
-                        .entity(!userRepo.existsByEmail(email))
+                        .entity(!userService.existsByEmail(email))
                         .build()
         );
     }
 
     @GetMapping("/users/{username}")
     public ResponseEntity<ApiResponse<UserSummary>> getUserProfile(@PathVariable(value = "username") String username) {
-        final User user = userRepo.findByUsername(username)
-                .orElseThrow(() -> new ResourceNotFoundException("User", "username", username));
+        final UserEntity user = userService.findByUsername(username);
+        if (user == null) {
+            throw new ResourceNotFoundException("User", "username", username);
+        }
 
         final Set<String> roles = user.getRoles().stream()
                 .map(role -> role.getName().name())
                 .collect(Collectors.toSet());
 
+        final String name = user.getFirstName() + (user.getMiddleName() != null ? " " + user.getMiddleName() : "") + " " + user.getLastName();
+
         final UserSummary userSummary = UserSummary.builder()
                 .id(user.getId())
-                .name(user.getName())
+                .name(name)
                 .username(user.getUsername())
                 .roles(roles)
                 .build();
@@ -109,8 +113,10 @@ public class UserController {
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<ApiResponse<Boolean>> changeUserPassword(@CurrentUser final UserPrincipal currentUserPrincipal, @RequestBody final ChangePasswordRequest request) {
         try {
-            final User currentUser = userRepo.findById(currentUserPrincipal.getId())
-                    .orElseThrow(() -> new ResourceNotFoundException("User", "id", currentUserPrincipal.getId()));
+            final UserEntity currentUser = userService.findById(currentUserPrincipal.getId());
+            if (currentUser == null) {
+                throw new ResourceNotFoundException("User", "id", currentUserPrincipal.getId());
+            }
 
             if (StringUtils.isEmpty(request.getCurrentPassword())) {
                 throw new BadRequestException("Current password is empty");
@@ -124,7 +130,7 @@ public class UserController {
                 throw new BadRequestException("New password does not meet complexity requirements");
             } else {
                 currentUser.setPassword(passwordEncoder.encode(request.getNewPassword()));
-                userRepo.saveAndFlush(currentUser);
+                userService.save(currentUser);
                 return ResponseEntity.ok(
                         ApiResponse
                                 .<Boolean>builder()

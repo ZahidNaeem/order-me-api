@@ -1,8 +1,8 @@
 package com.alfauz.orderme.security.service;
 
+import com.alfauz.orderme.entity.UserEntity;
+import com.alfauz.orderme.service.UserService;
 import lombok.RequiredArgsConstructor;
-import com.alfauz.orderme.entity.User;
-import com.alfauz.orderme.repo.UserRepo;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -13,18 +13,18 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-  private final UserRepo userRepo;
+    private final UserService userService;
 
-  @Override
-  @Transactional
-  public UserDetails loadUserByUsername(final String usernameOrEmail)
-      throws UsernameNotFoundException {
+    @Override
+    @Transactional
+    public UserDetails loadUserByUsername(final String usernameOrEmail)
+            throws UsernameNotFoundException {
 
-    final User user = userRepo.findByUsernameOrEmail(usernameOrEmail, usernameOrEmail)
-        .orElseThrow(() ->
-            new UsernameNotFoundException("User Not Found with -> username or email : " + usernameOrEmail)
-        );
+        final UserEntity user = userService.findByUsernameOrEmail(usernameOrEmail, usernameOrEmail);
+        if (user == null) {
+            throw new UsernameNotFoundException("User Not Found with -> username or email : " + usernameOrEmail);
+        }
 
-    return UserPrincipal.build(user);
-  }
+        return UserPrincipal.build(user);
+    }
 }

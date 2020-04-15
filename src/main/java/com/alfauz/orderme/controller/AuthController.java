@@ -1,8 +1,7 @@
 package com.alfauz.orderme.controller;
 
-import lombok.RequiredArgsConstructor;
-import com.alfauz.orderme.entity.Role;
-import com.alfauz.orderme.entity.User;
+import com.alfauz.orderme.entity.RoleEntity;
+import com.alfauz.orderme.entity.UserEntity;
 import com.alfauz.orderme.enumeration.RoleName;
 import com.alfauz.orderme.exception.BadRequestException;
 import com.alfauz.orderme.exception.InternalServerErrorException;
@@ -12,9 +11,10 @@ import com.alfauz.orderme.payload.request.LoginRequest;
 import com.alfauz.orderme.payload.request.SignUpRequest;
 import com.alfauz.orderme.payload.response.ApiResponse;
 import com.alfauz.orderme.payload.response.JwtAuthenticationResponse;
-import com.alfauz.orderme.repo.RoleRepo;
-import com.alfauz.orderme.repo.UserRepo;
 import com.alfauz.orderme.security.jwt.JwtProvider;
+import com.alfauz.orderme.service.RoleService;
+import com.alfauz.orderme.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -37,9 +37,9 @@ public class AuthController {
 
     private final AuthenticationManager authenticationManager;
 
-    private final UserRepo userRepo;
+    private final UserService userService;
 
-    private final RoleRepo roleRepo;
+    private final RoleService roleService;
 
     private final UserMapper userMapper;
 
@@ -69,7 +69,7 @@ public class AuthController {
                             .entity(new JwtAuthenticationResponse(jwt))
                             .build()
             );
-        } catch (Exception e){
+        } catch (Exception e) {
             throw new InternalServerErrorException(e.getMessage());
         }
 //                    throw new AppException("BAD CREDENTIALS");
@@ -77,59 +77,43 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<ApiResponse<Boolean>> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
-        if (userRepo.existsByUsername(signUpRequest.getUsername())) {
+        if (userService.existsByUsername(signUpRequest.getUsername())) {
             throw new BadRequestException("Username is already taken!");
         }
 
-        if (userRepo.existsByEmail(signUpRequest.getEmail())) {
+        if (userService.existsByEmail(signUpRequest.getEmail())) {
             throw new BadRequestException("Email Address already in use!");
         }
 
         // Creating userModel's account
         final UserModel userModel = UserModel.builder()
-                .name(signUpRequest.getName())
+                .firstName(signUpRequest.getFirstName())
+                .middleName(signUpRequest.getMiddleName())
+                .lastName(signUpRequest.getLastName())
                 .username(signUpRequest.getUsername())
                 .password(passwordEncoder.encode(signUpRequest.getPassword()))
                 .email(signUpRequest.getEmail())
+                .userAddresses(signUpRequest.getUserAddresses())
                 .build();
 
-        Set<String> strRoles = CollectionUtils.isNotEmpty(signUpRequest.getRole()) ? signUpRequest.getRole() : Set.of("user");
-        Set<Role> roles = new HashSet<>();
+        final UserEntity userEntity = userMapper.toEntity(userModel);
 
-        strRoles.forEach(role -> {
-            switch (role) {
-                case "admin":
-                    Role adminRole = roleRepo.findByName(RoleName.ROLE_ADMIN)
-                            .orElseThrow(() -> new RuntimeException(
-                                    "Fail! -> Cause: Role " + RoleName.ROLE_ADMIN.getValue() + " not found."));
-                    roles.add(adminRole);
-                    break;
+        Set<String> roleValues = CollectionUtils.isNotEmpty(signUpRequest.getRoles()) ? signUpRequest.getRoles() : Set.of("user");
+        Set<RoleEntity> roles = new HashSet<>();
 
-                case "pm":
-                    Role pmRole = roleRepo.findByName(RoleName.ROLE_PM)
-                            .orElseThrow(() -> new RuntimeException(
-                                    "Fail! -> Cause: Role " + RoleName.ROLE_PM.getValue() + " not found."));
-                    roles.add(pmRole);
-                    break;
-
-        /*case "userModel":
-          Role userRole = roleRepo.findByName(RoleName.ROLE_USER)
-              .orElseThrow(() -> new RuntimeException(
-                  "Fail! -> Cause: Role " + RoleName.ROLE_USER.getValue() + " not found."));
-          roles.add(userRole);
-          break;*/
-
-                default:
-                    Role userRole = roleRepo.findByName(RoleName.ROLE_USER)
-                            .orElseThrow(() -> new RuntimeException(
-                                    "Fail! -> Cause: Role " + RoleName.ROLE_USER.getValue() + " not found."));
-                    roles.add(userRole);
+        roleValues.forEach(value -> {
+            final RoleEntity role = roleService.findByName(RoleName.fromValue(value));
+            if (role == null) {
+                throw new RuntimeException(
+                        "Fail! -> Cause: Role " + RoleName.ROLE_USER.getValue() + " not found.");
             }
+            roles.add(role);
         });
 
-        userModel.setRoles(roles);
 
-        final User result = userRepo.saveAndFlush(userMapper.toEntity(userModel));
+        userEntity.setRoles(roles);
+
+        final UserEntity result = userService.save(userEntity);
 
         final URI location = ServletUriComponentsBuilder
                 .fromCurrentContextPath().path("/users/{username}")
@@ -151,9 +135,9 @@ public class AuthController {
         return ResponseEntity.ok(
                 ApiResponse
                         .<Boolean>builder()
-                        .success(userRepo.existsByEmail(email))
+                        .success(userService.existsByEmail(email))
                         .message("Email already exists")
-                        .entity(userRepo.existsByEmail(email))
+                        .entity(userService.existsByEmail(email))
                         .build()
         );
     }
@@ -166,14 +150,14 @@ public class AuthController {
             try {
 //                final boolean mailSent = gmailService.sendMessage("Welcome to OM Application", "To reset you account password, please click on below link:\nhttp://localhost:3000", email);
 //                if (mailSent) {
-                    return ResponseEntity.ok(
-                            ApiResponse
-                                    .<Boolean>builder()
-                                    .success(true)
-                                    .message("Recovery email sent")
-                                    .entity(null)
-                                    .build()
-                    );
+                return ResponseEntity.ok(
+                        ApiResponse
+                                .<Boolean>builder()
+                                .success(true)
+                                .message("Recovery email sent")
+                                .entity(null)
+                                .build()
+                );
 //                } else {
 //                    throw new BadRequestException("Unknown error occurred");
 //                }

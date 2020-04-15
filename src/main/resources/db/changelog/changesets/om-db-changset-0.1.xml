@@ -106,10 +106,14 @@
         <comment>Creating table User_Roles</comment>
         <createTable schemaName="om" tableName="user_roles">
             <column name="USER_ID" type="INT">
-                <constraints nullable="false"/>
+                <constraints nullable="false"
+                             foreignKeyName="USER_ROLES_USER_ID_FK"
+                             references="users(id)"/>
             </column>
             <column name="ROLE_ID" type="INT">
-                <constraints nullable="false"/>
+                <constraints nullable="false"
+                             foreignKeyName="USER_ROLES_ROLE_ID_FK"
+                             references="roles(id)"/>
             </column>
         </createTable>
         <addPrimaryKey columnNames="USER_ID, ROLE_ID" constraintName="USER_ROLES_PK" schemaName="om"

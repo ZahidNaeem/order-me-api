@@ -1,8 +1,8 @@
 package com.alfauz.orderme.utils;
 
-import lombok.RequiredArgsConstructor;
 import com.alfauz.orderme.config.ConfigProperties;
 import com.alfauz.orderme.exception.BadRequestException;
+import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
