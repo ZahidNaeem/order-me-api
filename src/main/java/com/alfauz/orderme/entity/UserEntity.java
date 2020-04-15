@@ -1,5 +1,6 @@
 package com.alfauz.orderme.entity;
 
+import com.alfauz.orderme.enumeration.UserType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -61,6 +62,12 @@ public class UserEntity extends Auditable<Long> {
     @Size(min = 6, max = 100, message = "Password should has min. 6 and max. 100 characters")
     @Column(name = "PASSWORD")
     private String password;
+
+    @NotBlank(message = "User type must not be blank")
+    @Enumerated(EnumType.STRING)
+    @Size(min = 1, max = 20, message = "User type should has min. 1 and max. 20 characters")
+    @Column(name = "USER_TYPE")
+    private UserType userType;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     @Cascade(value = CascadeType.ALL)

@@ -18,12 +18,14 @@ import java.util.List;
 )
 public interface UserMapper {
 
-    @Mapping(target = "roles", qualifiedByName = "rolesModelsToEntities")
+    @Mapping(target = "userType", qualifiedByName = "userTypeModelToEntity")
     @Mapping(target = "userAddresses", qualifiedByName = "userAddressesModelsToEntities")
+    @Mapping(target = "roles", qualifiedByName = "rolesModelsToEntities")
     UserEntity toEntity(final UserModel model);
 
-    @Mapping(target = "roles", qualifiedByName = "rolesEntitiesToModels")
+    @Mapping(target = "userType", qualifiedByName = "userTypeEntityToModel")
     @Mapping(target = "userAddresses", qualifiedByName = "userAddressesEntitiesToModels")
+    @Mapping(target = "roles", qualifiedByName = "rolesEntitiesToModels")
     UserModel toModel(final UserEntity user);
 
     default List<UserEntity> toEntities(final List<UserModel> models) {

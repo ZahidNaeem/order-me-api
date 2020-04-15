@@ -62,6 +62,9 @@
             <column name="PASSWORD" type="VARCHAR(100)">
                 <constraints nullable="false"/>
             </column>
+            <column name="USER_TYPE" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
             <column name="CREATED_BY" type="INT"/>
             <column name="CREATION_DATE" type="TIMESTAMP"/>
             <column name="LAST_UPDATED_BY" type="INT"/>
@@ -165,6 +168,7 @@
             <column name="EMAIL" value="abc@abc.com"/>
             <column name="USERNAME" value="zahid"/>
             <column name="PASSWORD" value="$2y$12$RonM07a5gzYti.hIqyiAC.fvl66hY8e/FrKqkrN5IIaOWD8ZHdd7e"/>
+            <column name="USER_TYPE" value="SHOP_OWNER"/>
         </insert>
     </changeSet>
     <changeSet author="Zahid Naeem" id="insert-user-abid">
@@ -180,6 +184,7 @@
             <column name="EMAIL" value="abc2@abc2.com"/>
             <column name="USERNAME" value="abid"/>
             <column name="PASSWORD" value="$2y$12$RonM07a5gzYti.hIqyiAC.fvl66hY8e/FrKqkrN5IIaOWD8ZHdd7e"/>
+            <column name="USER_TYPE" value="CUSTOMER"/>
         </insert>
     </changeSet>
     <changeSet author="Zahid Naeem" id="insert-home-address-for-user-zahid">

@@ -22,6 +22,7 @@ public class UserModel extends Auditable<Long> {
     private String username;
     private String email;
     private String password;
+    private String userType;
     private List<UserAddressModel> userAddresses;
     private Set<RoleModel> roles = new HashSet<>();
 }

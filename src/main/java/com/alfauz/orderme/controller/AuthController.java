@@ -93,6 +93,7 @@ public class AuthController {
                 .username(signUpRequest.getUsername())
                 .password(passwordEncoder.encode(signUpRequest.getPassword()))
                 .email(signUpRequest.getEmail())
+                .userType(signUpRequest.getUserType())
                 .userAddresses(signUpRequest.getUserAddresses())
                 .build();
 

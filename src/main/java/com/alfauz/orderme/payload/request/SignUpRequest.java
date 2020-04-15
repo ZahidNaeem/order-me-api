@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -42,6 +44,10 @@ public class SignUpRequest {
     @NotBlank(message = "Password must not be blank")
     @Size(min = 6, max = 100, message = "Password should has min. 6 and max. 100 characters")
     private String password;
+
+    @NotBlank(message = "User type must not be blank")
+    @Size(min = 1, max = 20, message = "User type should has min. 1 and max. 20 characters")
+    private String userType;
 
     private List<UserAddressModel> userAddresses;
 

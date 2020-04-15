@@ -5,9 +5,9 @@ import com.alfauz.orderme.exception.RoleNameNotFoundException;
 import java.util.Arrays;
 
 public enum RoleName {
-    ROLE_USER("user"),
     ROLE_PM("pm"),
-    ROLE_ADMIN("admin");
+    ROLE_ADMIN("admin"),
+    ROLE_USER("user");
 
     private String value;
 
