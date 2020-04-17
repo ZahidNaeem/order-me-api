@@ -7,6 +7,7 @@ import com.alfauz.orderme.service.UserService;
 import com.alfauz.orderme.utils.Miscellaneous;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 
@@ -58,6 +59,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserEntity save(UserEntity userEntity) {
         Miscellaneous.constraintViolation(userEntity);
+        if (!CollectionUtils.isEmpty(userEntity.getUserAddresses())) {
+            userEntity.getUserAddresses()
+                    .forEach(address -> {
+                        if (address.getUser() == null) {
+                            address.setUser(userEntity);
+                        }
+                    });
+        }
         try {
             return userRepo.saveAndFlush(userEntity);
         } catch (Exception e) {
