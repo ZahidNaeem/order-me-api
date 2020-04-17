@@ -1,14 +1,13 @@
 package com.alfauz.orderme.payload.request;
 
+import com.alfauz.orderme.model.RoleModel;
 import com.alfauz.orderme.model.UserAddressModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -29,7 +28,7 @@ public class SignupRequest {
     private String middleName;
 
     @NotBlank(message = "Last name must not be blank")
-    @Column(name = "LAST_NAME")
+    @Size(max = 20, message = "Last name should has max. 20 characters")
     private String lastName;
 
     @NotBlank(message = "Email must not be blank")
@@ -49,7 +48,8 @@ public class SignupRequest {
     @Size(min = 1, max = 20, message = "User type should has min. 1 and max. 20 characters")
     private String userType;
 
+    @Valid
     private List<UserAddressModel> userAddresses;
 
-    private Set<String> roles;
+    private Set<RoleModel> roles;
 }
