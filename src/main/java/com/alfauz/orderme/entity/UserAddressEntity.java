@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Builder
@@ -28,8 +29,7 @@ public class UserAddressEntity extends Auditable<Long> {
     private String address;
 
     @Enumerated(EnumType.STRING)
-    @NotBlank(message = "Address Type must not be blank")
-    @Size(min = 1, max = 20, message = "Address should has min. 1 and max. 20 characters")
+    @NotNull
     @Column(name = "ADDRESS_TYPE")
     private AddressType addressType;
 

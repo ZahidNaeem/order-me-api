@@ -12,6 +12,7 @@ import org.hibernate.annotations.NaturalId;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.List;
@@ -63,9 +64,8 @@ public class UserEntity extends Auditable<Long> {
     @Column(name = "PASSWORD")
     private String password;
 
-    @NotBlank(message = "User type must not be blank")
     @Enumerated(EnumType.STRING)
-    @Size(min = 1, max = 20, message = "User type should has min. 1 and max. 20 characters")
+    @NotNull
     @Column(name = "USER_TYPE")
     private UserType userType;
 
