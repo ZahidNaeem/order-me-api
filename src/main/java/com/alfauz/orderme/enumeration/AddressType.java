@@ -21,7 +21,7 @@ public enum AddressType {
 
     public static AddressType fromValue(final String value) {
         return Arrays.stream(AddressType.values())
-                .filter(addressType -> addressType.equals(value))
+                .filter(addressType -> addressType.getValue().equals(value))
                 .findFirst()
                 .orElseThrow(
                         () -> new AddressTypeNotFoundException("Address type with value " + value + " not found")

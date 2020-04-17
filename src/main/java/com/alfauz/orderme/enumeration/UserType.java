@@ -20,7 +20,7 @@ public enum UserType {
 
     public static UserType fromValue(final String value) {
         return Arrays.stream(UserType.values())
-                .filter(userType -> userType.equals(value))
+                .filter(userType -> userType.getValue().equals(value))
                 .findFirst()
                 .orElseThrow(
                         () -> new UserTypeNotFoundException("User type with value " + value + " not found")
