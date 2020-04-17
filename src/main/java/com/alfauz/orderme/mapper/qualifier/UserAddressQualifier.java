@@ -26,8 +26,8 @@ public class UserAddressQualifier {
     }
 
     @Named("userModelToEntity")
-    public UserEntity user(final Long user) {
-        return userService.findById(user);
+    public UserEntity user(final Long id) {
+        return id != null ? userService.findById(id) : null;
     }
 
     @Named("userEntityToModel")
