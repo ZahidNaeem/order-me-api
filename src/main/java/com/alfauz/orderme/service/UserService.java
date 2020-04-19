@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface UserService {
 
+    List<UserEntity> findAll();
+
     UserEntity findById(final Long id);
 
     UserEntity findByUsername(final String username);

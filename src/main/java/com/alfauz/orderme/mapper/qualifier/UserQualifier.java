@@ -1,12 +1,15 @@
 package com.alfauz.orderme.mapper.qualifier;
 
+import com.alfauz.orderme.entity.CountryCodeEntity;
 import com.alfauz.orderme.entity.RoleEntity;
 import com.alfauz.orderme.entity.UserAddressEntity;
+import com.alfauz.orderme.enumeration.ActivationStatus;
 import com.alfauz.orderme.enumeration.UserType;
 import com.alfauz.orderme.mapper.RoleMapper;
 import com.alfauz.orderme.mapper.UserAddressMapper;
 import com.alfauz.orderme.model.RoleModel;
 import com.alfauz.orderme.model.UserAddressModel;
+import com.alfauz.orderme.service.CountryCodeService;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.mapstruct.Named;
@@ -22,6 +25,7 @@ public class UserQualifier {
 
     private final RoleMapper roleMapper;
     private final UserAddressMapper userAddressMapper;
+    private final CountryCodeService countryCodeService;
 
     @Named("rolesModelsToEntities")
     public Set<RoleEntity> rolesMTE(final Set<RoleModel> models) {
@@ -51,5 +55,25 @@ public class UserQualifier {
     @Named("userTypeEntityToModel")
     public String userType(final UserType userType) {
         return userType.getValue();
+    }
+
+    @Named("countryCodeModelToEntity")
+    public CountryCodeEntity countryCode(final Long id) {
+        return countryCodeService.findById(id);
+    }
+
+    @Named("countryCodeEntityToModel")
+    public Long countryCode(final CountryCodeEntity entity) {
+        return entity.getId();
+    }
+
+    @Named("activationStatusModelToEntity")
+    public ActivationStatus activationStatus(final String value) {
+        return ActivationStatus.fromValue(value);
+    }
+
+    @Named("activationStatusEntityToModel")
+    public String activationStatus(final ActivationStatus activationStatus) {
+        return activationStatus.getValue();
     }
 }

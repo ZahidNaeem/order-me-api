@@ -1,0 +1,1571 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="Zahid Naeem" id="insert-country-codes">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="country_codes"/>
+            <and>
+                <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.country_codes;
+                </sqlCheck>
+            </and>
+        </preConditions>
+        <comment>Insert records in country_codes table</comment>
+        <!--<sqlFile encoding="utf8"
+                 path="/db/changelog/sql/insert_country_codes.sql"
+                 splitStatements="false"
+                 stripComments="true"/>-->
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="1"/>
+            <column name="COUNTRY" value="Afghanistan"/>
+            <column name="CODE" value="93"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="2"/>
+            <column name="COUNTRY" value="Albania"/>
+            <column name="CODE" value="355"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="3"/>
+            <column name="COUNTRY" value="Algeria"/>
+            <column name="CODE" value="213"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="4"/>
+            <column name="COUNTRY" value="American Samoa"/>
+            <column name="CODE" value="684"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="5"/>
+            <column name="COUNTRY" value="Andorra"/>
+            <column name="CODE" value="376"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="6"/>
+            <column name="COUNTRY" value="Angola"/>
+            <column name="CODE" value="244"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="7"/>
+            <column name="COUNTRY" value="Anguilla"/>
+            <column name="CODE" value="809"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="8"/>
+            <column name="COUNTRY" value="Antigua"/>
+            <column name="CODE" value="268"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="9"/>
+            <column name="COUNTRY" value="Argentina"/>
+            <column name="CODE" value="54"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="10"/>
+            <column name="COUNTRY" value="Armenia"/>
+            <column name="CODE" value="374"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="11"/>
+            <column name="COUNTRY" value="Aruba"/>
+            <column name="CODE" value="297"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="12"/>
+            <column name="COUNTRY" value="Ascension Island"/>
+            <column name="CODE" value="247"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="13"/>
+            <column name="COUNTRY" value="Australia"/>
+            <column name="CODE" value="61"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="14"/>
+            <column name="COUNTRY" value="Australian External Territories"/>
+            <column name="CODE" value="672"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="15"/>
+            <column name="COUNTRY" value="Austria"/>
+            <column name="CODE" value="43"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="16"/>
+            <column name="COUNTRY" value="Azerbaijan"/>
+            <column name="CODE" value="994"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="17"/>
+            <column name="COUNTRY" value="Bahamas"/>
+            <column name="CODE" value="242"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="18"/>
+            <column name="COUNTRY" value="Barbados"/>
+            <column name="CODE" value="246"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="19"/>
+            <column name="COUNTRY" value="Bahrain"/>
+            <column name="CODE" value="973"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="20"/>
+            <column name="COUNTRY" value="Bangladesh"/>
+            <column name="CODE" value="880"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="21"/>
+            <column name="COUNTRY" value="Belarus"/>
+            <column name="CODE" value="375"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="22"/>
+            <column name="COUNTRY" value="Belgium"/>
+            <column name="CODE" value="32"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="23"/>
+            <column name="COUNTRY" value="Belize"/>
+            <column name="CODE" value="501"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="24"/>
+            <column name="COUNTRY" value="Benin"/>
+            <column name="CODE" value="229"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="25"/>
+            <column name="COUNTRY" value="Bermuda"/>
+            <column name="CODE" value="809"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="26"/>
+            <column name="COUNTRY" value="Bhutan"/>
+            <column name="CODE" value="975"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="27"/>
+            <column name="COUNTRY" value="British Virgin Islands"/>
+            <column name="CODE" value="284"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="28"/>
+            <column name="COUNTRY" value="Bolivia"/>
+            <column name="CODE" value="591"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="29"/>
+            <column name="COUNTRY" value="Bosnia and Hercegovina"/>
+            <column name="CODE" value="387"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="30"/>
+            <column name="COUNTRY" value="Botswana"/>
+            <column name="CODE" value="267"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="31"/>
+            <column name="COUNTRY" value="Brazil"/>
+            <column name="CODE" value="55"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="32"/>
+            <column name="COUNTRY" value="British V.I."/>
+            <column name="CODE" value="284"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="33"/>
+            <column name="COUNTRY" value="Brunei Darussalm"/>
+            <column name="CODE" value="673"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="34"/>
+            <column name="COUNTRY" value="Bulgaria"/>
+            <column name="CODE" value="359"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="35"/>
+            <column name="COUNTRY" value="Burkina Faso"/>
+            <column name="CODE" value="226"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="36"/>
+            <column name="COUNTRY" value="Burundi"/>
+            <column name="CODE" value="257"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="37"/>
+            <column name="COUNTRY" value="Cambodia"/>
+            <column name="CODE" value="855"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="38"/>
+            <column name="COUNTRY" value="Cameroon"/>
+            <column name="CODE" value="237"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="39"/>
+            <column name="COUNTRY" value="Canada"/>
+            <column name="CODE" value="1"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="40"/>
+            <column name="COUNTRY" value="CapeVerde Islands"/>
+            <column name="CODE" value="238"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="41"/>
+            <column name="COUNTRY" value="Caribbean Nations"/>
+            <column name="CODE" value="1"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="42"/>
+            <column name="COUNTRY" value="Cayman Islands"/>
+            <column name="CODE" value="345"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="43"/>
+            <column name="COUNTRY" value="Cape Verdi"/>
+            <column name="CODE" value="238"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="44"/>
+            <column name="COUNTRY" value="Central African Republic"/>
+            <column name="CODE" value="236"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="45"/>
+            <column name="COUNTRY" value="Chad"/>
+            <column name="CODE" value="235"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="46"/>
+            <column name="COUNTRY" value="Chile"/>
+            <column name="CODE" value="56"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="47"/>
+            <column name="COUNTRY" value="China (People's Republic)"/>
+            <column name="CODE" value="86"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="48"/>
+            <column name="COUNTRY" value="China-Taiwan"/>
+            <column name="CODE" value="886"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="49"/>
+            <column name="COUNTRY" value="Colombia"/>
+            <column name="CODE" value="57"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="50"/>
+            <column name="COUNTRY" value="Comoros and Mayotte"/>
+            <column name="CODE" value="269"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="51"/>
+            <column name="COUNTRY" value="Congo"/>
+            <column name="CODE" value="242"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="52"/>
+            <column name="COUNTRY" value="Cook Islands"/>
+            <column name="CODE" value="682"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="53"/>
+            <column name="COUNTRY" value="Costa Rica"/>
+            <column name="CODE" value="506"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="54"/>
+            <column name="COUNTRY" value="Croatia"/>
+            <column name="CODE" value="385"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="55"/>
+            <column name="COUNTRY" value="Cuba"/>
+            <column name="CODE" value="53"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="56"/>
+            <column name="COUNTRY" value="Cyprus"/>
+            <column name="CODE" value="357"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="57"/>
+            <column name="COUNTRY" value="Czech Republic"/>
+            <column name="CODE" value="420"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="58"/>
+            <column name="COUNTRY" value="Denmark"/>
+            <column name="CODE" value="45"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="59"/>
+            <column name="COUNTRY" value="Diego Garcia"/>
+            <column name="CODE" value="246"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="60"/>
+            <column name="COUNTRY" value="Dominca"/>
+            <column name="CODE" value="767"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="61"/>
+            <column name="COUNTRY" value="Dominican Republic"/>
+            <column name="CODE" value="809"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="62"/>
+            <column name="COUNTRY" value="Djibouti"/>
+            <column name="CODE" value="253"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="63"/>
+            <column name="COUNTRY" value="Ecuador"/>
+            <column name="CODE" value="593"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="64"/>
+            <column name="COUNTRY" value="Egypt"/>
+            <column name="CODE" value="20"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="65"/>
+            <column name="COUNTRY" value="El Salvador"/>
+            <column name="CODE" value="503"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="66"/>
+            <column name="COUNTRY" value="Equatorial Guinea"/>
+            <column name="CODE" value="240"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="67"/>
+            <column name="COUNTRY" value="Eritrea"/>
+            <column name="CODE" value="291"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="68"/>
+            <column name="COUNTRY" value="Estonia"/>
+            <column name="CODE" value="372"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="69"/>
+            <column name="COUNTRY" value="Ethiopia"/>
+            <column name="CODE" value="251"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="70"/>
+            <column name="COUNTRY" value="Falkland Islands"/>
+            <column name="CODE" value="500"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="71"/>
+            <column name="COUNTRY" value="Faroe (Faeroe) Islands (Denmark)"/>
+            <column name="CODE" value="298"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="72"/>
+            <column name="COUNTRY" value="Fiji"/>
+            <column name="CODE" value="679"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="73"/>
+            <column name="COUNTRY" value="Finland"/>
+            <column name="CODE" value="358"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="74"/>
+            <column name="COUNTRY" value="France"/>
+            <column name="CODE" value="33"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="75"/>
+            <column name="COUNTRY" value="French Antilles"/>
+            <column name="CODE" value="596"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="76"/>
+            <column name="COUNTRY" value="French Guiana"/>
+            <column name="CODE" value="594"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="77"/>
+            <column name="COUNTRY" value="Gabon (Gabonese Republic)"/>
+            <column name="CODE" value="241"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="78"/>
+            <column name="COUNTRY" value="Gambia"/>
+            <column name="CODE" value="220"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="79"/>
+            <column name="COUNTRY" value="Georgia"/>
+            <column name="CODE" value="995"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="80"/>
+            <column name="COUNTRY" value="Germany"/>
+            <column name="CODE" value="49"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="81"/>
+            <column name="COUNTRY" value="Ghana"/>
+            <column name="CODE" value="233"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="82"/>
+            <column name="COUNTRY" value="Gibraltar"/>
+            <column name="CODE" value="350"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="83"/>
+            <column name="COUNTRY" value="Greece"/>
+            <column name="CODE" value="30"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="84"/>
+            <column name="COUNTRY" value="Greenland"/>
+            <column name="CODE" value="299"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="85"/>
+            <column name="COUNTRY" value="Grenada/Carricou"/>
+            <column name="CODE" value="473"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="86"/>
+            <column name="COUNTRY" value="Guam"/>
+            <column name="CODE" value="671"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="87"/>
+            <column name="COUNTRY" value="Guatemala"/>
+            <column name="CODE" value="502"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="88"/>
+            <column name="COUNTRY" value="Guinea"/>
+            <column name="CODE" value="224"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="89"/>
+            <column name="COUNTRY" value="Guinea-Bissau"/>
+            <column name="CODE" value="245"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="90"/>
+            <column name="COUNTRY" value="Guyana"/>
+            <column name="CODE" value="592"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="91"/>
+            <column name="COUNTRY" value="Haiti"/>
+            <column name="CODE" value="509"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="92"/>
+            <column name="COUNTRY" value="Honduras"/>
+            <column name="CODE" value="504"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="93"/>
+            <column name="COUNTRY" value="Hong Kong"/>
+            <column name="CODE" value="852"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="94"/>
+            <column name="COUNTRY" value="Hungary"/>
+            <column name="CODE" value="36"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="95"/>
+            <column name="COUNTRY" value="Iceland"/>
+            <column name="CODE" value="354"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="96"/>
+            <column name="COUNTRY" value="India"/>
+            <column name="CODE" value="91"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="97"/>
+            <column name="COUNTRY" value="Indonesia"/>
+            <column name="CODE" value="62"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="98"/>
+            <column name="COUNTRY" value="Iran"/>
+            <column name="CODE" value="98"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="99"/>
+            <column name="COUNTRY" value="Iraq"/>
+            <column name="CODE" value="964"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="100"/>
+            <column name="COUNTRY" value="Ireland (Irish Republic; Eire)"/>
+            <column name="CODE" value="353"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="101"/>
+            <column name="COUNTRY" value="Israel"/>
+            <column name="CODE" value="972"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="102"/>
+            <column name="COUNTRY" value="Italy"/>
+            <column name="CODE" value="39"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="103"/>
+            <column name="COUNTRY" value="Ivory Coast (La Cote d'Ivoire)"/>
+            <column name="CODE" value="225"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="104"/>
+            <column name="COUNTRY" value="Jamaica"/>
+            <column name="CODE" value="876"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="105"/>
+            <column name="COUNTRY" value="Japan"/>
+            <column name="CODE" value="81"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="106"/>
+            <column name="COUNTRY" value="Jordan"/>
+            <column name="CODE" value="962"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="107"/>
+            <column name="COUNTRY" value="Kazakhstan"/>
+            <column name="CODE" value="7"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="108"/>
+            <column name="COUNTRY" value="Kenya"/>
+            <column name="CODE" value="254"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="109"/>
+            <column name="COUNTRY" value="Khmer Republic (Cambodia/Kampuchea)"/>
+            <column name="CODE" value="855"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="110"/>
+            <column name="COUNTRY" value="Kiribati Republic (Gilbert Islands)"/>
+            <column name="CODE" value="686"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="111"/>
+            <column name="COUNTRY" value="Korea - Republic of (South Korea)"/>
+            <column name="CODE" value="82"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="112"/>
+            <column name="COUNTRY" value="Korea - People's Republic of (North Korea)"/>
+            <column name="CODE" value="850"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="113"/>
+            <column name="COUNTRY" value="Kuwait"/>
+            <column name="CODE" value="965"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="114"/>
+            <column name="COUNTRY" value="Kyrgyz Republic"/>
+            <column name="CODE" value="996"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="115"/>
+            <column name="COUNTRY" value="Latvia"/>
+            <column name="CODE" value="371"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="116"/>
+            <column name="COUNTRY" value="Laos"/>
+            <column name="CODE" value="856"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="117"/>
+            <column name="COUNTRY" value="Lebanon"/>
+            <column name="CODE" value="961"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="118"/>
+            <column name="COUNTRY" value="Lesotho"/>
+            <column name="CODE" value="266"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="119"/>
+            <column name="COUNTRY" value="Liberia"/>
+            <column name="CODE" value="231"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="120"/>
+            <column name="COUNTRY" value="Lithuania"/>
+            <column name="CODE" value="370"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="121"/>
+            <column name="COUNTRY" value="Libya"/>
+            <column name="CODE" value="218"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="122"/>
+            <column name="COUNTRY" value="Liechtenstein"/>
+            <column name="CODE" value="423"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="123"/>
+            <column name="COUNTRY" value="Luxembourg"/>
+            <column name="CODE" value="352"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="124"/>
+            <column name="COUNTRY" value="Macao"/>
+            <column name="CODE" value="853"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="125"/>
+            <column name="COUNTRY" value="Macedonia"/>
+            <column name="CODE" value="389"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="126"/>
+            <column name="COUNTRY" value="Madagascar"/>
+            <column name="CODE" value="261"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="127"/>
+            <column name="COUNTRY" value="Malawi"/>
+            <column name="CODE" value="265"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="128"/>
+            <column name="COUNTRY" value="Malaysia"/>
+            <column name="CODE" value="60"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="129"/>
+            <column name="COUNTRY" value="Maldives"/>
+            <column name="CODE" value="960"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="130"/>
+            <column name="COUNTRY" value="Mali"/>
+            <column name="CODE" value="223"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="131"/>
+            <column name="COUNTRY" value="Malta"/>
+            <column name="CODE" value="356"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="132"/>
+            <column name="COUNTRY" value="Marshall Islands"/>
+            <column name="CODE" value="692"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="133"/>
+            <column name="COUNTRY" value="Martinique (French Antilles)"/>
+            <column name="CODE" value="596"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="134"/>
+            <column name="COUNTRY" value="Mauritania"/>
+            <column name="CODE" value="222"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="135"/>
+            <column name="COUNTRY" value="Mauritius"/>
+            <column name="CODE" value="230"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="136"/>
+            <column name="COUNTRY" value="Mayolte"/>
+            <column name="CODE" value="269"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="137"/>
+            <column name="COUNTRY" value="Mexico"/>
+            <column name="CODE" value="52"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="138"/>
+            <column name="COUNTRY" value="Micronesia (F.S. of Polynesia)"/>
+            <column name="CODE" value="691"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="139"/>
+            <column name="COUNTRY" value="Moldova"/>
+            <column name="CODE" value="373"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="140"/>
+            <column name="COUNTRY" value="Monaco"/>
+            <column name="CODE" value="33"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="141"/>
+            <column name="COUNTRY" value="Mongolia"/>
+            <column name="CODE" value="976"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="142"/>
+            <column name="COUNTRY" value="Montserrat"/>
+            <column name="CODE" value="473"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="143"/>
+            <column name="COUNTRY" value="Morocco"/>
+            <column name="CODE" value="212"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="144"/>
+            <column name="COUNTRY" value="Mozambique"/>
+            <column name="CODE" value="258"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="145"/>
+            <column name="COUNTRY" value="Myanmar (former Burma)"/>
+            <column name="CODE" value="95"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="146"/>
+            <column name="COUNTRY" value="Namibia (former South-West Africa)"/>
+            <column name="CODE" value="264"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="147"/>
+            <column name="COUNTRY" value="Nauru"/>
+            <column name="CODE" value="674"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="148"/>
+            <column name="COUNTRY" value="Nepal"/>
+            <column name="CODE" value="977"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="149"/>
+            <column name="COUNTRY" value="Netherlands"/>
+            <column name="CODE" value="31"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="150"/>
+            <column name="COUNTRY" value="Netherlands Antilles"/>
+            <column name="CODE" value="599"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="151"/>
+            <column name="COUNTRY" value="Nevis"/>
+            <column name="CODE" value="869"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="152"/>
+            <column name="COUNTRY" value="New Caledonia"/>
+            <column name="CODE" value="687"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="153"/>
+            <column name="COUNTRY" value="New Zealand"/>
+            <column name="CODE" value="64"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="154"/>
+            <column name="COUNTRY" value="Nicaragua"/>
+            <column name="CODE" value="505"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="155"/>
+            <column name="COUNTRY" value="Niger"/>
+            <column name="CODE" value="227"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="156"/>
+            <column name="COUNTRY" value="Nigeria"/>
+            <column name="CODE" value="234"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="157"/>
+            <column name="COUNTRY" value="Niue"/>
+            <column name="CODE" value="683"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="158"/>
+            <column name="COUNTRY" value="North Korea"/>
+            <column name="CODE" value="850"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="159"/>
+            <column name="COUNTRY" value="North Mariana Islands (Saipan)"/>
+            <column name="CODE" value="1670"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="160"/>
+            <column name="COUNTRY" value="Norway"/>
+            <column name="CODE" value="47"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="161"/>
+            <column name="COUNTRY" value="Oman"/>
+            <column name="CODE" value="968"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="162"/>
+            <column name="COUNTRY" value="Pakistan"/>
+            <column name="CODE" value="92"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="163"/>
+            <column name="COUNTRY" value="Palau"/>
+            <column name="CODE" value="680"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="164"/>
+            <column name="COUNTRY" value="Panama"/>
+            <column name="CODE" value="507"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="165"/>
+            <column name="COUNTRY" value="Papua New Guinea"/>
+            <column name="CODE" value="675"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="166"/>
+            <column name="COUNTRY" value="Paraguay"/>
+            <column name="CODE" value="595"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="167"/>
+            <column name="COUNTRY" value="Peru"/>
+            <column name="CODE" value="51"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="168"/>
+            <column name="COUNTRY" value="Philippines"/>
+            <column name="CODE" value="63"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="169"/>
+            <column name="COUNTRY" value="Poland"/>
+            <column name="CODE" value="48"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="170"/>
+            <column name="COUNTRY" value="Portugal (includes Azores)"/>
+            <column name="CODE" value="351"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="171"/>
+            <column name="COUNTRY" value="Puerto Rico"/>
+            <column name="CODE" value="1787"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="172"/>
+            <column name="COUNTRY" value="Qatar"/>
+            <column name="CODE" value="974"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="173"/>
+            <column name="COUNTRY" value="Reunion (France)"/>
+            <column name="CODE" value="262"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="174"/>
+            <column name="COUNTRY" value="Romania"/>
+            <column name="CODE" value="40"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="175"/>
+            <column name="COUNTRY" value="Russia"/>
+            <column name="CODE" value="7"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="176"/>
+            <column name="COUNTRY" value="Rwanda (Rwandese Republic)"/>
+            <column name="CODE" value="250"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="177"/>
+            <column name="COUNTRY" value="Saipan"/>
+            <column name="CODE" value="670"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="178"/>
+            <column name="COUNTRY" value="San Marino"/>
+            <column name="CODE" value="378"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="179"/>
+            <column name="COUNTRY" value="Sao Tome and Principe"/>
+            <column name="CODE" value="239"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="180"/>
+            <column name="COUNTRY" value="Saudi Arabia"/>
+            <column name="CODE" value="966"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="181"/>
+            <column name="COUNTRY" value="Senegal"/>
+            <column name="CODE" value="221"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="182"/>
+            <column name="COUNTRY" value="Serbia and Montenegro"/>
+            <column name="CODE" value="381"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="183"/>
+            <column name="COUNTRY" value="Seychelles"/>
+            <column name="CODE" value="248"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="184"/>
+            <column name="COUNTRY" value="Sierra Leone"/>
+            <column name="CODE" value="232"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="185"/>
+            <column name="COUNTRY" value="Singapore"/>
+            <column name="CODE" value="65"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="186"/>
+            <column name="COUNTRY" value="Slovakia"/>
+            <column name="CODE" value="421"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="187"/>
+            <column name="COUNTRY" value="Slovenia"/>
+            <column name="CODE" value="386"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="188"/>
+            <column name="COUNTRY" value="Solomon Islands"/>
+            <column name="CODE" value="677"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="189"/>
+            <column name="COUNTRY" value="Somalia"/>
+            <column name="CODE" value="252"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="190"/>
+            <column name="COUNTRY" value="South Africa"/>
+            <column name="CODE" value="27"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="191"/>
+            <column name="COUNTRY" value="Spain"/>
+            <column name="CODE" value="34"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="192"/>
+            <column name="COUNTRY" value="Sri Lanka"/>
+            <column name="CODE" value="94"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="193"/>
+            <column name="COUNTRY" value="St. Helena"/>
+            <column name="CODE" value="290"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="194"/>
+            <column name="COUNTRY" value="St. Kitts/Nevis"/>
+            <column name="CODE" value="869"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="195"/>
+            <column name="COUNTRY" value="St. Pierre &amp;(et) Miquelon (France)"/>
+            <column name="CODE" value="508"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="196"/>
+            <column name="COUNTRY" value="Sudan"/>
+            <column name="CODE" value="249"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="197"/>
+            <column name="COUNTRY" value="Suriname"/>
+            <column name="CODE" value="597"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="198"/>
+            <column name="COUNTRY" value="Swaziland"/>
+            <column name="CODE" value="268"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="199"/>
+            <column name="COUNTRY" value="Sweden"/>
+            <column name="CODE" value="46"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="200"/>
+            <column name="COUNTRY" value="Switzerland"/>
+            <column name="CODE" value="41"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="201"/>
+            <column name="COUNTRY" value="Syrian Arab Republic (Syria)"/>
+            <column name="CODE" value="963"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="202"/>
+            <column name="COUNTRY" value="Tahiti (French Polynesia)"/>
+            <column name="CODE" value="689"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="203"/>
+            <column name="COUNTRY" value="Taiwan"/>
+            <column name="CODE" value="886"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="204"/>
+            <column name="COUNTRY" value="Tajikistan"/>
+            <column name="CODE" value="7"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="205"/>
+            <column name="COUNTRY" value="Tanzania (includes Zanzibar)"/>
+            <column name="CODE" value="255"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="206"/>
+            <column name="COUNTRY" value="Thailand"/>
+            <column name="CODE" value="66"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="207"/>
+            <column name="COUNTRY" value="Togo (Togolese Republic)"/>
+            <column name="CODE" value="228"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="208"/>
+            <column name="COUNTRY" value="Tokelau"/>
+            <column name="CODE" value="690"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="209"/>
+            <column name="COUNTRY" value="Tonga"/>
+            <column name="CODE" value="676"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="210"/>
+            <column name="COUNTRY" value="Trinidad and Tobago"/>
+            <column name="CODE" value="1868"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="211"/>
+            <column name="COUNTRY" value="Tunisia"/>
+            <column name="CODE" value="216"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="212"/>
+            <column name="COUNTRY" value="Turkey"/>
+            <column name="CODE" value="90"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="213"/>
+            <column name="COUNTRY" value="Turkmenistan"/>
+            <column name="CODE" value="993"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="214"/>
+            <column name="COUNTRY" value="Tuvalu (Ellice Islands)"/>
+            <column name="CODE" value="688"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="215"/>
+            <column name="COUNTRY" value="Uganda"/>
+            <column name="CODE" value="256"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="216"/>
+            <column name="COUNTRY" value="Ukraine"/>
+            <column name="CODE" value="380"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="217"/>
+            <column name="COUNTRY" value="United Arab Emirates"/>
+            <column name="CODE" value="971"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="218"/>
+            <column name="COUNTRY" value="United Kingdom"/>
+            <column name="CODE" value="44"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="219"/>
+            <column name="COUNTRY" value="Uruguay"/>
+            <column name="CODE" value="598"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="220"/>
+            <column name="COUNTRY" value="USA"/>
+            <column name="CODE" value="1"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="221"/>
+            <column name="COUNTRY" value="Uzbekistan"/>
+            <column name="CODE" value="7"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="222"/>
+            <column name="COUNTRY" value="Vanuatu (New Hebrides)"/>
+            <column name="CODE" value="678"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="223"/>
+            <column name="COUNTRY" value="Vatican City"/>
+            <column name="CODE" value="39"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="224"/>
+            <column name="COUNTRY" value="Venezuela"/>
+            <column name="CODE" value="58"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="225"/>
+            <column name="COUNTRY" value="Viet Nam"/>
+            <column name="CODE" value="84"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="226"/>
+            <column name="COUNTRY" value="Virgin Islands"/>
+            <column name="CODE" value="1340"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="227"/>
+            <column name="COUNTRY" value="Wallis and Futuna"/>
+            <column name="CODE" value="681"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="228"/>
+            <column name="COUNTRY" value="Western Samoa"/>
+            <column name="CODE" value="685"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="229"/>
+            <column name="COUNTRY" value="Yemen (People's Democratic Republic of)"/>
+            <column name="CODE" value="381"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="230"/>
+            <column name="COUNTRY" value="Yemen Arab Republic (North Yemen)"/>
+            <column name="CODE" value="967"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="231"/>
+            <column name="COUNTRY" value="Yugoslavia (discontinued)"/>
+            <column name="CODE" value="381"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="232"/>
+            <column name="COUNTRY" value="Zaire"/>
+            <column name="CODE" value="243"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="233"/>
+            <column name="COUNTRY" value="Zambia"/>
+            <column name="CODE" value="260"/>
+        </insert>
+        <insert schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" value="234"/>
+            <column name="COUNTRY" value="Zimbabwe"/>
+            <column name="CODE" value="263"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-item_categories">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="item_categories"/>
+            <and>
+                <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.item_categories;
+                </sqlCheck>
+            </and>
+        </preConditions>
+        <comment>Insert records in item_categories table</comment>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Asian Fusion"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Bagels"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Bakery"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Barbeque"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Breakfast"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="British"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Brunch"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Buffets"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Burgers"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Cajun/Creole"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Caribbean"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Chinese"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Coffee / Espresso"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Country Food"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Cuban"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Deli"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Doughnuts"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Family Fare"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Fast Food"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Fine Dining"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Food Trucks"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="French"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="German"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Gluten-free"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Greek"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Happy Hour"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Hot Dogs"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Ice Cream"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Indian"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Irish"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Italian"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Japanese"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Latin American"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Live Entertainment"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Mediterranean"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Mexican"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Nouvelle"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Pancakes/Waffles"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Pizza"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Polish"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Sandwiches"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Seafood"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Soul Food"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Soup &amp; Salad"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Southern"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Spanish"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Sports Bar"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Steaks"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Sushi"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Tapas"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Thai"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Vegan Friendly"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+        <insert schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" value="Vegetarian"/>
+            <column name="MAIN_CATEGORY" value="Food"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-role-pm">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.roles WHERE name = 'ROLE_PM';
+            </sqlCheck>
+        </preConditions>
+        <comment>insert role PM into roles table</comment>
+        <insert schemaName="om" tableName="roles">
+            <column name="ID" value="1"/>
+            <column name="NAME" value="ROLE_PM"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-role-admin">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.roles WHERE name = 'ROLE_ADMIN';
+            </sqlCheck>
+        </preConditions>
+        <comment>insert role ADMIN into roles table</comment>
+        <insert schemaName="om" tableName="roles">
+            <column name="ID" value="2"/>
+            <column name="NAME" value="ROLE_ADMIN"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-role-user">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.roles WHERE name = 'ROLE_USER';
+            </sqlCheck>
+        </preConditions>
+        <comment>insert role USER into roles table</comment>
+        <insert schemaName="om" tableName="roles">
+            <column name="ID" value="3"/>
+            <column name="NAME" value="ROLE_USER"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-user-zahid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.users WHERE lower(username) = 'zahid';
+            </sqlCheck>
+        </preConditions>
+        <comment>insert user zahid</comment>
+        <insert schemaName="om" tableName="users">
+            <column name="ID" value="1"/>
+            <column name="FIRST_NAME" value="Zahid"/>
+            <column name="LAST_NAME" value="Naeem"/>
+            <column name="COUNTRY_ID" value="162"/>
+            <column name="PHONE" value="3222666605"/>
+            <column name="EMAIL" value="abc@abc.com"/>
+            <column name="USERNAME" value="zahid"/>
+            <column name="PASSWORD" value="$2y$12$RonM07a5gzYti.hIqyiAC.fvl66hY8e/FrKqkrN5IIaOWD8ZHdd7e"/>
+            <column name="USER_TYPE" value="SHOP_OWNER"/>
+            <column name="ACTIVATION_STATUS" value="PENDING"/>
+            <column name="REMARKS" value="User has to sign agreement and then he will be marked as active"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-user-abid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.users WHERE lower(username) = 'abid';
+            </sqlCheck>
+        </preConditions>
+        <comment>insert user abid</comment>
+        <insert schemaName="om" tableName="users">
+            <column name="ID" value="2"/>
+            <column name="FIRST_NAME" value="Abid"/>
+            <column name="LAST_NAME" value="Naeem"/>
+            <column name="COUNTRY_ID" value="162"/>
+            <column name="PHONE" value="3222666607"/>
+            <column name="EMAIL" value="abc2@abc2.com"/>
+            <column name="USERNAME" value="abid"/>
+            <column name="PASSWORD" value="$2y$12$RonM07a5gzYti.hIqyiAC.fvl66hY8e/FrKqkrN5IIaOWD8ZHdd7e"/>
+            <column name="CREDIT_CARD_NO" value="123-456-789"/>
+            <column name="CC_EXPIRY_DATE" valueDate="sysdate"/>
+            <column name="USER_TYPE" value="CUSTOMER"/>
+            <column name="ACTIVATION_STATUS" value="ACTIVE"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-home-address-for-user-zahid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_addresses WHERE user_id = 1 and lower(address) =
+                'gajju matta';
+            </sqlCheck>
+        </preConditions>
+        <comment>insert home address for user zahid</comment>
+        <insert schemaName="om" tableName="user_addresses">
+            <column name="ID" value="1"/>
+            <column name="USER_ID" value="1"/>
+            <column name="ADDRESS" value="Gajju Matta"/>
+            <column name="ADDRESS_TYPE" value="HOME_ADDRESS"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-office-address-for-user-zahid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_addresses WHERE user_id = 1 and lower(address) =
+                'g-9';
+            </sqlCheck>
+        </preConditions>
+        <comment>insert office address for user zahid</comment>
+        <insert schemaName="om" tableName="user_addresses">
+            <column name="ID" value="2"/>
+            <column name="USER_ID" value="1"/>
+            <column name="ADDRESS" value="G-9"/>
+            <column name="ADDRESS_TYPE" value="OFFICE_ADDRESS"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-office-address-for-user-abid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_addresses WHERE user_id = 2 and lower(address) =
+                'fc college';
+            </sqlCheck>
+        </preConditions>
+        <comment>insert office address for user abid</comment>
+        <insert schemaName="om" tableName="user_addresses">
+            <column name="ID" value="3"/>
+            <column name="USER_ID" value="2"/>
+            <column name="ADDRESS" value="FC College"/>
+            <column name="ADDRESS_TYPE" value="OFFICE_ADDRESS"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-role-pm-for-user-zahid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_roles WHERE user_id = 1 AND role_id = 1;
+            </sqlCheck>
+        </preConditions>
+        <comment>insert role PM for user zahid</comment>
+        <insert schemaName="om" tableName="user_roles">
+            <column name="USER_ID" value="1"/>
+            <column name="ROLE_ID" value="1"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-role-admin-for-user-zahid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_roles WHERE user_id = 1 AND role_id = 2;
+            </sqlCheck>
+        </preConditions>
+        <comment>insert role ADMIN for user zahid</comment>
+        <insert schemaName="om" tableName="user_roles">
+            <column name="USER_ID" value="1"/>
+            <column name="ROLE_ID" value="2"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-role-user-for-user-zahid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_roles WHERE user_id = 1 AND role_id = 3;
+            </sqlCheck>
+        </preConditions>
+        <comment>insert role USER for user zahid</comment>
+        <insert schemaName="om" tableName="user_roles">
+            <column name="USER_ID" value="1"/>
+            <column name="ROLE_ID" value="3"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-role-user-for-user-abid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_roles WHERE user_id = 2 AND role_id = 3;
+            </sqlCheck>
+        </preConditions>
+        <comment>insert role USER for user abid</comment>
+        <insert schemaName="om" tableName="user_roles">
+            <column name="USER_ID" value="2"/>
+            <column name="ROLE_ID" value="3"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

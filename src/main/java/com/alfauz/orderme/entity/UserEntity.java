@@ -1,5 +1,6 @@
 package com.alfauz.orderme.entity;
 
+import com.alfauz.orderme.enumeration.ActivationStatus;
 import com.alfauz.orderme.enumeration.UserType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,6 +15,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -23,10 +25,11 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "USERS", schema = "OM", uniqueConstraints = {
-        @UniqueConstraint(name = "username_uk", columnNames = {"username"}),
-        @UniqueConstraint(name = "email_uk", columnNames = {"email"})
-})
+@Table(name = "USERS", schema = "OM")
+//, uniqueConstraints = {
+//        @UniqueConstraint(name = "username_uk", columnNames = {"username"}),
+//        @UniqueConstraint(name = "email_uk", columnNames = {"email"})
+//})
 public class UserEntity extends Auditable<Long> {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -47,16 +50,26 @@ public class UserEntity extends Auditable<Long> {
     @Column(name = "LAST_NAME")
     private String lastName;
 
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "COUNTRY_ID")
+    private CountryCodeEntity countryCode;
+
+    @NotBlank
+    @Size(min = 6, max = 50, message = "Phone should has min. 6 and max. 50 characters")
+    @Column(name = "PHONE", unique = true)
+    private String phone;
+
     @NaturalId
     @NotBlank(message = "Email must not be blank")
     @Size(min = 6, max = 50, message = "Email should has min. 6 and max. 50 characters")
     @Email
-    @Column(name = "EMAIL")
+    @Column(name = "EMAIL", unique = true)
     private String email;
 
     @NotBlank(message = "Username must not be blank")
     @Size(min = 3, max = 50, message = "Username should has min. 3 and max. 50 characters")
-    @Column(name = "USERNAME")
+    @Column(name = "USERNAME", unique = true)
     private String username;
 
     @NotBlank(message = "Password must not be blank")
@@ -64,10 +77,26 @@ public class UserEntity extends Auditable<Long> {
     @Column(name = "PASSWORD")
     private String password;
 
+    @Size(max = 50, message = "Credit card should has max. 50 characters")
+    @Column(name = "CREDIT_CARD_NO")
+    private String creditCardNo;
+
+    @Column(name = "CC_EXPIRY_DATE")
+    private Date ccExpiryDate;
+
     @Enumerated(EnumType.STRING)
     @NotNull
     @Column(name = "USER_TYPE")
     private UserType userType;
+
+    @Enumerated(EnumType.STRING)
+    @NotNull
+    @Column(name = "ACTIVATION_STATUS")
+    private ActivationStatus activationStatus;
+
+    @Size(max = 2000, message = "Credit card should has max. 2000 characters")
+    @Column(name = "REMARKS")
+    private String remarks;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     @Cascade(value = CascadeType.ALL)

@@ -1,0 +1,174 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="Zahid Naeem" id="create-sequence-hibernate_sequence">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <sequenceExists sequenceName="hibernate_sequence"/>
+            </not>
+        </preConditions>
+        <comment>Creating sequence hibernate_sequence</comment>
+        <createSequence sequenceName="hibernate_sequence"
+                        schemaName="om"
+                        startValue="1"
+                        incrementBy="1"/>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="create-table-country_codes">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="country_codes"/>
+            </not>
+        </preConditions>
+        <comment>Creating table country_codes</comment>
+        <createTable schemaName="om" tableName="country_codes">
+            <column name="COUNTRY_ID" type="INT">
+                <constraints primaryKey="true" primaryKeyName="country_codes_pk"/>
+            </column>
+            <column name="COUNTRY" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CODE" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="create-table-item_categories">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="item_categories"/>
+            </not>
+        </preConditions>
+        <comment>Creating table item_categories</comment>
+        <createTable schemaName="om" tableName="item_categories">
+            <column name="ITEM_CATEGORY" type="VARCHAR(50)">
+                <constraints primaryKey="true" primaryKeyName="item_categories_pk"/>
+            </column>
+            <column name="MAIN_CATEGORY" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="create-table-roles">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="roles"/>
+            </not>
+        </preConditions>
+        <comment>Creating table Roles</comment>
+        <createTable schemaName="om" tableName="roles">
+            <column name="ID" type="INT">
+                <constraints primaryKey="true" primaryKeyName="roles_pk"/>
+            </column>
+            <column name="NAME" type="VARCHAR(20)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="roles_name_uk"/>
+            </column>
+            <column name="CREATED_BY" type="INT"/>
+            <column name="CREATION_DATE" type="TIMESTAMP"/>
+            <column name="LAST_UPDATED_BY" type="INT"/>
+            <column name="LAST_UPDATE_DATE" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="create-table-users">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="users"/>
+            </not>
+        </preConditions>
+        <comment>Creating table Users</comment>
+        <createTable schemaName="om" tableName="users">
+            <column name="ID" type="INT">
+                <constraints primaryKey="true" primaryKeyName="users_pk"/>
+            </column>
+            <column name="FIRST_NAME" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MIDDLE_NAME" type="VARCHAR(20)">
+            </column>
+            <column name="LAST_NAME" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="COUNTRY_ID" type="INT">
+                <constraints nullable="false"
+                             foreignKeyName="USERS_COUNTRY_ID_FK"
+                             references="country_codes(country_id)"/>
+            </column>
+            <column name="PHONE" type="VARCHAR(50)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="users_phone_uk"/>
+            </column>
+            <column name="EMAIL" type="VARCHAR(50)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="users_email_uk"/>
+            </column>
+            <column name="USERNAME" type="VARCHAR(50)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="users_username_uk"/>
+            </column>
+            <column name="PASSWORD" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREDIT_CARD_NO" type="VARCHAR(50)"/>
+            <column name="CC_EXPIRY_DATE" type="DATE"/>
+            <column name="USER_TYPE" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ACTIVATION_STATUS" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="REMARKS" type="VARCHAR(2000)"/>
+            <column name="CREATED_BY" type="INT"/>
+            <column name="CREATION_DATE" type="TIMESTAMP"/>
+            <column name="LAST_UPDATED_BY" type="INT"/>
+            <column name="LAST_UPDATE_DATE" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="create-table-user_addresses">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="user_addresses"/>
+            </not>
+        </preConditions>
+        <comment>Creating table user_addresses</comment>
+        <createTable schemaName="om" tableName="user_addresses">
+            <column name="ID" type="INT">
+                <constraints primaryKey="true" primaryKeyName="user_addresses_pk"/>
+            </column>
+            <column name="USER_ID" type="INT">
+                <constraints nullable="false"
+                             foreignKeyName="USER_ADDRESSES_USER_ID_FK"
+                             references="users(id)"/>
+            </column>
+            <column name="ADDRESS" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ADDRESS_TYPE" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="INT"/>
+            <column name="CREATION_DATE" type="TIMESTAMP"/>
+            <column name="LAST_UPDATED_BY" type="INT"/>
+            <column name="LAST_UPDATE_DATE" type="TIMESTAMP"/>
+        </createTable>
+        <addUniqueConstraint constraintName="user_addresses_uk1" tableName="user_addresses" columnNames="USER_ID, ADDRESS"/>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="create-table-user_roles">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="user_roles"/>
+            </not>
+        </preConditions>
+        <comment>Creating table User_Roles</comment>
+        <createTable schemaName="om" tableName="user_roles">
+            <column name="USER_ID" type="INT">
+                <constraints nullable="false"
+                             foreignKeyName="USER_ROLES_USER_ID_FK"
+                             references="users(id)"/>
+            </column>
+            <column name="ROLE_ID" type="INT">
+                <constraints nullable="false"
+                             foreignKeyName="USER_ROLES_ROLE_ID_FK"
+                             references="roles(id)"/>
+            </column>
+        </createTable>
+        <addPrimaryKey columnNames="USER_ID, ROLE_ID" constraintName="USER_ROLES_PK" schemaName="om"
+                       tableName="user_roles"/>
+    </changeSet>
+</databaseChangeLog>

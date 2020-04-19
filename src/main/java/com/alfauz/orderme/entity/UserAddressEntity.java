@@ -16,7 +16,9 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "USER_ADDRESSES", schema = "OM")
+@Table(name = "USER_ADDRESSES", schema = "OM", uniqueConstraints = {
+        @UniqueConstraint(name = "user_addresses_uk1", columnNames = "USER_ID, ADDRESS")
+})
 public class UserAddressEntity extends Auditable<Long> {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

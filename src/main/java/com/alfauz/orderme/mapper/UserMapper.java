@@ -18,11 +18,15 @@ import java.util.List;
 )
 public interface UserMapper {
 
+    @Mapping(target = "countryCode", qualifiedByName = "countryCodeModelToEntity")
+    @Mapping(target = "activationStatus", qualifiedByName = "activationStatusModelToEntity")
     @Mapping(target = "userType", qualifiedByName = "userTypeModelToEntity")
     @Mapping(target = "userAddresses", qualifiedByName = "userAddressesModelsToEntities")
     @Mapping(target = "roles", qualifiedByName = "rolesModelsToEntities")
     UserEntity toEntity(final UserModel model);
 
+    @Mapping(target = "countryCode", qualifiedByName = "countryCodeEntityToModel")
+    @Mapping(target = "activationStatus", qualifiedByName = "activationStatusEntityToModel")
     @Mapping(target = "userType", qualifiedByName = "userTypeEntityToModel")
     @Mapping(target = "userAddresses", qualifiedByName = "userAddressesEntitiesToModels")
     @Mapping(target = "roles", qualifiedByName = "rolesEntitiesToModels")
