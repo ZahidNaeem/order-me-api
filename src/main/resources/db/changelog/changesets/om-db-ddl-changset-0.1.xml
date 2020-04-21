@@ -26,9 +26,13 @@
                 <constraints primaryKey="true" primaryKeyName="country_codes_pk"/>
             </column>
             <column name="COUNTRY" type="VARCHAR(50)">
-                <constraints nullable="false"/>
+                <constraints nullable="false"
+                             uniqueConstraintName="country_codes_uk1" unique="true"/>
             </column>
-            <column name="CODE" type="VARCHAR(10)">
+            <column name="ALPHA2_CODE" type="VARCHAR(2)"/>
+            <column name="ALPHA3_CODE" type="VARCHAR(3)"/>
+            <column name="CAPITAL_CITY" type="VARCHAR(50)"/>
+            <column name="DIALING_CODE" type="VARCHAR(10)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
@@ -147,7 +151,8 @@
             <column name="LAST_UPDATED_BY" type="INT"/>
             <column name="LAST_UPDATE_DATE" type="TIMESTAMP"/>
         </createTable>
-        <addUniqueConstraint constraintName="user_addresses_uk1" tableName="user_addresses" columnNames="USER_ID, ADDRESS"/>
+        <addUniqueConstraint constraintName="user_addresses_uk1" tableName="user_addresses"
+                             columnNames="USER_ID, ADDRESS"/>
     </changeSet>
     <changeSet author="Zahid Naeem" id="create-table-user_roles">
         <preConditions onFail="MARK_RAN">
@@ -170,5 +175,34 @@
         </createTable>
         <addPrimaryKey columnNames="USER_ID, ROLE_ID" constraintName="USER_ROLES_PK" schemaName="om"
                        tableName="user_roles"/>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="create-table-user_sale_item_cats">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="user_sale_item_cats"/>
+            </not>
+        </preConditions>
+        <comment>Creating table user_sale_item_cats</comment>
+        <createTable schemaName="om" tableName="user_sale_item_cats">
+            <column name="ID" type="INT">
+                <constraints primaryKey="true" primaryKeyName="user_sale_item_cats_pk"/>
+            </column>
+            <column name="USER_ID" type="INT">
+                <constraints nullable="false"
+                             foreignKeyName="USR_SALE_ITM_CATS_USR_ID_FK"
+                             references="users(id)"/>
+            </column>
+            <column name="ITEM_CATEGORY" type="VARCHAR(50)">
+                <constraints nullable="false"
+                             foreignKeyName="USR_SALE_ITM_CATS_ITM_CAT_FK"
+                             references="item_categories(ITEM_CATEGORY)"/>
+            </column>
+            <column name="CREATED_BY" type="INT"/>
+            <column name="CREATION_DATE" type="TIMESTAMP"/>
+            <column name="LAST_UPDATED_BY" type="INT"/>
+            <column name="LAST_UPDATE_DATE" type="TIMESTAMP"/>
+        </createTable>
+        <addUniqueConstraint constraintName="user_sale_item_cats_uk1" tableName="user_sale_item_cats"
+                             columnNames="USER_ID, ITEM_CATEGORY"/>
     </changeSet>
 </databaseChangeLog>

@@ -29,9 +29,7 @@ public interface CountryCodeMapper {
         if (CollectionUtils.isEmpty(models)) {
             return entities;
         }
-        models.forEach(model -> {
-            entities.add(toEntity(model));
-        });
+        models.forEach(model -> entities.add(toEntity(model)));
         return entities;
     }
 
@@ -40,9 +38,7 @@ public interface CountryCodeMapper {
         if (CollectionUtils.isEmpty(entities)) {
             return models;
         }
-        entities.forEach(User -> {
-            models.add(toModel(User));
-        });
+        entities.forEach(entity -> models.add(toModel(entity)));
         return models;
     }
 }

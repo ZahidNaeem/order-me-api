@@ -2,6 +2,7 @@ package com.alfauz.orderme.payload.request;
 
 import com.alfauz.orderme.model.RoleModel;
 import com.alfauz.orderme.model.UserAddressModel;
+import com.alfauz.orderme.model.UserSaleItemCategoryModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -62,14 +63,17 @@ public class SignupRequest {
     @Size(min = 1, max = 20, message = "User type should has min. 1 and max. 20 characters")
     private String userType;
 
-    @NotNull
-    private Long activationStatus;
+    @NotBlank
+    private String activationStatus;
 
     @Size(max = 2000, message = "Credit card should has max. 2000 characters")
     private String remarks;
 
     @Valid
     private List<UserAddressModel> userAddresses;
+
+    @Valid
+    private List<UserSaleItemCategoryModel> userSaleItemCategories;
 
     private Set<RoleModel> roles;
 }

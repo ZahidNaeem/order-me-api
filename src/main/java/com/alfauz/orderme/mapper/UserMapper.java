@@ -22,6 +22,7 @@ public interface UserMapper {
     @Mapping(target = "activationStatus", qualifiedByName = "activationStatusModelToEntity")
     @Mapping(target = "userType", qualifiedByName = "userTypeModelToEntity")
     @Mapping(target = "userAddresses", qualifiedByName = "userAddressesModelsToEntities")
+    @Mapping(target = "userSaleItemCategories", qualifiedByName = "userSaleItemCategoriesModelsToEntities")
     @Mapping(target = "roles", qualifiedByName = "rolesModelsToEntities")
     UserEntity toEntity(final UserModel model);
 
@@ -29,6 +30,7 @@ public interface UserMapper {
     @Mapping(target = "activationStatus", qualifiedByName = "activationStatusEntityToModel")
     @Mapping(target = "userType", qualifiedByName = "userTypeEntityToModel")
     @Mapping(target = "userAddresses", qualifiedByName = "userAddressesEntitiesToModels")
+    @Mapping(target = "userSaleItemCategories", qualifiedByName = "userSaleItemCategoriesEntitiesToModels")
     @Mapping(target = "roles", qualifiedByName = "rolesEntitiesToModels")
     UserModel toModel(final UserEntity user);
 
@@ -37,20 +39,16 @@ public interface UserMapper {
         if (CollectionUtils.isEmpty(models)) {
             return users;
         }
-        models.forEach(model -> {
-            users.add(toEntity(model));
-        });
+        models.forEach(model -> users.add(toEntity(model)));
         return users;
     }
 
-    default List<UserModel> toModels(final List<UserEntity> Users) {
+    default List<UserModel> toModels(final List<UserEntity> entities) {
         final List<UserModel> models = new ArrayList<>();
-        if (CollectionUtils.isEmpty(Users)) {
+        if (CollectionUtils.isEmpty(entities)) {
             return models;
         }
-        Users.forEach(User -> {
-            models.add(toModel(User));
-        });
+        entities.forEach(entity -> models.add(toModel(entity)));
         return models;
     }
 }

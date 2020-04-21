@@ -14,6 +14,9 @@ import java.util.List;
 public class CountryCodeModel {
     private Long id;
     private String country;
-    private String code;
+    private String alpha2Code;
+    private String alpha3Code;
+    private String capitalCity;
+    private String dialingCode;
     private List<UserModel> users;
 }

@@ -11,1179 +11,1805 @@
             </and>
         </preConditions>
         <comment>Insert records in country_codes table</comment>
-        <!--<sqlFile encoding="utf8"
-                 path="/db/changelog/sql/insert_country_codes.sql"
-                 splitStatements="false"
-                 stripComments="true"/>-->
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="1"/>
             <column name="COUNTRY" value="Afghanistan"/>
-            <column name="CODE" value="93"/>
+            <column name="ALPHA2_CODE" value="AF"/>
+            <column name="ALPHA3_CODE" value="AFG"/>
+            <column name="CAPITAL_CITY" value="Kabul"/>
+            <column name="DIALING_CODE" value="93"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="2"/>
             <column name="COUNTRY" value="Albania"/>
-            <column name="CODE" value="355"/>
+            <column name="ALPHA2_CODE" value="AL"/>
+            <column name="ALPHA3_CODE" value="ALB"/>
+            <column name="CAPITAL_CITY" value="Tirana"/>
+            <column name="DIALING_CODE" value="355"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="3"/>
             <column name="COUNTRY" value="Algeria"/>
-            <column name="CODE" value="213"/>
+            <column name="ALPHA2_CODE" value="DZ"/>
+            <column name="ALPHA3_CODE" value="DZA"/>
+            <column name="CAPITAL_CITY" value="Algiers"/>
+            <column name="DIALING_CODE" value="213"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="4"/>
             <column name="COUNTRY" value="American Samoa"/>
-            <column name="CODE" value="684"/>
+            <column name="ALPHA2_CODE" value="AS"/>
+            <column name="ALPHA3_CODE" value="ASM"/>
+            <column name="CAPITAL_CITY" value="Pago Pago"/>
+            <column name="DIALING_CODE" value="1684"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="5"/>
             <column name="COUNTRY" value="Andorra"/>
-            <column name="CODE" value="376"/>
+            <column name="ALPHA2_CODE" value="AD"/>
+            <column name="ALPHA3_CODE" value="AND"/>
+            <column name="CAPITAL_CITY" value="Andorra la Vella"/>
+            <column name="DIALING_CODE" value="376"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="6"/>
             <column name="COUNTRY" value="Angola"/>
-            <column name="CODE" value="244"/>
+            <column name="ALPHA2_CODE" value="AO"/>
+            <column name="ALPHA3_CODE" value="AGO"/>
+            <column name="CAPITAL_CITY" value="Luanda"/>
+            <column name="DIALING_CODE" value="244"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="7"/>
             <column name="COUNTRY" value="Anguilla"/>
-            <column name="CODE" value="809"/>
+            <column name="ALPHA2_CODE" value="AI"/>
+            <column name="ALPHA3_CODE" value="AIA"/>
+            <column name="CAPITAL_CITY" value="The Valley"/>
+            <column name="DIALING_CODE" value="1264"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="8"/>
-            <column name="COUNTRY" value="Antigua"/>
-            <column name="CODE" value="268"/>
+            <column name="COUNTRY" value="Antarctica"/>
+            <column name="ALPHA2_CODE" value="AQ"/>
+            <column name="ALPHA3_CODE" value="ATA"/>
+            <column name="CAPITAL_CITY" value=""/>
+            <column name="DIALING_CODE" value="672"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="9"/>
             <column name="COUNTRY" value="Argentina"/>
-            <column name="CODE" value="54"/>
+            <column name="ALPHA2_CODE" value="AR"/>
+            <column name="ALPHA3_CODE" value="ARG"/>
+            <column name="CAPITAL_CITY" value="Buenos Aires"/>
+            <column name="DIALING_CODE" value="54"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="10"/>
             <column name="COUNTRY" value="Armenia"/>
-            <column name="CODE" value="374"/>
+            <column name="ALPHA2_CODE" value="AM"/>
+            <column name="ALPHA3_CODE" value="ARM"/>
+            <column name="CAPITAL_CITY" value="Yerevan"/>
+            <column name="DIALING_CODE" value="374"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="11"/>
             <column name="COUNTRY" value="Aruba"/>
-            <column name="CODE" value="297"/>
+            <column name="ALPHA2_CODE" value="AW"/>
+            <column name="ALPHA3_CODE" value="ABW"/>
+            <column name="CAPITAL_CITY" value="Oranjestad"/>
+            <column name="DIALING_CODE" value="297"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="12"/>
-            <column name="COUNTRY" value="Ascension Island"/>
-            <column name="CODE" value="247"/>
+            <column name="COUNTRY" value="Australia"/>
+            <column name="ALPHA2_CODE" value="AU"/>
+            <column name="ALPHA3_CODE" value="AUS"/>
+            <column name="CAPITAL_CITY" value="Canberra"/>
+            <column name="DIALING_CODE" value="61"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="13"/>
-            <column name="COUNTRY" value="Australia"/>
-            <column name="CODE" value="61"/>
+            <column name="COUNTRY" value="Austria"/>
+            <column name="ALPHA2_CODE" value="AT"/>
+            <column name="ALPHA3_CODE" value="AUT"/>
+            <column name="CAPITAL_CITY" value="Vienna"/>
+            <column name="DIALING_CODE" value="43"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="14"/>
-            <column name="COUNTRY" value="Australian External Territories"/>
-            <column name="CODE" value="672"/>
+            <column name="COUNTRY" value="Azerbaijan"/>
+            <column name="ALPHA2_CODE" value="AZ"/>
+            <column name="ALPHA3_CODE" value="AZE"/>
+            <column name="CAPITAL_CITY" value="Baku"/>
+            <column name="DIALING_CODE" value="994"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="15"/>
-            <column name="COUNTRY" value="Austria"/>
-            <column name="CODE" value="43"/>
+            <column name="COUNTRY" value="Bahamas"/>
+            <column name="ALPHA2_CODE" value="BS"/>
+            <column name="ALPHA3_CODE" value="BHS"/>
+            <column name="CAPITAL_CITY" value="Nassau"/>
+            <column name="DIALING_CODE" value="1"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="16"/>
-            <column name="COUNTRY" value="Azerbaijan"/>
-            <column name="CODE" value="994"/>
+            <column name="COUNTRY" value="Bahrain"/>
+            <column name="ALPHA2_CODE" value="BH"/>
+            <column name="ALPHA3_CODE" value="BHR"/>
+            <column name="CAPITAL_CITY" value="Manama"/>
+            <column name="DIALING_CODE" value="973"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="17"/>
-            <column name="COUNTRY" value="Bahamas"/>
-            <column name="CODE" value="242"/>
+            <column name="COUNTRY" value="Bangladesh"/>
+            <column name="ALPHA2_CODE" value="BD"/>
+            <column name="ALPHA3_CODE" value="BGD"/>
+            <column name="CAPITAL_CITY" value="Dhaka"/>
+            <column name="DIALING_CODE" value="880"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="18"/>
             <column name="COUNTRY" value="Barbados"/>
-            <column name="CODE" value="246"/>
+            <column name="ALPHA2_CODE" value="BB"/>
+            <column name="ALPHA3_CODE" value="BRB"/>
+            <column name="CAPITAL_CITY" value="Bridgetown"/>
+            <column name="DIALING_CODE" value="1"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="19"/>
-            <column name="COUNTRY" value="Bahrain"/>
-            <column name="CODE" value="973"/>
+            <column name="COUNTRY" value="Belarus"/>
+            <column name="ALPHA2_CODE" value="BY"/>
+            <column name="ALPHA3_CODE" value="BLR"/>
+            <column name="CAPITAL_CITY" value="Minsk"/>
+            <column name="DIALING_CODE" value="375"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="20"/>
-            <column name="COUNTRY" value="Bangladesh"/>
-            <column name="CODE" value="880"/>
+            <column name="COUNTRY" value="Belgium"/>
+            <column name="ALPHA2_CODE" value="BE"/>
+            <column name="ALPHA3_CODE" value="BEL"/>
+            <column name="CAPITAL_CITY" value="Brussels"/>
+            <column name="DIALING_CODE" value="32"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="21"/>
-            <column name="COUNTRY" value="Belarus"/>
-            <column name="CODE" value="375"/>
+            <column name="COUNTRY" value="Belize"/>
+            <column name="ALPHA2_CODE" value="BZ"/>
+            <column name="ALPHA3_CODE" value="BLZ"/>
+            <column name="CAPITAL_CITY" value="Belmopan"/>
+            <column name="DIALING_CODE" value="501"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="22"/>
-            <column name="COUNTRY" value="Belgium"/>
-            <column name="CODE" value="32"/>
+            <column name="COUNTRY" value="Benin"/>
+            <column name="ALPHA2_CODE" value="BJ"/>
+            <column name="ALPHA3_CODE" value="BEN"/>
+            <column name="CAPITAL_CITY" value="Porto-Novo"/>
+            <column name="DIALING_CODE" value="229"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="23"/>
-            <column name="COUNTRY" value="Belize"/>
-            <column name="CODE" value="501"/>
+            <column name="COUNTRY" value="Bermuda"/>
+            <column name="ALPHA2_CODE" value="BM"/>
+            <column name="ALPHA3_CODE" value="BMU"/>
+            <column name="CAPITAL_CITY" value="Hamilton"/>
+            <column name="DIALING_CODE" value="1"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="24"/>
-            <column name="COUNTRY" value="Benin"/>
-            <column name="CODE" value="229"/>
+            <column name="COUNTRY" value="Bhutan"/>
+            <column name="ALPHA2_CODE" value="BT"/>
+            <column name="ALPHA3_CODE" value="BTN"/>
+            <column name="CAPITAL_CITY" value="Thimphu"/>
+            <column name="DIALING_CODE" value="975"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="25"/>
-            <column name="COUNTRY" value="Bermuda"/>
-            <column name="CODE" value="809"/>
+            <column name="COUNTRY" value="Bolivia"/>
+            <column name="ALPHA2_CODE" value="BO"/>
+            <column name="ALPHA3_CODE" value="BOL"/>
+            <column name="CAPITAL_CITY" value="La Paz"/>
+            <column name="DIALING_CODE" value="591"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="26"/>
-            <column name="COUNTRY" value="Bhutan"/>
-            <column name="CODE" value="975"/>
+            <column name="COUNTRY" value="Bosnia and Herzegovina"/>
+            <column name="ALPHA2_CODE" value="BA"/>
+            <column name="ALPHA3_CODE" value="BIH"/>
+            <column name="CAPITAL_CITY" value="Sarajevo"/>
+            <column name="DIALING_CODE" value="387"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="27"/>
-            <column name="COUNTRY" value="British Virgin Islands"/>
-            <column name="CODE" value="284"/>
+            <column name="COUNTRY" value="Botswana"/>
+            <column name="ALPHA2_CODE" value="BW"/>
+            <column name="ALPHA3_CODE" value="BWA"/>
+            <column name="CAPITAL_CITY" value="Gaborone"/>
+            <column name="DIALING_CODE" value="267"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="28"/>
-            <column name="COUNTRY" value="Bolivia"/>
-            <column name="CODE" value="591"/>
+            <column name="COUNTRY" value="Brazil"/>
+            <column name="ALPHA2_CODE" value="BR"/>
+            <column name="ALPHA3_CODE" value="BRA"/>
+            <column name="CAPITAL_CITY" value="Brasília"/>
+            <column name="DIALING_CODE" value="55"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="29"/>
-            <column name="COUNTRY" value="Bosnia and Hercegovina"/>
-            <column name="CODE" value="387"/>
+            <column name="COUNTRY" value="British Virgin Islands"/>
+            <column name="ALPHA2_CODE" value="VG"/>
+            <column name="ALPHA3_CODE" value="VGB"/>
+            <column name="CAPITAL_CITY" value="Road Town"/>
+            <column name="DIALING_CODE" value="1284"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="30"/>
-            <column name="COUNTRY" value="Botswana"/>
-            <column name="CODE" value="267"/>
+            <column name="COUNTRY" value="Brunei"/>
+            <column name="ALPHA2_CODE" value="BN"/>
+            <column name="ALPHA3_CODE" value="BRN"/>
+            <column name="CAPITAL_CITY" value="Bandar Seri Begawan"/>
+            <column name="DIALING_CODE" value="673"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="31"/>
-            <column name="COUNTRY" value="Brazil"/>
-            <column name="CODE" value="55"/>
+            <column name="COUNTRY" value="Bulgaria"/>
+            <column name="ALPHA2_CODE" value="BG"/>
+            <column name="ALPHA3_CODE" value="BGR"/>
+            <column name="CAPITAL_CITY" value="Sofia"/>
+            <column name="DIALING_CODE" value="359"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="32"/>
-            <column name="COUNTRY" value="British V.I."/>
-            <column name="CODE" value="284"/>
+            <column name="COUNTRY" value="Burkina Faso"/>
+            <column name="ALPHA2_CODE" value="BF"/>
+            <column name="ALPHA3_CODE" value="BFA"/>
+            <column name="CAPITAL_CITY" value="Ouagadougou"/>
+            <column name="DIALING_CODE" value="226"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="33"/>
-            <column name="COUNTRY" value="Brunei Darussalm"/>
-            <column name="CODE" value="673"/>
+            <column name="COUNTRY" value="Burundi"/>
+            <column name="ALPHA2_CODE" value="BI"/>
+            <column name="ALPHA3_CODE" value="BDI"/>
+            <column name="CAPITAL_CITY" value="Bujumbura"/>
+            <column name="DIALING_CODE" value="257"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="34"/>
-            <column name="COUNTRY" value="Bulgaria"/>
-            <column name="CODE" value="359"/>
+            <column name="COUNTRY" value="Cambodia"/>
+            <column name="ALPHA2_CODE" value="KH"/>
+            <column name="ALPHA3_CODE" value="KHM"/>
+            <column name="CAPITAL_CITY" value="Phnom Penh"/>
+            <column name="DIALING_CODE" value="855"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="35"/>
-            <column name="COUNTRY" value="Burkina Faso"/>
-            <column name="CODE" value="226"/>
+            <column name="COUNTRY" value="Cameroon"/>
+            <column name="ALPHA2_CODE" value="CM"/>
+            <column name="ALPHA3_CODE" value="CMR"/>
+            <column name="CAPITAL_CITY" value="Yaoundé"/>
+            <column name="DIALING_CODE" value="237"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="36"/>
-            <column name="COUNTRY" value="Burundi"/>
-            <column name="CODE" value="257"/>
+            <column name="COUNTRY" value="Canada"/>
+            <column name="ALPHA2_CODE" value="CA"/>
+            <column name="ALPHA3_CODE" value="CAN"/>
+            <column name="CAPITAL_CITY" value="Ottawa"/>
+            <column name="DIALING_CODE" value="1"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="37"/>
-            <column name="COUNTRY" value="Cambodia"/>
-            <column name="CODE" value="855"/>
+            <column name="COUNTRY" value="Cape Verde"/>
+            <column name="ALPHA2_CODE" value="CV"/>
+            <column name="ALPHA3_CODE" value="CPV"/>
+            <column name="CAPITAL_CITY" value="Praia"/>
+            <column name="DIALING_CODE" value="238"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="38"/>
-            <column name="COUNTRY" value="Cameroon"/>
-            <column name="CODE" value="237"/>
+            <column name="COUNTRY" value="Cayman Islands"/>
+            <column name="ALPHA2_CODE" value="KY"/>
+            <column name="ALPHA3_CODE" value="CYM"/>
+            <column name="CAPITAL_CITY" value="George Town"/>
+            <column name="DIALING_CODE" value="-344"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="39"/>
-            <column name="COUNTRY" value="Canada"/>
-            <column name="CODE" value="1"/>
+            <column name="COUNTRY" value="Central African Republic"/>
+            <column name="ALPHA2_CODE" value="CF"/>
+            <column name="ALPHA3_CODE" value="CAF"/>
+            <column name="CAPITAL_CITY" value="Bangui"/>
+            <column name="DIALING_CODE" value="236"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="40"/>
-            <column name="COUNTRY" value="CapeVerde Islands"/>
-            <column name="CODE" value="238"/>
+            <column name="COUNTRY" value="Chile"/>
+            <column name="ALPHA2_CODE" value="CL"/>
+            <column name="ALPHA3_CODE" value="CHL"/>
+            <column name="CAPITAL_CITY" value="Santiago"/>
+            <column name="DIALING_CODE" value="56"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="41"/>
-            <column name="COUNTRY" value="Caribbean Nations"/>
-            <column name="CODE" value="1"/>
+            <column name="COUNTRY" value="China"/>
+            <column name="ALPHA2_CODE" value="CN"/>
+            <column name="ALPHA3_CODE" value="CHN"/>
+            <column name="CAPITAL_CITY" value="Beijing"/>
+            <column name="DIALING_CODE" value="86"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="42"/>
-            <column name="COUNTRY" value="Cayman Islands"/>
-            <column name="CODE" value="345"/>
+            <column name="COUNTRY" value="Colombia"/>
+            <column name="ALPHA2_CODE" value="CO"/>
+            <column name="ALPHA3_CODE" value="COL"/>
+            <column name="CAPITAL_CITY" value="Bogotá"/>
+            <column name="DIALING_CODE" value="57"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="43"/>
-            <column name="COUNTRY" value="Cape Verdi"/>
-            <column name="CODE" value="238"/>
+            <column name="COUNTRY" value="Comoros"/>
+            <column name="ALPHA2_CODE" value="KM"/>
+            <column name="ALPHA3_CODE" value="COM"/>
+            <column name="CAPITAL_CITY" value="Moroni"/>
+            <column name="DIALING_CODE" value="269"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="44"/>
-            <column name="COUNTRY" value="Central African Republic"/>
-            <column name="CODE" value="236"/>
+            <column name="COUNTRY" value="Cook Islands"/>
+            <column name="ALPHA2_CODE" value="CK"/>
+            <column name="ALPHA3_CODE" value="COK"/>
+            <column name="CAPITAL_CITY" value="Avarua"/>
+            <column name="DIALING_CODE" value="682"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="45"/>
-            <column name="COUNTRY" value="Chad"/>
-            <column name="CODE" value="235"/>
+            <column name="COUNTRY" value="Costa Rica"/>
+            <column name="ALPHA2_CODE" value="CR"/>
+            <column name="ALPHA3_CODE" value="CRI"/>
+            <column name="CAPITAL_CITY" value="San José"/>
+            <column name="DIALING_CODE" value="506"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="46"/>
-            <column name="COUNTRY" value="Chile"/>
-            <column name="CODE" value="56"/>
+            <column name="COUNTRY" value="Croatia"/>
+            <column name="ALPHA2_CODE" value="HR"/>
+            <column name="ALPHA3_CODE" value="HRV"/>
+            <column name="CAPITAL_CITY" value="Zagreb"/>
+            <column name="DIALING_CODE" value="385"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="47"/>
-            <column name="COUNTRY" value="China (People's Republic)"/>
-            <column name="CODE" value="86"/>
+            <column name="COUNTRY" value="Cuba"/>
+            <column name="ALPHA2_CODE" value="CU"/>
+            <column name="ALPHA3_CODE" value="CUB"/>
+            <column name="CAPITAL_CITY" value="Havana"/>
+            <column name="DIALING_CODE" value="53"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="48"/>
-            <column name="COUNTRY" value="China-Taiwan"/>
-            <column name="CODE" value="886"/>
+            <column name="COUNTRY" value="Curacao"/>
+            <column name="ALPHA2_CODE" value="CW"/>
+            <column name="ALPHA3_CODE" value="CUW"/>
+            <column name="CAPITAL_CITY" value="Willemstad"/>
+            <column name="DIALING_CODE" value="599"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="49"/>
-            <column name="COUNTRY" value="Colombia"/>
-            <column name="CODE" value="57"/>
+            <column name="COUNTRY" value="Cyprus"/>
+            <column name="ALPHA2_CODE" value="CY"/>
+            <column name="ALPHA3_CODE" value="CYP"/>
+            <column name="CAPITAL_CITY" value="Nicosia"/>
+            <column name="DIALING_CODE" value="357"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="50"/>
-            <column name="COUNTRY" value="Comoros and Mayotte"/>
-            <column name="CODE" value="269"/>
+            <column name="COUNTRY" value="Czech Republic"/>
+            <column name="ALPHA2_CODE" value="CZ"/>
+            <column name="ALPHA3_CODE" value="CZE"/>
+            <column name="CAPITAL_CITY" value="Prague"/>
+            <column name="DIALING_CODE" value="420"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="51"/>
-            <column name="COUNTRY" value="Congo"/>
-            <column name="CODE" value="242"/>
+            <column name="COUNTRY" value="Democratic Republic of Congo"/>
+            <column name="ALPHA2_CODE" value="CD"/>
+            <column name="ALPHA3_CODE" value="COD"/>
+            <column name="CAPITAL_CITY" value="Kinshasa"/>
+            <column name="DIALING_CODE" value="243"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="52"/>
-            <column name="COUNTRY" value="Cook Islands"/>
-            <column name="CODE" value="682"/>
+            <column name="COUNTRY" value="Denmark"/>
+            <column name="ALPHA2_CODE" value="DK"/>
+            <column name="ALPHA3_CODE" value="DNK"/>
+            <column name="CAPITAL_CITY" value="Copenhagen"/>
+            <column name="DIALING_CODE" value="45"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="53"/>
-            <column name="COUNTRY" value="Costa Rica"/>
-            <column name="CODE" value="506"/>
+            <column name="COUNTRY" value="Djibouti"/>
+            <column name="ALPHA2_CODE" value="DJ"/>
+            <column name="ALPHA3_CODE" value="DJI"/>
+            <column name="CAPITAL_CITY" value="Djibouti"/>
+            <column name="DIALING_CODE" value="253"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="54"/>
-            <column name="COUNTRY" value="Croatia"/>
-            <column name="CODE" value="385"/>
+            <column name="COUNTRY" value="Dominica"/>
+            <column name="ALPHA2_CODE" value="DM"/>
+            <column name="ALPHA3_CODE" value="DMA"/>
+            <column name="CAPITAL_CITY" value="Roseau"/>
+            <column name="DIALING_CODE" value="1"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="55"/>
-            <column name="COUNTRY" value="Cuba"/>
-            <column name="CODE" value="53"/>
+            <column name="COUNTRY" value="Dominican Republic"/>
+            <column name="ALPHA2_CODE" value="DO"/>
+            <column name="ALPHA3_CODE" value="DOM"/>
+            <column name="CAPITAL_CITY" value="Santo Domingo"/>
+            <column name="DIALING_CODE" value="1"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="56"/>
-            <column name="COUNTRY" value="Cyprus"/>
-            <column name="CODE" value="357"/>
+            <column name="COUNTRY" value="East Timor"/>
+            <column name="ALPHA2_CODE" value="TL"/>
+            <column name="ALPHA3_CODE" value="TLS"/>
+            <column name="CAPITAL_CITY" value="Dili"/>
+            <column name="DIALING_CODE" value="670"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="57"/>
-            <column name="COUNTRY" value="Czech Republic"/>
-            <column name="CODE" value="420"/>
+            <column name="COUNTRY" value="Ecuador"/>
+            <column name="ALPHA2_CODE" value="EC"/>
+            <column name="ALPHA3_CODE" value="ECU"/>
+            <column name="CAPITAL_CITY" value="Quito"/>
+            <column name="DIALING_CODE" value="593"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="58"/>
-            <column name="COUNTRY" value="Denmark"/>
-            <column name="CODE" value="45"/>
+            <column name="COUNTRY" value="Egypt"/>
+            <column name="ALPHA2_CODE" value="EG"/>
+            <column name="ALPHA3_CODE" value="EGY"/>
+            <column name="CAPITAL_CITY" value="Cairo"/>
+            <column name="DIALING_CODE" value="20"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="59"/>
-            <column name="COUNTRY" value="Diego Garcia"/>
-            <column name="CODE" value="246"/>
+            <column name="COUNTRY" value="El Salvador"/>
+            <column name="ALPHA2_CODE" value="SV"/>
+            <column name="ALPHA3_CODE" value="SLV"/>
+            <column name="CAPITAL_CITY" value="San Salvador"/>
+            <column name="DIALING_CODE" value="503"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="60"/>
-            <column name="COUNTRY" value="Dominca"/>
-            <column name="CODE" value="767"/>
+            <column name="COUNTRY" value="Equatorial Guinea"/>
+            <column name="ALPHA2_CODE" value="GQ"/>
+            <column name="ALPHA3_CODE" value="GNQ"/>
+            <column name="CAPITAL_CITY" value="Malabo"/>
+            <column name="DIALING_CODE" value="240"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="61"/>
-            <column name="COUNTRY" value="Dominican Republic"/>
-            <column name="CODE" value="809"/>
+            <column name="COUNTRY" value="Eritrea"/>
+            <column name="ALPHA2_CODE" value="ER"/>
+            <column name="ALPHA3_CODE" value="ERI"/>
+            <column name="CAPITAL_CITY" value="Asmara"/>
+            <column name="DIALING_CODE" value="291"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="62"/>
-            <column name="COUNTRY" value="Djibouti"/>
-            <column name="CODE" value="253"/>
+            <column name="COUNTRY" value="Estonia"/>
+            <column name="ALPHA2_CODE" value="EE"/>
+            <column name="ALPHA3_CODE" value="EST"/>
+            <column name="CAPITAL_CITY" value="Tallinn"/>
+            <column name="DIALING_CODE" value="372"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="63"/>
-            <column name="COUNTRY" value="Ecuador"/>
-            <column name="CODE" value="593"/>
+            <column name="COUNTRY" value="Ethiopia"/>
+            <column name="ALPHA2_CODE" value="ET"/>
+            <column name="ALPHA3_CODE" value="ETH"/>
+            <column name="CAPITAL_CITY" value="Addis Ababa"/>
+            <column name="DIALING_CODE" value="251"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="64"/>
-            <column name="COUNTRY" value="Egypt"/>
-            <column name="CODE" value="20"/>
+            <column name="COUNTRY" value="Falkland Islands"/>
+            <column name="ALPHA2_CODE" value="FK"/>
+            <column name="ALPHA3_CODE" value="FLK"/>
+            <column name="CAPITAL_CITY" value="Stanley"/>
+            <column name="DIALING_CODE" value="500"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="65"/>
-            <column name="COUNTRY" value="El Salvador"/>
-            <column name="CODE" value="503"/>
+            <column name="COUNTRY" value="Faroe Islands"/>
+            <column name="ALPHA2_CODE" value="FO"/>
+            <column name="ALPHA3_CODE" value="FRO"/>
+            <column name="CAPITAL_CITY" value="Tórshavn"/>
+            <column name="DIALING_CODE" value="298"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="66"/>
-            <column name="COUNTRY" value="Equatorial Guinea"/>
-            <column name="CODE" value="240"/>
+            <column name="COUNTRY" value="Fiji"/>
+            <column name="ALPHA2_CODE" value="FJ"/>
+            <column name="ALPHA3_CODE" value="FJI"/>
+            <column name="CAPITAL_CITY" value="Suva"/>
+            <column name="DIALING_CODE" value="679"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="67"/>
-            <column name="COUNTRY" value="Eritrea"/>
-            <column name="CODE" value="291"/>
+            <column name="COUNTRY" value="Finland"/>
+            <column name="ALPHA2_CODE" value="FI"/>
+            <column name="ALPHA3_CODE" value="FIN"/>
+            <column name="CAPITAL_CITY" value="Helsinki"/>
+            <column name="DIALING_CODE" value="358"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="68"/>
-            <column name="COUNTRY" value="Estonia"/>
-            <column name="CODE" value="372"/>
+            <column name="COUNTRY" value="France"/>
+            <column name="ALPHA2_CODE" value="FR"/>
+            <column name="ALPHA3_CODE" value="FRA"/>
+            <column name="CAPITAL_CITY" value="Paris"/>
+            <column name="DIALING_CODE" value="33"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="69"/>
-            <column name="COUNTRY" value="Ethiopia"/>
-            <column name="CODE" value="251"/>
+            <column name="COUNTRY" value="French Polynesia"/>
+            <column name="ALPHA2_CODE" value="PF"/>
+            <column name="ALPHA3_CODE" value="PYF"/>
+            <column name="CAPITAL_CITY" value="Papeete"/>
+            <column name="DIALING_CODE" value="689"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="70"/>
-            <column name="COUNTRY" value="Falkland Islands"/>
-            <column name="CODE" value="500"/>
+            <column name="COUNTRY" value="Gabon"/>
+            <column name="ALPHA2_CODE" value="GA"/>
+            <column name="ALPHA3_CODE" value="GAB"/>
+            <column name="CAPITAL_CITY" value="Libreville"/>
+            <column name="DIALING_CODE" value="241"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="71"/>
-            <column name="COUNTRY" value="Faroe (Faeroe) Islands (Denmark)"/>
-            <column name="CODE" value="298"/>
+            <column name="COUNTRY" value="Gambia"/>
+            <column name="ALPHA2_CODE" value="GM"/>
+            <column name="ALPHA3_CODE" value="GMB"/>
+            <column name="CAPITAL_CITY" value="Banjul"/>
+            <column name="DIALING_CODE" value="220"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="72"/>
-            <column name="COUNTRY" value="Fiji"/>
-            <column name="CODE" value="679"/>
+            <column name="COUNTRY" value="Georgia"/>
+            <column name="ALPHA2_CODE" value="GE"/>
+            <column name="ALPHA3_CODE" value="GEO"/>
+            <column name="CAPITAL_CITY" value="Tbilisi"/>
+            <column name="DIALING_CODE" value="995"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="73"/>
-            <column name="COUNTRY" value="Finland"/>
-            <column name="CODE" value="358"/>
+            <column name="COUNTRY" value="Germany"/>
+            <column name="ALPHA2_CODE" value="DE"/>
+            <column name="ALPHA3_CODE" value="DEU"/>
+            <column name="CAPITAL_CITY" value="Berlin"/>
+            <column name="DIALING_CODE" value="49"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="74"/>
-            <column name="COUNTRY" value="France"/>
-            <column name="CODE" value="33"/>
+            <column name="COUNTRY" value="Ghana"/>
+            <column name="ALPHA2_CODE" value="GH"/>
+            <column name="ALPHA3_CODE" value="GHA"/>
+            <column name="CAPITAL_CITY" value="Accra"/>
+            <column name="DIALING_CODE" value="233"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="75"/>
-            <column name="COUNTRY" value="French Antilles"/>
-            <column name="CODE" value="596"/>
+            <column name="COUNTRY" value="Gibraltar"/>
+            <column name="ALPHA2_CODE" value="GI"/>
+            <column name="ALPHA3_CODE" value="GIB"/>
+            <column name="CAPITAL_CITY" value="Gibraltar"/>
+            <column name="DIALING_CODE" value="350"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="76"/>
-            <column name="COUNTRY" value="French Guiana"/>
-            <column name="CODE" value="594"/>
+            <column name="COUNTRY" value="Greece"/>
+            <column name="ALPHA2_CODE" value="GR"/>
+            <column name="ALPHA3_CODE" value="GRC"/>
+            <column name="CAPITAL_CITY" value="Athens"/>
+            <column name="DIALING_CODE" value="30"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="77"/>
-            <column name="COUNTRY" value="Gabon (Gabonese Republic)"/>
-            <column name="CODE" value="241"/>
+            <column name="COUNTRY" value="Greenland"/>
+            <column name="ALPHA2_CODE" value="GL"/>
+            <column name="ALPHA3_CODE" value="GRL"/>
+            <column name="CAPITAL_CITY" value="Nuuk"/>
+            <column name="DIALING_CODE" value="299"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="78"/>
-            <column name="COUNTRY" value="Gambia"/>
-            <column name="CODE" value="220"/>
+            <column name="COUNTRY" value="Guadeloupe"/>
+            <column name="ALPHA2_CODE" value="GP"/>
+            <column name="ALPHA3_CODE" value="GLP"/>
+            <column name="CAPITAL_CITY" value="Basse-Terre"/>
+            <column name="DIALING_CODE" value="590"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="79"/>
-            <column name="COUNTRY" value="Georgia"/>
-            <column name="CODE" value="995"/>
+            <column name="COUNTRY" value="Guam"/>
+            <column name="ALPHA2_CODE" value="GU"/>
+            <column name="ALPHA3_CODE" value="GUM"/>
+            <column name="CAPITAL_CITY" value="Hagåtña"/>
+            <column name="DIALING_CODE" value="1671"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="80"/>
-            <column name="COUNTRY" value="Germany"/>
-            <column name="CODE" value="49"/>
+            <column name="COUNTRY" value="Guatemala"/>
+            <column name="ALPHA2_CODE" value="GT"/>
+            <column name="ALPHA3_CODE" value="GTM"/>
+            <column name="CAPITAL_CITY" value="Guatemala City"/>
+            <column name="DIALING_CODE" value="502"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="81"/>
-            <column name="COUNTRY" value="Ghana"/>
-            <column name="CODE" value="233"/>
+            <column name="COUNTRY" value="Guinea"/>
+            <column name="ALPHA2_CODE" value="GN"/>
+            <column name="ALPHA3_CODE" value="GIN"/>
+            <column name="CAPITAL_CITY" value="Conakry"/>
+            <column name="DIALING_CODE" value="224"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="82"/>
-            <column name="COUNTRY" value="Gibraltar"/>
-            <column name="CODE" value="350"/>
+            <column name="COUNTRY" value="Guinea-Bissau"/>
+            <column name="ALPHA2_CODE" value="GW"/>
+            <column name="ALPHA3_CODE" value="GNB"/>
+            <column name="CAPITAL_CITY" value="Bissau"/>
+            <column name="DIALING_CODE" value="245"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="83"/>
-            <column name="COUNTRY" value="Greece"/>
-            <column name="CODE" value="30"/>
+            <column name="COUNTRY" value="Guyana"/>
+            <column name="ALPHA2_CODE" value="GY"/>
+            <column name="ALPHA3_CODE" value="GUY"/>
+            <column name="CAPITAL_CITY" value="Georgetown"/>
+            <column name="DIALING_CODE" value="592"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="84"/>
-            <column name="COUNTRY" value="Greenland"/>
-            <column name="CODE" value="299"/>
+            <column name="COUNTRY" value="Haiti"/>
+            <column name="ALPHA2_CODE" value="HT"/>
+            <column name="ALPHA3_CODE" value="HTI"/>
+            <column name="CAPITAL_CITY" value="Port-au-Prince"/>
+            <column name="DIALING_CODE" value="509"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="85"/>
-            <column name="COUNTRY" value="Grenada/Carricou"/>
-            <column name="CODE" value="473"/>
+            <column name="COUNTRY" value="Honduras"/>
+            <column name="ALPHA2_CODE" value="HN"/>
+            <column name="ALPHA3_CODE" value="HND"/>
+            <column name="CAPITAL_CITY" value="Tegucigalpa"/>
+            <column name="DIALING_CODE" value="504"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="86"/>
-            <column name="COUNTRY" value="Guam"/>
-            <column name="CODE" value="671"/>
+            <column name="COUNTRY" value="Hong Kong"/>
+            <column name="ALPHA2_CODE" value="HK"/>
+            <column name="ALPHA3_CODE" value="HKG"/>
+            <column name="CAPITAL_CITY" value="Hong Kong"/>
+            <column name="DIALING_CODE" value="852"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="87"/>
-            <column name="COUNTRY" value="Guatemala"/>
-            <column name="CODE" value="502"/>
+            <column name="COUNTRY" value="Hungary"/>
+            <column name="ALPHA2_CODE" value="HU"/>
+            <column name="ALPHA3_CODE" value="HUN"/>
+            <column name="CAPITAL_CITY" value="Budapest"/>
+            <column name="DIALING_CODE" value="36"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="88"/>
-            <column name="COUNTRY" value="Guinea"/>
-            <column name="CODE" value="224"/>
+            <column name="COUNTRY" value="Iceland"/>
+            <column name="ALPHA2_CODE" value="IS"/>
+            <column name="ALPHA3_CODE" value="ISL"/>
+            <column name="CAPITAL_CITY" value="Reykjavík"/>
+            <column name="DIALING_CODE" value="354"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="89"/>
-            <column name="COUNTRY" value="Guinea-Bissau"/>
-            <column name="CODE" value="245"/>
+            <column name="COUNTRY" value="India"/>
+            <column name="ALPHA2_CODE" value="IN"/>
+            <column name="ALPHA3_CODE" value="IND"/>
+            <column name="CAPITAL_CITY" value="New Delhi"/>
+            <column name="DIALING_CODE" value="91"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="90"/>
-            <column name="COUNTRY" value="Guyana"/>
-            <column name="CODE" value="592"/>
+            <column name="COUNTRY" value="Indonesia"/>
+            <column name="ALPHA2_CODE" value="ID"/>
+            <column name="ALPHA3_CODE" value="IDN"/>
+            <column name="CAPITAL_CITY" value="Jakarta"/>
+            <column name="DIALING_CODE" value="62"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="91"/>
-            <column name="COUNTRY" value="Haiti"/>
-            <column name="CODE" value="509"/>
+            <column name="COUNTRY" value="Iran"/>
+            <column name="ALPHA2_CODE" value="IR"/>
+            <column name="ALPHA3_CODE" value="IRN"/>
+            <column name="CAPITAL_CITY" value="Tehran"/>
+            <column name="DIALING_CODE" value="98"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="92"/>
-            <column name="COUNTRY" value="Honduras"/>
-            <column name="CODE" value="504"/>
+            <column name="COUNTRY" value="Iraq"/>
+            <column name="ALPHA2_CODE" value="IQ"/>
+            <column name="ALPHA3_CODE" value="IRQ"/>
+            <column name="CAPITAL_CITY" value="Baghdad"/>
+            <column name="DIALING_CODE" value="964"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="93"/>
-            <column name="COUNTRY" value="Hong Kong"/>
-            <column name="CODE" value="852"/>
+            <column name="COUNTRY" value="Ireland"/>
+            <column name="ALPHA2_CODE" value="IE"/>
+            <column name="ALPHA3_CODE" value="IRL"/>
+            <column name="CAPITAL_CITY" value="Dublin"/>
+            <column name="DIALING_CODE" value="353"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="94"/>
-            <column name="COUNTRY" value="Hungary"/>
-            <column name="CODE" value="36"/>
+            <column name="COUNTRY" value="Isle of Man"/>
+            <column name="ALPHA2_CODE" value="IM"/>
+            <column name="ALPHA3_CODE" value="IMN"/>
+            <column name="CAPITAL_CITY" value="Douglas, Isle of Man"/>
+            <column name="DIALING_CODE" value="44"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="95"/>
-            <column name="COUNTRY" value="Iceland"/>
-            <column name="CODE" value="354"/>
+            <column name="COUNTRY" value="Israel"/>
+            <column name="ALPHA2_CODE" value="IL"/>
+            <column name="ALPHA3_CODE" value="ISR"/>
+            <column name="CAPITAL_CITY" value="Jerusalem"/>
+            <column name="DIALING_CODE" value="972"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="96"/>
-            <column name="COUNTRY" value="India"/>
-            <column name="CODE" value="91"/>
+            <column name="COUNTRY" value="Italy"/>
+            <column name="ALPHA2_CODE" value="IT"/>
+            <column name="ALPHA3_CODE" value="ITA"/>
+            <column name="CAPITAL_CITY" value="Rome"/>
+            <column name="DIALING_CODE" value="39"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="97"/>
-            <column name="COUNTRY" value="Indonesia"/>
-            <column name="CODE" value="62"/>
+            <column name="COUNTRY" value="Ivory Coast"/>
+            <column name="ALPHA2_CODE" value="CI"/>
+            <column name="ALPHA3_CODE" value="CIV"/>
+            <column name="CAPITAL_CITY" value="Yamoussoukro"/>
+            <column name="DIALING_CODE" value="225"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="98"/>
-            <column name="COUNTRY" value="Iran"/>
-            <column name="CODE" value="98"/>
+            <column name="COUNTRY" value="Jamaica"/>
+            <column name="ALPHA2_CODE" value="JM"/>
+            <column name="ALPHA3_CODE" value="JAM"/>
+            <column name="CAPITAL_CITY" value="Kingston"/>
+            <column name="DIALING_CODE" value="1"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="99"/>
-            <column name="COUNTRY" value="Iraq"/>
-            <column name="CODE" value="964"/>
+            <column name="COUNTRY" value="Japan"/>
+            <column name="ALPHA2_CODE" value="JP"/>
+            <column name="ALPHA3_CODE" value="JPN"/>
+            <column name="CAPITAL_CITY" value="Tokyo"/>
+            <column name="DIALING_CODE" value="81"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="100"/>
-            <column name="COUNTRY" value="Ireland (Irish Republic; Eire)"/>
-            <column name="CODE" value="353"/>
+            <column name="COUNTRY" value="Jordan"/>
+            <column name="ALPHA2_CODE" value="JO"/>
+            <column name="ALPHA3_CODE" value="JOR"/>
+            <column name="CAPITAL_CITY" value="Amman"/>
+            <column name="DIALING_CODE" value="962"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="101"/>
-            <column name="COUNTRY" value="Israel"/>
-            <column name="CODE" value="972"/>
+            <column name="COUNTRY" value="Kazakhstan"/>
+            <column name="ALPHA2_CODE" value="KZ"/>
+            <column name="ALPHA3_CODE" value="KAZ"/>
+            <column name="CAPITAL_CITY" value="Astana"/>
+            <column name="DIALING_CODE" value="7"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="102"/>
-            <column name="COUNTRY" value="Italy"/>
-            <column name="CODE" value="39"/>
+            <column name="COUNTRY" value="Kenya"/>
+            <column name="ALPHA2_CODE" value="KE"/>
+            <column name="ALPHA3_CODE" value="KEN"/>
+            <column name="CAPITAL_CITY" value="Nairobi"/>
+            <column name="DIALING_CODE" value="254"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="103"/>
-            <column name="COUNTRY" value="Ivory Coast (La Cote d'Ivoire)"/>
-            <column name="CODE" value="225"/>
+            <column name="COUNTRY" value="Kiribati"/>
+            <column name="ALPHA2_CODE" value="KI"/>
+            <column name="ALPHA3_CODE" value="KIR"/>
+            <column name="CAPITAL_CITY" value="Tarawa"/>
+            <column name="DIALING_CODE" value="686"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="104"/>
-            <column name="COUNTRY" value="Jamaica"/>
-            <column name="CODE" value="876"/>
+            <column name="COUNTRY" value="Kosovo"/>
+            <column name="ALPHA2_CODE" value="XK"/>
+            <column name="ALPHA3_CODE" value="XKX"/>
+            <column name="CAPITAL_CITY" value="Pristina"/>
+            <column name="DIALING_CODE" value="381"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="105"/>
-            <column name="COUNTRY" value="Japan"/>
-            <column name="CODE" value="81"/>
+            <column name="COUNTRY" value="Kuwait"/>
+            <column name="ALPHA2_CODE" value="KW"/>
+            <column name="ALPHA3_CODE" value="KWT"/>
+            <column name="CAPITAL_CITY" value="Kuwait City"/>
+            <column name="DIALING_CODE" value="965"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="106"/>
-            <column name="COUNTRY" value="Jordan"/>
-            <column name="CODE" value="962"/>
+            <column name="COUNTRY" value="Kyrgyzstan"/>
+            <column name="ALPHA2_CODE" value="KG"/>
+            <column name="ALPHA3_CODE" value="KGZ"/>
+            <column name="CAPITAL_CITY" value="Bishkek"/>
+            <column name="DIALING_CODE" value="996"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="107"/>
-            <column name="COUNTRY" value="Kazakhstan"/>
-            <column name="CODE" value="7"/>
+            <column name="COUNTRY" value="Laos"/>
+            <column name="ALPHA2_CODE" value="LA"/>
+            <column name="ALPHA3_CODE" value="LAO"/>
+            <column name="CAPITAL_CITY" value="Vientiane"/>
+            <column name="DIALING_CODE" value="856"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="108"/>
-            <column name="COUNTRY" value="Kenya"/>
-            <column name="CODE" value="254"/>
+            <column name="COUNTRY" value="Latvia"/>
+            <column name="ALPHA2_CODE" value="LV"/>
+            <column name="ALPHA3_CODE" value="LVA"/>
+            <column name="CAPITAL_CITY" value="Riga"/>
+            <column name="DIALING_CODE" value="371"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="109"/>
-            <column name="COUNTRY" value="Khmer Republic (Cambodia/Kampuchea)"/>
-            <column name="CODE" value="855"/>
+            <column name="COUNTRY" value="Lebanon"/>
+            <column name="ALPHA2_CODE" value="LB"/>
+            <column name="ALPHA3_CODE" value="LBN"/>
+            <column name="CAPITAL_CITY" value="Beirut"/>
+            <column name="DIALING_CODE" value="961"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="110"/>
-            <column name="COUNTRY" value="Kiribati Republic (Gilbert Islands)"/>
-            <column name="CODE" value="686"/>
+            <column name="COUNTRY" value="Lesotho"/>
+            <column name="ALPHA2_CODE" value="LS"/>
+            <column name="ALPHA3_CODE" value="LSO"/>
+            <column name="CAPITAL_CITY" value="Maseru"/>
+            <column name="DIALING_CODE" value="266"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="111"/>
-            <column name="COUNTRY" value="Korea - Republic of (South Korea)"/>
-            <column name="CODE" value="82"/>
+            <column name="COUNTRY" value="Liberia"/>
+            <column name="ALPHA2_CODE" value="LR"/>
+            <column name="ALPHA3_CODE" value="LBR"/>
+            <column name="CAPITAL_CITY" value="Monrovia"/>
+            <column name="DIALING_CODE" value="231"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="112"/>
-            <column name="COUNTRY" value="Korea - People's Republic of (North Korea)"/>
-            <column name="CODE" value="850"/>
+            <column name="COUNTRY" value="Libya"/>
+            <column name="ALPHA2_CODE" value="LY"/>
+            <column name="ALPHA3_CODE" value="LBY"/>
+            <column name="CAPITAL_CITY" value="Tripolis"/>
+            <column name="DIALING_CODE" value="218"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="113"/>
-            <column name="COUNTRY" value="Kuwait"/>
-            <column name="CODE" value="965"/>
+            <column name="COUNTRY" value="Liechtenstein"/>
+            <column name="ALPHA2_CODE" value="LI"/>
+            <column name="ALPHA3_CODE" value="LIE"/>
+            <column name="CAPITAL_CITY" value="Vaduz"/>
+            <column name="DIALING_CODE" value="423"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="114"/>
-            <column name="COUNTRY" value="Kyrgyz Republic"/>
-            <column name="CODE" value="996"/>
+            <column name="COUNTRY" value="Lithuania"/>
+            <column name="ALPHA2_CODE" value="LT"/>
+            <column name="ALPHA3_CODE" value="LTU"/>
+            <column name="CAPITAL_CITY" value="Vilnius"/>
+            <column name="DIALING_CODE" value="370"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="115"/>
-            <column name="COUNTRY" value="Latvia"/>
-            <column name="CODE" value="371"/>
+            <column name="COUNTRY" value="Luxembourg"/>
+            <column name="ALPHA2_CODE" value="LU"/>
+            <column name="ALPHA3_CODE" value="LUX"/>
+            <column name="CAPITAL_CITY" value="Luxembourg"/>
+            <column name="DIALING_CODE" value="352"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="116"/>
-            <column name="COUNTRY" value="Laos"/>
-            <column name="CODE" value="856"/>
+            <column name="COUNTRY" value="Macau"/>
+            <column name="ALPHA2_CODE" value="MO"/>
+            <column name="ALPHA3_CODE" value="MAC"/>
+            <column name="CAPITAL_CITY" value="Macao"/>
+            <column name="DIALING_CODE" value="853"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="117"/>
-            <column name="COUNTRY" value="Lebanon"/>
-            <column name="CODE" value="961"/>
+            <column name="COUNTRY" value="Macedonia"/>
+            <column name="ALPHA2_CODE" value="MK"/>
+            <column name="ALPHA3_CODE" value="MKD"/>
+            <column name="CAPITAL_CITY" value="Skopje"/>
+            <column name="DIALING_CODE" value="389"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="118"/>
-            <column name="COUNTRY" value="Lesotho"/>
-            <column name="CODE" value="266"/>
+            <column name="COUNTRY" value="Madagascar"/>
+            <column name="ALPHA2_CODE" value="MG"/>
+            <column name="ALPHA3_CODE" value="MDG"/>
+            <column name="CAPITAL_CITY" value="Antananarivo"/>
+            <column name="DIALING_CODE" value="261"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="119"/>
-            <column name="COUNTRY" value="Liberia"/>
-            <column name="CODE" value="231"/>
+            <column name="COUNTRY" value="Malawi"/>
+            <column name="ALPHA2_CODE" value="MW"/>
+            <column name="ALPHA3_CODE" value="MWI"/>
+            <column name="CAPITAL_CITY" value="Lilongwe"/>
+            <column name="DIALING_CODE" value="265"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="120"/>
-            <column name="COUNTRY" value="Lithuania"/>
-            <column name="CODE" value="370"/>
+            <column name="COUNTRY" value="Malaysia"/>
+            <column name="ALPHA2_CODE" value="MY"/>
+            <column name="ALPHA3_CODE" value="MYS"/>
+            <column name="CAPITAL_CITY" value="Kuala Lumpur"/>
+            <column name="DIALING_CODE" value="60"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="121"/>
-            <column name="COUNTRY" value="Libya"/>
-            <column name="CODE" value="218"/>
+            <column name="COUNTRY" value="Maldives"/>
+            <column name="ALPHA2_CODE" value="MV"/>
+            <column name="ALPHA3_CODE" value="MDV"/>
+            <column name="CAPITAL_CITY" value="Malé"/>
+            <column name="DIALING_CODE" value="960"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="122"/>
-            <column name="COUNTRY" value="Liechtenstein"/>
-            <column name="CODE" value="423"/>
+            <column name="COUNTRY" value="Mali"/>
+            <column name="ALPHA2_CODE" value="ML"/>
+            <column name="ALPHA3_CODE" value="MLI"/>
+            <column name="CAPITAL_CITY" value="Bamako"/>
+            <column name="DIALING_CODE" value="223"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="123"/>
-            <column name="COUNTRY" value="Luxembourg"/>
-            <column name="CODE" value="352"/>
+            <column name="COUNTRY" value="Malta"/>
+            <column name="ALPHA2_CODE" value="MT"/>
+            <column name="ALPHA3_CODE" value="MLT"/>
+            <column name="CAPITAL_CITY" value="Valletta"/>
+            <column name="DIALING_CODE" value="356"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="124"/>
-            <column name="COUNTRY" value="Macao"/>
-            <column name="CODE" value="853"/>
+            <column name="COUNTRY" value="Marshall Islands"/>
+            <column name="ALPHA2_CODE" value="MH"/>
+            <column name="ALPHA3_CODE" value="MHL"/>
+            <column name="CAPITAL_CITY" value="Majuro"/>
+            <column name="DIALING_CODE" value="692"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="125"/>
-            <column name="COUNTRY" value="Macedonia"/>
-            <column name="CODE" value="389"/>
+            <column name="COUNTRY" value="Mauritania"/>
+            <column name="ALPHA2_CODE" value="MR"/>
+            <column name="ALPHA3_CODE" value="MRT"/>
+            <column name="CAPITAL_CITY" value="Nouakchott"/>
+            <column name="DIALING_CODE" value="222"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="126"/>
-            <column name="COUNTRY" value="Madagascar"/>
-            <column name="CODE" value="261"/>
+            <column name="COUNTRY" value="Mauritius"/>
+            <column name="ALPHA2_CODE" value="MU"/>
+            <column name="ALPHA3_CODE" value="MUS"/>
+            <column name="CAPITAL_CITY" value="Port Louis"/>
+            <column name="DIALING_CODE" value="230"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="127"/>
-            <column name="COUNTRY" value="Malawi"/>
-            <column name="CODE" value="265"/>
+            <column name="COUNTRY" value="Mexico"/>
+            <column name="ALPHA2_CODE" value="MX"/>
+            <column name="ALPHA3_CODE" value="MEX"/>
+            <column name="CAPITAL_CITY" value="Mexico City"/>
+            <column name="DIALING_CODE" value="52"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="128"/>
-            <column name="COUNTRY" value="Malaysia"/>
-            <column name="CODE" value="60"/>
+            <column name="COUNTRY" value="Micronesia"/>
+            <column name="ALPHA2_CODE" value="FM"/>
+            <column name="ALPHA3_CODE" value="FSM"/>
+            <column name="CAPITAL_CITY" value="Palikir"/>
+            <column name="DIALING_CODE" value="691"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="129"/>
-            <column name="COUNTRY" value="Maldives"/>
-            <column name="CODE" value="960"/>
+            <column name="COUNTRY" value="Moldova"/>
+            <column name="ALPHA2_CODE" value="MD"/>
+            <column name="ALPHA3_CODE" value="MDA"/>
+            <column name="CAPITAL_CITY" value="Chişinău"/>
+            <column name="DIALING_CODE" value="373"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="130"/>
-            <column name="COUNTRY" value="Mali"/>
-            <column name="CODE" value="223"/>
+            <column name="COUNTRY" value="Monaco"/>
+            <column name="ALPHA2_CODE" value="MC"/>
+            <column name="ALPHA3_CODE" value="MCO"/>
+            <column name="CAPITAL_CITY" value="Monaco"/>
+            <column name="DIALING_CODE" value="377"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="131"/>
-            <column name="COUNTRY" value="Malta"/>
-            <column name="CODE" value="356"/>
+            <column name="COUNTRY" value="Mongolia"/>
+            <column name="ALPHA2_CODE" value="MN"/>
+            <column name="ALPHA3_CODE" value="MNG"/>
+            <column name="CAPITAL_CITY" value="Ulan Bator"/>
+            <column name="DIALING_CODE" value="976"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="132"/>
-            <column name="COUNTRY" value="Marshall Islands"/>
-            <column name="CODE" value="692"/>
+            <column name="COUNTRY" value="Montenegro"/>
+            <column name="ALPHA2_CODE" value="ME"/>
+            <column name="ALPHA3_CODE" value="MNE"/>
+            <column name="CAPITAL_CITY" value="Podgorica"/>
+            <column name="DIALING_CODE" value="382"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="133"/>
-            <column name="COUNTRY" value="Martinique (French Antilles)"/>
-            <column name="CODE" value="596"/>
+            <column name="COUNTRY" value="Montserrat"/>
+            <column name="ALPHA2_CODE" value="MS"/>
+            <column name="ALPHA3_CODE" value="MSR"/>
+            <column name="CAPITAL_CITY" value="Plymouth"/>
+            <column name="DIALING_CODE" value="1664"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="134"/>
-            <column name="COUNTRY" value="Mauritania"/>
-            <column name="CODE" value="222"/>
+            <column name="COUNTRY" value="Morocco"/>
+            <column name="ALPHA2_CODE" value="MA"/>
+            <column name="ALPHA3_CODE" value="MAR"/>
+            <column name="CAPITAL_CITY" value="Rabat"/>
+            <column name="DIALING_CODE" value="212"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="135"/>
-            <column name="COUNTRY" value="Mauritius"/>
-            <column name="CODE" value="230"/>
+            <column name="COUNTRY" value="Mozambique"/>
+            <column name="ALPHA2_CODE" value="MZ"/>
+            <column name="ALPHA3_CODE" value="MOZ"/>
+            <column name="CAPITAL_CITY" value="Maputo"/>
+            <column name="DIALING_CODE" value="258"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="136"/>
-            <column name="COUNTRY" value="Mayolte"/>
-            <column name="CODE" value="269"/>
+            <column name="COUNTRY" value="Myanmar [Burma]"/>
+            <column name="ALPHA2_CODE" value="MM"/>
+            <column name="ALPHA3_CODE" value="MMR"/>
+            <column name="CAPITAL_CITY" value="Nay Pyi Taw"/>
+            <column name="DIALING_CODE" value="95"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="137"/>
-            <column name="COUNTRY" value="Mexico"/>
-            <column name="CODE" value="52"/>
+            <column name="COUNTRY" value="Namibia"/>
+            <column name="ALPHA2_CODE" value="NA"/>
+            <column name="ALPHA3_CODE" value="NAM"/>
+            <column name="CAPITAL_CITY" value="Windhoek"/>
+            <column name="DIALING_CODE" value="264"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="138"/>
-            <column name="COUNTRY" value="Micronesia (F.S. of Polynesia)"/>
-            <column name="CODE" value="691"/>
+            <column name="COUNTRY" value="Nauru"/>
+            <column name="ALPHA2_CODE" value="NR"/>
+            <column name="ALPHA3_CODE" value="NRU"/>
+            <column name="CAPITAL_CITY" value="Yaren"/>
+            <column name="DIALING_CODE" value="674"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="139"/>
-            <column name="COUNTRY" value="Moldova"/>
-            <column name="CODE" value="373"/>
+            <column name="COUNTRY" value="Nepal"/>
+            <column name="ALPHA2_CODE" value="NP"/>
+            <column name="ALPHA3_CODE" value="NPL"/>
+            <column name="CAPITAL_CITY" value="Kathmandu"/>
+            <column name="DIALING_CODE" value="977"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="140"/>
-            <column name="COUNTRY" value="Monaco"/>
-            <column name="CODE" value="33"/>
+            <column name="COUNTRY" value="Netherlands"/>
+            <column name="ALPHA2_CODE" value="NL"/>
+            <column name="ALPHA3_CODE" value="NLD"/>
+            <column name="CAPITAL_CITY" value="Amsterdam"/>
+            <column name="DIALING_CODE" value="31"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="141"/>
-            <column name="COUNTRY" value="Mongolia"/>
-            <column name="CODE" value="976"/>
+            <column name="COUNTRY" value="New Caledonia"/>
+            <column name="ALPHA2_CODE" value="NC"/>
+            <column name="ALPHA3_CODE" value="NCL"/>
+            <column name="CAPITAL_CITY" value="Nouméa"/>
+            <column name="DIALING_CODE" value="687"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="142"/>
-            <column name="COUNTRY" value="Montserrat"/>
-            <column name="CODE" value="473"/>
+            <column name="COUNTRY" value="New Zealand"/>
+            <column name="ALPHA2_CODE" value="NZ"/>
+            <column name="ALPHA3_CODE" value="NZL"/>
+            <column name="CAPITAL_CITY" value="Wellington"/>
+            <column name="DIALING_CODE" value="64"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="143"/>
-            <column name="COUNTRY" value="Morocco"/>
-            <column name="CODE" value="212"/>
+            <column name="COUNTRY" value="Nicaragua"/>
+            <column name="ALPHA2_CODE" value="NI"/>
+            <column name="ALPHA3_CODE" value="NIC"/>
+            <column name="CAPITAL_CITY" value="Managua"/>
+            <column name="DIALING_CODE" value="505"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="144"/>
-            <column name="COUNTRY" value="Mozambique"/>
-            <column name="CODE" value="258"/>
+            <column name="COUNTRY" value="Niger"/>
+            <column name="ALPHA2_CODE" value="NE"/>
+            <column name="ALPHA3_CODE" value="NER"/>
+            <column name="CAPITAL_CITY" value="Niamey"/>
+            <column name="DIALING_CODE" value="227"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="145"/>
-            <column name="COUNTRY" value="Myanmar (former Burma)"/>
-            <column name="CODE" value="95"/>
+            <column name="COUNTRY" value="Nigeria"/>
+            <column name="ALPHA2_CODE" value="NG"/>
+            <column name="ALPHA3_CODE" value="NGA"/>
+            <column name="CAPITAL_CITY" value="Abuja"/>
+            <column name="DIALING_CODE" value="234"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="146"/>
-            <column name="COUNTRY" value="Namibia (former South-West Africa)"/>
-            <column name="CODE" value="264"/>
+            <column name="COUNTRY" value="Niue"/>
+            <column name="ALPHA2_CODE" value="NU"/>
+            <column name="ALPHA3_CODE" value="NIU"/>
+            <column name="CAPITAL_CITY" value="Alofi"/>
+            <column name="DIALING_CODE" value="683"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="147"/>
-            <column name="COUNTRY" value="Nauru"/>
-            <column name="CODE" value="674"/>
+            <column name="COUNTRY" value="Norfolk Island"/>
+            <column name="ALPHA2_CODE" value="NF"/>
+            <column name="ALPHA3_CODE" value="NFK"/>
+            <column name="CAPITAL_CITY" value="Kingston"/>
+            <column name="DIALING_CODE" value="672"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="148"/>
-            <column name="COUNTRY" value="Nepal"/>
-            <column name="CODE" value="977"/>
+            <column name="COUNTRY" value="North Korea"/>
+            <column name="ALPHA2_CODE" value="KP"/>
+            <column name="ALPHA3_CODE" value="PRK"/>
+            <column name="CAPITAL_CITY" value="Pyongyang"/>
+            <column name="DIALING_CODE" value="850"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="149"/>
-            <column name="COUNTRY" value="Netherlands"/>
-            <column name="CODE" value="31"/>
+            <column name="COUNTRY" value="Northern Mariana Islands"/>
+            <column name="ALPHA2_CODE" value="MP"/>
+            <column name="ALPHA3_CODE" value="MNP"/>
+            <column name="CAPITAL_CITY" value="Saipan"/>
+            <column name="DIALING_CODE" value="1670"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="150"/>
-            <column name="COUNTRY" value="Netherlands Antilles"/>
-            <column name="CODE" value="599"/>
+            <column name="COUNTRY" value="Norway"/>
+            <column name="ALPHA2_CODE" value="NO"/>
+            <column name="ALPHA3_CODE" value="NOR"/>
+            <column name="CAPITAL_CITY" value="Oslo"/>
+            <column name="DIALING_CODE" value="47"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="151"/>
-            <column name="COUNTRY" value="Nevis"/>
-            <column name="CODE" value="869"/>
+            <column name="COUNTRY" value="Oman"/>
+            <column name="ALPHA2_CODE" value="OM"/>
+            <column name="ALPHA3_CODE" value="OMN"/>
+            <column name="CAPITAL_CITY" value="Muscat"/>
+            <column name="DIALING_CODE" value="968"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="152"/>
-            <column name="COUNTRY" value="New Caledonia"/>
-            <column name="CODE" value="687"/>
+            <column name="COUNTRY" value="Pakistan"/>
+            <column name="ALPHA2_CODE" value="PK"/>
+            <column name="ALPHA3_CODE" value="PAK"/>
+            <column name="CAPITAL_CITY" value="Islamabad"/>
+            <column name="DIALING_CODE" value="92"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="153"/>
-            <column name="COUNTRY" value="New Zealand"/>
-            <column name="CODE" value="64"/>
+            <column name="COUNTRY" value="Palau"/>
+            <column name="ALPHA2_CODE" value="PW"/>
+            <column name="ALPHA3_CODE" value="PLW"/>
+            <column name="CAPITAL_CITY" value="Melekeok"/>
+            <column name="DIALING_CODE" value="680"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="154"/>
-            <column name="COUNTRY" value="Nicaragua"/>
-            <column name="CODE" value="505"/>
+            <column name="COUNTRY" value="Panama"/>
+            <column name="ALPHA2_CODE" value="PA"/>
+            <column name="ALPHA3_CODE" value="PAN"/>
+            <column name="CAPITAL_CITY" value="Panama City"/>
+            <column name="DIALING_CODE" value="507"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="155"/>
-            <column name="COUNTRY" value="Niger"/>
-            <column name="CODE" value="227"/>
+            <column name="COUNTRY" value="Papua New Guinea"/>
+            <column name="ALPHA2_CODE" value="PG"/>
+            <column name="ALPHA3_CODE" value="PNG"/>
+            <column name="CAPITAL_CITY" value="Port Moresby"/>
+            <column name="DIALING_CODE" value="675"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="156"/>
-            <column name="COUNTRY" value="Nigeria"/>
-            <column name="CODE" value="234"/>
+            <column name="COUNTRY" value="Paraguay"/>
+            <column name="ALPHA2_CODE" value="PY"/>
+            <column name="ALPHA3_CODE" value="PRY"/>
+            <column name="CAPITAL_CITY" value="Asunción"/>
+            <column name="DIALING_CODE" value="595"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="157"/>
-            <column name="COUNTRY" value="Niue"/>
-            <column name="CODE" value="683"/>
+            <column name="COUNTRY" value="Peru"/>
+            <column name="ALPHA2_CODE" value="PE"/>
+            <column name="ALPHA3_CODE" value="PER"/>
+            <column name="CAPITAL_CITY" value="Lima"/>
+            <column name="DIALING_CODE" value="51"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="158"/>
-            <column name="COUNTRY" value="North Korea"/>
-            <column name="CODE" value="850"/>
+            <column name="COUNTRY" value="Philippines"/>
+            <column name="ALPHA2_CODE" value="PH"/>
+            <column name="ALPHA3_CODE" value="PHL"/>
+            <column name="CAPITAL_CITY" value="Manila"/>
+            <column name="DIALING_CODE" value="63"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="159"/>
-            <column name="COUNTRY" value="North Mariana Islands (Saipan)"/>
-            <column name="CODE" value="1670"/>
+            <column name="COUNTRY" value="Pitcairn Islands"/>
+            <column name="ALPHA2_CODE" value="PN"/>
+            <column name="ALPHA3_CODE" value="PCN"/>
+            <column name="CAPITAL_CITY" value="Adamstown"/>
+            <column name="DIALING_CODE" value="870"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="160"/>
-            <column name="COUNTRY" value="Norway"/>
-            <column name="CODE" value="47"/>
+            <column name="COUNTRY" value="Poland"/>
+            <column name="ALPHA2_CODE" value="PL"/>
+            <column name="ALPHA3_CODE" value="POL"/>
+            <column name="CAPITAL_CITY" value="Warsaw"/>
+            <column name="DIALING_CODE" value="48"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="161"/>
-            <column name="COUNTRY" value="Oman"/>
-            <column name="CODE" value="968"/>
+            <column name="COUNTRY" value="Portugal"/>
+            <column name="ALPHA2_CODE" value="PT"/>
+            <column name="ALPHA3_CODE" value="PRT"/>
+            <column name="CAPITAL_CITY" value="Lisbon"/>
+            <column name="DIALING_CODE" value="351"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="162"/>
-            <column name="COUNTRY" value="Pakistan"/>
-            <column name="CODE" value="92"/>
+            <column name="COUNTRY" value="Puerto Rico"/>
+            <column name="ALPHA2_CODE" value="PR"/>
+            <column name="ALPHA3_CODE" value="PRI"/>
+            <column name="CAPITAL_CITY" value="San Juan"/>
+            <column name="DIALING_CODE" value="1"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="163"/>
-            <column name="COUNTRY" value="Palau"/>
-            <column name="CODE" value="680"/>
+            <column name="COUNTRY" value="Qatar"/>
+            <column name="ALPHA2_CODE" value="QA"/>
+            <column name="ALPHA3_CODE" value="QAT"/>
+            <column name="CAPITAL_CITY" value="Doha"/>
+            <column name="DIALING_CODE" value="974"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="164"/>
-            <column name="COUNTRY" value="Panama"/>
-            <column name="CODE" value="507"/>
+            <column name="COUNTRY" value="Republic of the Congo"/>
+            <column name="ALPHA2_CODE" value="CG"/>
+            <column name="ALPHA3_CODE" value="COG"/>
+            <column name="CAPITAL_CITY" value="Brazzaville"/>
+            <column name="DIALING_CODE" value="242"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="165"/>
-            <column name="COUNTRY" value="Papua New Guinea"/>
-            <column name="CODE" value="675"/>
+            <column name="COUNTRY" value="Reunion"/>
+            <column name="ALPHA2_CODE" value="RE"/>
+            <column name="ALPHA3_CODE" value="REU"/>
+            <column name="CAPITAL_CITY" value="Saint-Denis"/>
+            <column name="DIALING_CODE" value="262"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="166"/>
-            <column name="COUNTRY" value="Paraguay"/>
-            <column name="CODE" value="595"/>
+            <column name="COUNTRY" value="Romania"/>
+            <column name="ALPHA2_CODE" value="RO"/>
+            <column name="ALPHA3_CODE" value="ROU"/>
+            <column name="CAPITAL_CITY" value="Bucharest"/>
+            <column name="DIALING_CODE" value="40"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="167"/>
-            <column name="COUNTRY" value="Peru"/>
-            <column name="CODE" value="51"/>
+            <column name="COUNTRY" value="Russia"/>
+            <column name="ALPHA2_CODE" value="RU"/>
+            <column name="ALPHA3_CODE" value="RUS"/>
+            <column name="CAPITAL_CITY" value="Moscow"/>
+            <column name="DIALING_CODE" value="7"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="168"/>
-            <column name="COUNTRY" value="Philippines"/>
-            <column name="CODE" value="63"/>
+            <column name="COUNTRY" value="Rwanda"/>
+            <column name="ALPHA2_CODE" value="RW"/>
+            <column name="ALPHA3_CODE" value="RWA"/>
+            <column name="CAPITAL_CITY" value="Kigali"/>
+            <column name="DIALING_CODE" value="250"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="169"/>
-            <column name="COUNTRY" value="Poland"/>
-            <column name="CODE" value="48"/>
+            <column name="COUNTRY" value="Saint Barthélemy"/>
+            <column name="ALPHA2_CODE" value="BL"/>
+            <column name="ALPHA3_CODE" value="BLM"/>
+            <column name="CAPITAL_CITY" value="Gustavia"/>
+            <column name="DIALING_CODE" value="590"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="170"/>
-            <column name="COUNTRY" value="Portugal (includes Azores)"/>
-            <column name="CODE" value="351"/>
+            <column name="COUNTRY" value="Saint Helena"/>
+            <column name="ALPHA2_CODE" value="SH"/>
+            <column name="ALPHA3_CODE" value="SHN"/>
+            <column name="CAPITAL_CITY" value="Jamestown"/>
+            <column name="DIALING_CODE" value="290"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="171"/>
-            <column name="COUNTRY" value="Puerto Rico"/>
-            <column name="CODE" value="1787"/>
+            <column name="COUNTRY" value="Saint Kitts and Nevis"/>
+            <column name="ALPHA2_CODE" value="KN"/>
+            <column name="ALPHA3_CODE" value="KNA"/>
+            <column name="CAPITAL_CITY" value="Basseterre"/>
+            <column name="DIALING_CODE" value="1"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="172"/>
-            <column name="COUNTRY" value="Qatar"/>
-            <column name="CODE" value="974"/>
+            <column name="COUNTRY" value="Saint Lucia"/>
+            <column name="ALPHA2_CODE" value="LC"/>
+            <column name="ALPHA3_CODE" value="LCA"/>
+            <column name="CAPITAL_CITY" value="Castries"/>
+            <column name="DIALING_CODE" value="1"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="173"/>
-            <column name="COUNTRY" value="Reunion (France)"/>
-            <column name="CODE" value="262"/>
+            <column name="COUNTRY" value="Saint Martin"/>
+            <column name="ALPHA2_CODE" value="MF"/>
+            <column name="ALPHA3_CODE" value="MAF"/>
+            <column name="CAPITAL_CITY" value="Marigot"/>
+            <column name="DIALING_CODE" value="1599"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="174"/>
-            <column name="COUNTRY" value="Romania"/>
-            <column name="CODE" value="40"/>
+            <column name="COUNTRY" value="Saint Pierre and Miquelon"/>
+            <column name="ALPHA2_CODE" value="PM"/>
+            <column name="ALPHA3_CODE" value="SPM"/>
+            <column name="CAPITAL_CITY" value="Saint-Pierre"/>
+            <column name="DIALING_CODE" value="508"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="175"/>
-            <column name="COUNTRY" value="Russia"/>
-            <column name="CODE" value="7"/>
+            <column name="COUNTRY" value="Saint Vincent and the Grenadines"/>
+            <column name="ALPHA2_CODE" value="VC"/>
+            <column name="ALPHA3_CODE" value="VCT"/>
+            <column name="CAPITAL_CITY" value="Kingstown"/>
+            <column name="DIALING_CODE" value="1"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="176"/>
-            <column name="COUNTRY" value="Rwanda (Rwandese Republic)"/>
-            <column name="CODE" value="250"/>
+            <column name="COUNTRY" value="Samoa"/>
+            <column name="ALPHA2_CODE" value="WS"/>
+            <column name="ALPHA3_CODE" value="WSM"/>
+            <column name="CAPITAL_CITY" value="Apia"/>
+            <column name="DIALING_CODE" value="685"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="177"/>
-            <column name="COUNTRY" value="Saipan"/>
-            <column name="CODE" value="670"/>
+            <column name="COUNTRY" value="San Marino"/>
+            <column name="ALPHA2_CODE" value="SM"/>
+            <column name="ALPHA3_CODE" value="SMR"/>
+            <column name="CAPITAL_CITY" value="San Marino"/>
+            <column name="DIALING_CODE" value="378"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="178"/>
-            <column name="COUNTRY" value="San Marino"/>
-            <column name="CODE" value="378"/>
+            <column name="COUNTRY" value="Sao Tome and Principe"/>
+            <column name="ALPHA2_CODE" value="ST"/>
+            <column name="ALPHA3_CODE" value="STP"/>
+            <column name="CAPITAL_CITY" value="São Tomé"/>
+            <column name="DIALING_CODE" value="239"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="179"/>
-            <column name="COUNTRY" value="Sao Tome and Principe"/>
-            <column name="CODE" value="239"/>
+            <column name="COUNTRY" value="Saudi Arabia"/>
+            <column name="ALPHA2_CODE" value="SA"/>
+            <column name="ALPHA3_CODE" value="SAU"/>
+            <column name="CAPITAL_CITY" value="Riyadh"/>
+            <column name="DIALING_CODE" value="966"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="180"/>
-            <column name="COUNTRY" value="Saudi Arabia"/>
-            <column name="CODE" value="966"/>
+            <column name="COUNTRY" value="Senegal"/>
+            <column name="ALPHA2_CODE" value="SN"/>
+            <column name="ALPHA3_CODE" value="SEN"/>
+            <column name="CAPITAL_CITY" value="Dakar"/>
+            <column name="DIALING_CODE" value="221"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="181"/>
-            <column name="COUNTRY" value="Senegal"/>
-            <column name="CODE" value="221"/>
+            <column name="COUNTRY" value="Serbia"/>
+            <column name="ALPHA2_CODE" value="RS"/>
+            <column name="ALPHA3_CODE" value="SRB"/>
+            <column name="CAPITAL_CITY" value="Belgrade"/>
+            <column name="DIALING_CODE" value="381"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="182"/>
-            <column name="COUNTRY" value="Serbia and Montenegro"/>
-            <column name="CODE" value="381"/>
+            <column name="COUNTRY" value="Seychelles"/>
+            <column name="ALPHA2_CODE" value="SC"/>
+            <column name="ALPHA3_CODE" value="SYC"/>
+            <column name="CAPITAL_CITY" value="Victoria"/>
+            <column name="DIALING_CODE" value="248"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="183"/>
-            <column name="COUNTRY" value="Seychelles"/>
-            <column name="CODE" value="248"/>
+            <column name="COUNTRY" value="Sierra Leone"/>
+            <column name="ALPHA2_CODE" value="SL"/>
+            <column name="ALPHA3_CODE" value="SLE"/>
+            <column name="CAPITAL_CITY" value="Freetown"/>
+            <column name="DIALING_CODE" value="232"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="184"/>
-            <column name="COUNTRY" value="Sierra Leone"/>
-            <column name="CODE" value="232"/>
+            <column name="COUNTRY" value="Singapore"/>
+            <column name="ALPHA2_CODE" value="SG"/>
+            <column name="ALPHA3_CODE" value="SGP"/>
+            <column name="CAPITAL_CITY" value="Singapur"/>
+            <column name="DIALING_CODE" value="65"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="185"/>
-            <column name="COUNTRY" value="Singapore"/>
-            <column name="CODE" value="65"/>
+            <column name="COUNTRY" value="Slovakia"/>
+            <column name="ALPHA2_CODE" value="SK"/>
+            <column name="ALPHA3_CODE" value="SVK"/>
+            <column name="CAPITAL_CITY" value="Bratislava"/>
+            <column name="DIALING_CODE" value="421"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="186"/>
-            <column name="COUNTRY" value="Slovakia"/>
-            <column name="CODE" value="421"/>
+            <column name="COUNTRY" value="Slovenia"/>
+            <column name="ALPHA2_CODE" value="SI"/>
+            <column name="ALPHA3_CODE" value="SVN"/>
+            <column name="CAPITAL_CITY" value="Ljubljana"/>
+            <column name="DIALING_CODE" value="386"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="187"/>
-            <column name="COUNTRY" value="Slovenia"/>
-            <column name="CODE" value="386"/>
+            <column name="COUNTRY" value="Solomon Islands"/>
+            <column name="ALPHA2_CODE" value="SB"/>
+            <column name="ALPHA3_CODE" value="SLB"/>
+            <column name="CAPITAL_CITY" value="Honiara"/>
+            <column name="DIALING_CODE" value="677"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="188"/>
-            <column name="COUNTRY" value="Solomon Islands"/>
-            <column name="CODE" value="677"/>
+            <column name="COUNTRY" value="Somalia"/>
+            <column name="ALPHA2_CODE" value="SO"/>
+            <column name="ALPHA3_CODE" value="SOM"/>
+            <column name="CAPITAL_CITY" value="Mogadishu"/>
+            <column name="DIALING_CODE" value="252"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="189"/>
-            <column name="COUNTRY" value="Somalia"/>
-            <column name="CODE" value="252"/>
+            <column name="COUNTRY" value="South Africa"/>
+            <column name="ALPHA2_CODE" value="ZA"/>
+            <column name="ALPHA3_CODE" value="ZAF"/>
+            <column name="CAPITAL_CITY" value="Pretoria"/>
+            <column name="DIALING_CODE" value="27"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="190"/>
-            <column name="COUNTRY" value="South Africa"/>
-            <column name="CODE" value="27"/>
+            <column name="COUNTRY" value="South Korea"/>
+            <column name="ALPHA2_CODE" value="KR"/>
+            <column name="ALPHA3_CODE" value="KOR"/>
+            <column name="CAPITAL_CITY" value="Seoul"/>
+            <column name="DIALING_CODE" value="82"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="191"/>
-            <column name="COUNTRY" value="Spain"/>
-            <column name="CODE" value="34"/>
+            <column name="COUNTRY" value="South Sudan"/>
+            <column name="ALPHA2_CODE" value="SS"/>
+            <column name="ALPHA3_CODE" value="SSD"/>
+            <column name="CAPITAL_CITY" value="Juba"/>
+            <column name="DIALING_CODE" value="211"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="192"/>
-            <column name="COUNTRY" value="Sri Lanka"/>
-            <column name="CODE" value="94"/>
+            <column name="COUNTRY" value="Spain"/>
+            <column name="ALPHA2_CODE" value="ES"/>
+            <column name="ALPHA3_CODE" value="ESP"/>
+            <column name="CAPITAL_CITY" value="Madrid"/>
+            <column name="DIALING_CODE" value="34"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="193"/>
-            <column name="COUNTRY" value="St. Helena"/>
-            <column name="CODE" value="290"/>
+            <column name="COUNTRY" value="Sri Lanka"/>
+            <column name="ALPHA2_CODE" value="LK"/>
+            <column name="ALPHA3_CODE" value="LKA"/>
+            <column name="CAPITAL_CITY" value="Colombo"/>
+            <column name="DIALING_CODE" value="94"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="194"/>
-            <column name="COUNTRY" value="St. Kitts/Nevis"/>
-            <column name="CODE" value="869"/>
+            <column name="COUNTRY" value="Sudan"/>
+            <column name="ALPHA2_CODE" value="SD"/>
+            <column name="ALPHA3_CODE" value="SDN"/>
+            <column name="CAPITAL_CITY" value="Khartoum"/>
+            <column name="DIALING_CODE" value="249"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="195"/>
-            <column name="COUNTRY" value="St. Pierre &amp;(et) Miquelon (France)"/>
-            <column name="CODE" value="508"/>
+            <column name="COUNTRY" value="Suriname"/>
+            <column name="ALPHA2_CODE" value="SR"/>
+            <column name="ALPHA3_CODE" value="SUR"/>
+            <column name="CAPITAL_CITY" value="Paramaribo"/>
+            <column name="DIALING_CODE" value="597"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="196"/>
-            <column name="COUNTRY" value="Sudan"/>
-            <column name="CODE" value="249"/>
+            <column name="COUNTRY" value="Swaziland"/>
+            <column name="ALPHA2_CODE" value="SZ"/>
+            <column name="ALPHA3_CODE" value="SWZ"/>
+            <column name="CAPITAL_CITY" value="Mbabane"/>
+            <column name="DIALING_CODE" value="268"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="197"/>
-            <column name="COUNTRY" value="Suriname"/>
-            <column name="CODE" value="597"/>
+            <column name="COUNTRY" value="Sweden"/>
+            <column name="ALPHA2_CODE" value="SE"/>
+            <column name="ALPHA3_CODE" value="SWE"/>
+            <column name="CAPITAL_CITY" value="Stockholm"/>
+            <column name="DIALING_CODE" value="46"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="198"/>
-            <column name="COUNTRY" value="Swaziland"/>
-            <column name="CODE" value="268"/>
+            <column name="COUNTRY" value="Switzerland"/>
+            <column name="ALPHA2_CODE" value="CH"/>
+            <column name="ALPHA3_CODE" value="CHE"/>
+            <column name="CAPITAL_CITY" value="Berne"/>
+            <column name="DIALING_CODE" value="41"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="199"/>
-            <column name="COUNTRY" value="Sweden"/>
-            <column name="CODE" value="46"/>
+            <column name="COUNTRY" value="Syria"/>
+            <column name="ALPHA2_CODE" value="SY"/>
+            <column name="ALPHA3_CODE" value="SYR"/>
+            <column name="CAPITAL_CITY" value="Damascus"/>
+            <column name="DIALING_CODE" value="963"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="200"/>
-            <column name="COUNTRY" value="Switzerland"/>
-            <column name="CODE" value="41"/>
+            <column name="COUNTRY" value="Taiwan"/>
+            <column name="ALPHA2_CODE" value="TW"/>
+            <column name="ALPHA3_CODE" value="TWN"/>
+            <column name="CAPITAL_CITY" value="Taipei"/>
+            <column name="DIALING_CODE" value="886"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="201"/>
-            <column name="COUNTRY" value="Syrian Arab Republic (Syria)"/>
-            <column name="CODE" value="963"/>
+            <column name="COUNTRY" value="Tajikistan"/>
+            <column name="ALPHA2_CODE" value="TJ"/>
+            <column name="ALPHA3_CODE" value="TJK"/>
+            <column name="CAPITAL_CITY" value="Dushanbe"/>
+            <column name="DIALING_CODE" value="992"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="202"/>
-            <column name="COUNTRY" value="Tahiti (French Polynesia)"/>
-            <column name="CODE" value="689"/>
+            <column name="COUNTRY" value="Tanzania"/>
+            <column name="ALPHA2_CODE" value="TZ"/>
+            <column name="ALPHA3_CODE" value="TZA"/>
+            <column name="CAPITAL_CITY" value="Dodoma"/>
+            <column name="DIALING_CODE" value="255"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="203"/>
-            <column name="COUNTRY" value="Taiwan"/>
-            <column name="CODE" value="886"/>
+            <column name="COUNTRY" value="Thailand"/>
+            <column name="ALPHA2_CODE" value="TH"/>
+            <column name="ALPHA3_CODE" value="THA"/>
+            <column name="CAPITAL_CITY" value="Bangkok"/>
+            <column name="DIALING_CODE" value="66"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="204"/>
-            <column name="COUNTRY" value="Tajikistan"/>
-            <column name="CODE" value="7"/>
+            <column name="COUNTRY" value="Togo"/>
+            <column name="ALPHA2_CODE" value="TG"/>
+            <column name="ALPHA3_CODE" value="TGO"/>
+            <column name="CAPITAL_CITY" value="Lomé"/>
+            <column name="DIALING_CODE" value="228"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="205"/>
-            <column name="COUNTRY" value="Tanzania (includes Zanzibar)"/>
-            <column name="CODE" value="255"/>
+            <column name="COUNTRY" value="Tokelau"/>
+            <column name="ALPHA2_CODE" value="TK"/>
+            <column name="ALPHA3_CODE" value="TKL"/>
+            <column name="CAPITAL_CITY" value=""/>
+            <column name="DIALING_CODE" value="690"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="206"/>
-            <column name="COUNTRY" value="Thailand"/>
-            <column name="CODE" value="66"/>
+            <column name="COUNTRY" value="Trinidad and Tobago"/>
+            <column name="ALPHA2_CODE" value="TT"/>
+            <column name="ALPHA3_CODE" value="TTO"/>
+            <column name="CAPITAL_CITY" value="Port of Spain"/>
+            <column name="DIALING_CODE" value="1"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="207"/>
-            <column name="COUNTRY" value="Togo (Togolese Republic)"/>
-            <column name="CODE" value="228"/>
+            <column name="COUNTRY" value="Tunisia"/>
+            <column name="ALPHA2_CODE" value="TN"/>
+            <column name="ALPHA3_CODE" value="TUN"/>
+            <column name="CAPITAL_CITY" value="Tunis"/>
+            <column name="DIALING_CODE" value="216"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="208"/>
-            <column name="COUNTRY" value="Tokelau"/>
-            <column name="CODE" value="690"/>
+            <column name="COUNTRY" value="Turkey"/>
+            <column name="ALPHA2_CODE" value="TR"/>
+            <column name="ALPHA3_CODE" value="TUR"/>
+            <column name="CAPITAL_CITY" value="Ankara"/>
+            <column name="DIALING_CODE" value="90"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="209"/>
-            <column name="COUNTRY" value="Tonga"/>
-            <column name="CODE" value="676"/>
+            <column name="COUNTRY" value="Turkmenistan"/>
+            <column name="ALPHA2_CODE" value="TM"/>
+            <column name="ALPHA3_CODE" value="TKM"/>
+            <column name="CAPITAL_CITY" value="Ashgabat"/>
+            <column name="DIALING_CODE" value="993"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="210"/>
-            <column name="COUNTRY" value="Trinidad and Tobago"/>
-            <column name="CODE" value="1868"/>
+            <column name="COUNTRY" value="Tuvalu"/>
+            <column name="ALPHA2_CODE" value="TV"/>
+            <column name="ALPHA3_CODE" value="TUV"/>
+            <column name="CAPITAL_CITY" value="Funafuti"/>
+            <column name="DIALING_CODE" value="688"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="211"/>
-            <column name="COUNTRY" value="Tunisia"/>
-            <column name="CODE" value="216"/>
+            <column name="COUNTRY" value="Uganda"/>
+            <column name="ALPHA2_CODE" value="UG"/>
+            <column name="ALPHA3_CODE" value="UGA"/>
+            <column name="CAPITAL_CITY" value="Kampala"/>
+            <column name="DIALING_CODE" value="256"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="212"/>
-            <column name="COUNTRY" value="Turkey"/>
-            <column name="CODE" value="90"/>
+            <column name="COUNTRY" value="Ukraine"/>
+            <column name="ALPHA2_CODE" value="UA"/>
+            <column name="ALPHA3_CODE" value="UKR"/>
+            <column name="CAPITAL_CITY" value="Kiev"/>
+            <column name="DIALING_CODE" value="380"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="213"/>
-            <column name="COUNTRY" value="Turkmenistan"/>
-            <column name="CODE" value="993"/>
+            <column name="COUNTRY" value="United Arab Emirates"/>
+            <column name="ALPHA2_CODE" value="AE"/>
+            <column name="ALPHA3_CODE" value="ARE"/>
+            <column name="CAPITAL_CITY" value="Abu Dhabi"/>
+            <column name="DIALING_CODE" value="971"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="214"/>
-            <column name="COUNTRY" value="Tuvalu (Ellice Islands)"/>
-            <column name="CODE" value="688"/>
+            <column name="COUNTRY" value="United Kingdom"/>
+            <column name="ALPHA2_CODE" value="GB"/>
+            <column name="ALPHA3_CODE" value="GBR"/>
+            <column name="CAPITAL_CITY" value="London"/>
+            <column name="DIALING_CODE" value="44"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="215"/>
-            <column name="COUNTRY" value="Uganda"/>
-            <column name="CODE" value="256"/>
+            <column name="COUNTRY" value="United States"/>
+            <column name="ALPHA2_CODE" value="US"/>
+            <column name="ALPHA3_CODE" value="USA"/>
+            <column name="CAPITAL_CITY" value="Washington"/>
+            <column name="DIALING_CODE" value="1"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="216"/>
-            <column name="COUNTRY" value="Ukraine"/>
-            <column name="CODE" value="380"/>
+            <column name="COUNTRY" value="Uruguay"/>
+            <column name="ALPHA2_CODE" value="UY"/>
+            <column name="ALPHA3_CODE" value="URY"/>
+            <column name="CAPITAL_CITY" value="Montevideo"/>
+            <column name="DIALING_CODE" value="598"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="217"/>
-            <column name="COUNTRY" value="United Arab Emirates"/>
-            <column name="CODE" value="971"/>
+            <column name="COUNTRY" value="Uzbekistan"/>
+            <column name="ALPHA2_CODE" value="UZ"/>
+            <column name="ALPHA3_CODE" value="UZB"/>
+            <column name="CAPITAL_CITY" value="Tashkent"/>
+            <column name="DIALING_CODE" value="998"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="218"/>
-            <column name="COUNTRY" value="United Kingdom"/>
-            <column name="CODE" value="44"/>
+            <column name="COUNTRY" value="Vanuatu"/>
+            <column name="ALPHA2_CODE" value="VU"/>
+            <column name="ALPHA3_CODE" value="VUT"/>
+            <column name="CAPITAL_CITY" value="Port Vila"/>
+            <column name="DIALING_CODE" value="678"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="219"/>
-            <column name="COUNTRY" value="Uruguay"/>
-            <column name="CODE" value="598"/>
+            <column name="COUNTRY" value="Vatican"/>
+            <column name="ALPHA2_CODE" value="VA"/>
+            <column name="ALPHA3_CODE" value="VAT"/>
+            <column name="CAPITAL_CITY" value="Vatican City"/>
+            <column name="DIALING_CODE" value="39"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="220"/>
-            <column name="COUNTRY" value="USA"/>
-            <column name="CODE" value="1"/>
+            <column name="COUNTRY" value="Venezuela"/>
+            <column name="ALPHA2_CODE" value="VE"/>
+            <column name="ALPHA3_CODE" value="VEN"/>
+            <column name="CAPITAL_CITY" value="Caracas"/>
+            <column name="DIALING_CODE" value="58"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="221"/>
-            <column name="COUNTRY" value="Uzbekistan"/>
-            <column name="CODE" value="7"/>
+            <column name="COUNTRY" value="Vietnam"/>
+            <column name="ALPHA2_CODE" value="VN"/>
+            <column name="ALPHA3_CODE" value="VNM"/>
+            <column name="CAPITAL_CITY" value="Hanoi"/>
+            <column name="DIALING_CODE" value="84"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="222"/>
-            <column name="COUNTRY" value="Vanuatu (New Hebrides)"/>
-            <column name="CODE" value="678"/>
+            <column name="COUNTRY" value="Western Sahara"/>
+            <column name="ALPHA2_CODE" value="EH"/>
+            <column name="ALPHA3_CODE" value="ESH"/>
+            <column name="CAPITAL_CITY" value="El-Aaiun"/>
+            <column name="DIALING_CODE" value="212"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="223"/>
-            <column name="COUNTRY" value="Vatican City"/>
-            <column name="CODE" value="39"/>
+            <column name="COUNTRY" value="Yemen"/>
+            <column name="ALPHA2_CODE" value="YE"/>
+            <column name="ALPHA3_CODE" value="YEM"/>
+            <column name="CAPITAL_CITY" value="San‘a’"/>
+            <column name="DIALING_CODE" value="967"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="224"/>
-            <column name="COUNTRY" value="Venezuela"/>
-            <column name="CODE" value="58"/>
+            <column name="COUNTRY" value="Zambia"/>
+            <column name="ALPHA2_CODE" value="ZM"/>
+            <column name="ALPHA3_CODE" value="ZMB"/>
+            <column name="CAPITAL_CITY" value="Lusaka"/>
+            <column name="DIALING_CODE" value="260"/>
         </insert>
         <insert schemaName="om" tableName="country_codes">
             <column name="COUNTRY_ID" value="225"/>
-            <column name="COUNTRY" value="Viet Nam"/>
-            <column name="CODE" value="84"/>
-        </insert>
-        <insert schemaName="om" tableName="country_codes">
-            <column name="COUNTRY_ID" value="226"/>
-            <column name="COUNTRY" value="Virgin Islands"/>
-            <column name="CODE" value="1340"/>
-        </insert>
-        <insert schemaName="om" tableName="country_codes">
-            <column name="COUNTRY_ID" value="227"/>
-            <column name="COUNTRY" value="Wallis and Futuna"/>
-            <column name="CODE" value="681"/>
-        </insert>
-        <insert schemaName="om" tableName="country_codes">
-            <column name="COUNTRY_ID" value="228"/>
-            <column name="COUNTRY" value="Western Samoa"/>
-            <column name="CODE" value="685"/>
-        </insert>
-        <insert schemaName="om" tableName="country_codes">
-            <column name="COUNTRY_ID" value="229"/>
-            <column name="COUNTRY" value="Yemen (People's Democratic Republic of)"/>
-            <column name="CODE" value="381"/>
-        </insert>
-        <insert schemaName="om" tableName="country_codes">
-            <column name="COUNTRY_ID" value="230"/>
-            <column name="COUNTRY" value="Yemen Arab Republic (North Yemen)"/>
-            <column name="CODE" value="967"/>
-        </insert>
-        <insert schemaName="om" tableName="country_codes">
-            <column name="COUNTRY_ID" value="231"/>
-            <column name="COUNTRY" value="Yugoslavia (discontinued)"/>
-            <column name="CODE" value="381"/>
-        </insert>
-        <insert schemaName="om" tableName="country_codes">
-            <column name="COUNTRY_ID" value="232"/>
-            <column name="COUNTRY" value="Zaire"/>
-            <column name="CODE" value="243"/>
-        </insert>
-        <insert schemaName="om" tableName="country_codes">
-            <column name="COUNTRY_ID" value="233"/>
-            <column name="COUNTRY" value="Zambia"/>
-            <column name="CODE" value="260"/>
-        </insert>
-        <insert schemaName="om" tableName="country_codes">
-            <column name="COUNTRY_ID" value="234"/>
             <column name="COUNTRY" value="Zimbabwe"/>
-            <column name="CODE" value="263"/>
+            <column name="ALPHA2_CODE" value="ZW"/>
+            <column name="ALPHA3_CODE" value="ZWE"/>
+            <column name="CAPITAL_CITY" value="Harare"/>
+            <column name="DIALING_CODE" value="263"/>
         </insert>
     </changeSet>
     <changeSet author="Zahid Naeem" id="insert-item_categories">
@@ -1566,6 +2192,19 @@
         <insert schemaName="om" tableName="user_roles">
             <column name="USER_ID" value="2"/>
             <column name="ROLE_ID" value="3"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-food-category-for-user-zahid">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_sale_item_cats WHERE user_id = 1 and
+                lower(ITEM_CATEGORY) = 'food';
+            </sqlCheck>
+        </preConditions>
+        <comment>insert food category for user zahid</comment>
+        <insert schemaName="om" tableName="user_sale_item_cats">
+            <column name="ID" value="1"/>
+            <column name="USER_ID" value="1"/>
+            <column name="ITEM_CATEGORY" value="Barbeque"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

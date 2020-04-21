@@ -20,16 +20,17 @@ public class UserModel extends Auditable<Long> {
     private String firstName;
     private String middleName;
     private String lastName;
-    private String username;
     private Long countryCode;
     private String phone;
     private String email;
+    private String username;
     private String password;
     private String creditCardNo;
     private Date ccExpiryDate;
     private String userType;
-    private Long activationStatus;
+    private String activationStatus;
     private String remarks;
     private List<UserAddressModel> userAddresses;
-    private Set<RoleModel> roles = new HashSet<>();
+    private List<UserSaleItemCategoryModel> userSaleItemCategories;
+    private Set<RoleModel> roles;
 }

@@ -3,12 +3,15 @@ package com.alfauz.orderme.mapper.qualifier;
 import com.alfauz.orderme.entity.CountryCodeEntity;
 import com.alfauz.orderme.entity.RoleEntity;
 import com.alfauz.orderme.entity.UserAddressEntity;
+import com.alfauz.orderme.entity.UserSaleItemCategoryEntity;
 import com.alfauz.orderme.enumeration.ActivationStatus;
 import com.alfauz.orderme.enumeration.UserType;
 import com.alfauz.orderme.mapper.RoleMapper;
 import com.alfauz.orderme.mapper.UserAddressMapper;
+import com.alfauz.orderme.mapper.UserSaleItemCategoryMapper;
 import com.alfauz.orderme.model.RoleModel;
 import com.alfauz.orderme.model.UserAddressModel;
+import com.alfauz.orderme.model.UserSaleItemCategoryModel;
 import com.alfauz.orderme.service.CountryCodeService;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +28,7 @@ public class UserQualifier {
 
     private final RoleMapper roleMapper;
     private final UserAddressMapper userAddressMapper;
+    private final UserSaleItemCategoryMapper userSaleItemCategoryMapper;
     private final CountryCodeService countryCodeService;
 
     @Named("rolesModelsToEntities")
@@ -45,6 +49,16 @@ public class UserQualifier {
     @Named("userAddressesEntitiesToModels")
     public List<UserAddressModel> userAddressesETM(final List<UserAddressEntity> entities) {
         return userAddressMapper.toModels(entities);
+    }
+
+    @Named("userSaleItemCategoriesModelsToEntities")
+    public List<UserSaleItemCategoryEntity> userSaleItemCategoriesMTE(final List<UserSaleItemCategoryModel> models) {
+        return userSaleItemCategoryMapper.toEntities(models);
+    }
+
+    @Named("userSaleItemCategoriesEntitiesToModels")
+    public List<UserSaleItemCategoryModel> userSaleItemCategoriesETM(final List<UserSaleItemCategoryEntity> entities) {
+        return userSaleItemCategoryMapper.toModels(entities);
     }
 
     @Named("userTypeModelToEntity")

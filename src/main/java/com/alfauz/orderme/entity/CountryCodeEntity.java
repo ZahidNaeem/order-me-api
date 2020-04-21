@@ -17,7 +17,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "COUNTRY_CODES", schema = "OM")
+@Table(name = "COUNTRY_CODES", schema = "OM", uniqueConstraints = {
+        @UniqueConstraint(name = "country_codes_uk1", columnNames = {"COUNTRY"})
+})
 public class CountryCodeEntity {
 
     @Id
@@ -29,10 +31,22 @@ public class CountryCodeEntity {
     @Column(name = "COUNTRY")
     private String country;
 
+    @Size(min = 2, max = 10)
+    @Column(name = "ALPHA2_CODE")
+    private String alpha2Code;
+
+    @Size(min = 2, max = 10)
+    @Column(name = "ALPHA3_CODE")
+    private String alpha3Code;
+
+    @Size(min = 2, max = 10)
+    @Column(name = "CAPITAL_CITY")
+    private String capitalCity;
+
     @NotBlank
     @Size(min = 2, max = 10)
-    @Column(name = "CODE")
-    private String code;
+    @Column(name = "DIALING_CODE")
+    private String dialingCode;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "countryCode")
     @Cascade(value = CascadeType.ALL)
