@@ -1,0 +1,37 @@
+;;; 
+Export: Release 11.2.0.2.0 - Production on Wed Apr 22 01:31:11 2020
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+;;; 
+Connected to: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+Starting "SYSTEM"."SYS_EXPORT_SCHEMA_01":  system/********@xe schemas=om directory=om_backup dumpfile=om_220420.dmp logfile=om_220420.log 
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 576 KB
+Processing object type SCHEMA_EXPORT/USER
+Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
+Processing object type SCHEMA_EXPORT/ROLE_GRANT
+Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
+Processing object type SCHEMA_EXPORT/TABLESPACE_QUOTA
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/SEQUENCE/SEQUENCE
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "OM"."COUNTRY_CODES"                        15.16 KB     225 rows
+. . exported "OM"."DATABASECHANGELOG"                    16.25 KB      23 rows
+. . exported "OM"."DATABASECHANGELOGLOCK"                6.304 KB       1 rows
+. . exported "OM"."ITEM_CATEGORIES"                      6.390 KB      53 rows
+. . exported "OM"."ROLES"                                7.140 KB       3 rows
+. . exported "OM"."USERS"                                12.32 KB       2 rows
+. . exported "OM"."USER_ADDRESSES"                       8.015 KB       3 rows
+. . exported "OM"."USER_ROLES"                           5.468 KB       4 rows
+. . exported "OM"."USER_SALE_ITEM_CATS"                  7.539 KB       1 rows
+Master table "SYSTEM"."SYS_EXPORT_SCHEMA_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYSTEM.SYS_EXPORT_SCHEMA_01 is:
+  E:\JAVA_PROJECTS\ORDERME\ORDER_ME_API\DB\OM_220420.DMP
+Job "SYSTEM"."SYS_EXPORT_SCHEMA_01" successfully completed at 01:32:06
