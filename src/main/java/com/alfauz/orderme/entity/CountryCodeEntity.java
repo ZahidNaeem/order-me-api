@@ -31,6 +31,7 @@ public class CountryCodeEntity {
     @Column(name = "COUNTRY")
     private String country;
 
+    @NotBlank
     @Size(min = 2, max = 10)
     @Column(name = "ALPHA2_CODE")
     private String alpha2Code;
