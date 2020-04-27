@@ -29,7 +29,9 @@
                 <constraints nullable="false"
                              uniqueConstraintName="country_codes_uk1" unique="true"/>
             </column>
-            <column name="ALPHA2_CODE" type="VARCHAR(2)"/>
+            <column name="ALPHA2_CODE" type="VARCHAR(2)">
+                <constraints nullable="false"/>
+            </column>
             <column name="ALPHA3_CODE" type="VARCHAR(3)"/>
             <column name="CAPITAL_CITY" type="VARCHAR(50)"/>
             <column name="DIALING_CODE" type="VARCHAR(10)">
