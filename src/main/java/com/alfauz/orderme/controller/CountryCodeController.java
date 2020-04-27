@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("countryCodes")
@@ -30,12 +33,14 @@ public class CountryCodeController {
 
     @GetMapping
     public ResponseEntity<ApiResponse<List<CountryCodeModel>>> findAll() {
+        final Stream<CountryCodeModel> modelStream = models.stream().sorted(Comparator.comparing(CountryCodeModel::getAlpha2Code));
+        final List<CountryCodeModel> sortedModels = modelStream.collect(Collectors.toList());
         return ResponseEntity.ok(
                 ApiResponse
                         .<List<CountryCodeModel>>builder()
                         .success(true)
                         .message("findAll response")
-                        .entity(models)
+                        .entity(sortedModels)
                         .build()
         );
     }
