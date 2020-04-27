@@ -1,8 +1,10 @@
 package com.alfauz.orderme.service.impl;
 
+import com.alfauz.orderme.entity.CountryCodeEntity;
 import com.alfauz.orderme.entity.UserEntity;
 import com.alfauz.orderme.exception.BadRequestException;
 import com.alfauz.orderme.repo.UserRepo;
+import com.alfauz.orderme.service.CountryCodeService;
 import com.alfauz.orderme.service.UserAddressService;
 import com.alfauz.orderme.service.UserService;
 import com.alfauz.orderme.utils.Miscellaneous;
@@ -17,6 +19,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     private final UserRepo userRepo;
+    private final CountryCodeService countryCodeService;
     private final UserAddressService userAddressService;
 
     @Override
@@ -54,13 +57,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Boolean existsByUsername(final String username) {
-        return userRepo.existsByUsername(username);
+    public Boolean existsByCountryCodeAndPhone(final Long countryCode, final String phone) {
+        final CountryCodeEntity countryCodeEntity = countryCodeService.findById(countryCode);
+        return userRepo.existsByCountryCodeAndPhone(countryCodeEntity, phone);
     }
 
     @Override
     public Boolean existsByEmail(final String email) {
         return userRepo.existsByEmail(email);
+    }
+
+    @Override
+    public Boolean existsByUsername(final String username) {
+        return userRepo.existsByUsername(username);
     }
 
     @Override

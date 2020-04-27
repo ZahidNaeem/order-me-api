@@ -22,9 +22,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(
-    securedEnabled = true,
-    jsr250Enabled = true,
-    prePostEnabled = true
+        securedEnabled = true,
+        jsr250Enabled = true,
+        prePostEnabled = true
 )
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -33,81 +33,83 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //  @Qualifier("userDetailsServiceImpl")
 //  private UserDetailsService userDetailsService;
 
-  private final JwtAuthEntryPoint unauthorizedHandler;
+    private final JwtAuthEntryPoint unauthorizedHandler;
 
-  private final JwtProvider tokenProvider;
+    private final JwtProvider tokenProvider;
 
-  private final UserDetailsServiceImpl userDetailsService;
+    private final UserDetailsServiceImpl userDetailsService;
 
-  private static final String[] AUTH_WHITELIST = {
-      "/",
-      "/favicon.ico",
-      "/**/*.png",
-      "/**/*.gif",
-      "/**/*.svg",
-      "/**/*.jpg",
-      "/**/*.html",
-      "/**/*.css",
-      "/**/*.js",
-      "/swagger-resources/**",
-      "/swagger-ui.html",
-      "/v2/api-docs",
-      "/webjars/**",
-      "/error"
-  };
+    private static final String[] AUTH_WHITELIST = {
+            "/",
+            "/favicon.ico",
+            "/**/*.png",
+            "/**/*.gif",
+            "/**/*.svg",
+            "/**/*.jpg",
+            "/**/*.html",
+            "/**/*.css",
+            "/**/*.js",
+            "/swagger-resources/**",
+            "/swagger-ui.html",
+            "/v2/api-docs",
+            "/webjars/**",
+            "/error"
+    };
 
-  @Bean
-  public JwtAuthTokenFilter authenticationJwtTokenFilter() {
-    return new JwtAuthTokenFilter(tokenProvider, userDetailsService);
-  }
+    @Bean
+    public JwtAuthTokenFilter authenticationJwtTokenFilter() {
+        return new JwtAuthTokenFilter(tokenProvider, userDetailsService);
+    }
 
-  @Override
-  public void configure(AuthenticationManagerBuilder authenticationManagerBuilder)
-      throws Exception {
-    authenticationManagerBuilder
-        .userDetailsService(userDetailsService)
-        .passwordEncoder(passwordEncoder());
-  }
+    @Override
+    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder)
+            throws Exception {
+        authenticationManagerBuilder
+                .userDetailsService(userDetailsService)
+                .passwordEncoder(passwordEncoder());
+    }
 
-  @Bean
-  @Override
-  public AuthenticationManager authenticationManagerBean() throws Exception {
-    return super.authenticationManagerBean();
-  }
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
 
-  @Bean
-  public PasswordEncoder passwordEncoder() {
-    return new BCryptPasswordEncoder();
-  }
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
-  @Override
-  protected void configure(HttpSecurity http) throws Exception {
-    http
-        .cors()
-        .and()
-        .csrf()
-        .disable()
-        .exceptionHandling()
-        .authenticationEntryPoint(unauthorizedHandler)
-        .and()
-        .sessionManagement()
-        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-        .and()
-        .authorizeRequests()
-        .antMatchers(AUTH_WHITELIST)
-        .permitAll()
-        .antMatchers("/auth/**")
-        .permitAll()
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .cors()
+                .and()
+                .csrf()
+                .disable()
+                .exceptionHandling()
+                .authenticationEntryPoint(unauthorizedHandler)
+                .and()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .authorizeRequests()
+                .antMatchers(AUTH_WHITELIST)
+                .permitAll()
+                .antMatchers("/auth/**")
+                .permitAll()
 //                .antMatchers("/**")
 //                .permitAll()
-        .antMatchers("/user/checkUsernameAvailability", "/user/checkEmailAvailability")
-        .permitAll()
-        .antMatchers(HttpMethod.GET, "/users/**")
-        .permitAll()
-        .anyRequest()
-        .authenticated();
+                .antMatchers("/user/checkUsernameAvailability", "/user/checkEmailAvailability", "/user/checkPhoneAvailability")
+                .permitAll()
+                .antMatchers(HttpMethod.GET, "/users/**")
+                .permitAll()
+                .antMatchers(HttpMethod.GET, "/countryCodes/")
+                .permitAll()
+                .anyRequest()
+                .authenticated();
 
-    http.addFilterBefore(authenticationJwtTokenFilter(),
-        UsernamePasswordAuthenticationFilter.class);
-  }
+        http.addFilterBefore(authenticationJwtTokenFilter(),
+                UsernamePasswordAuthenticationFilter.class);
+    }
 }

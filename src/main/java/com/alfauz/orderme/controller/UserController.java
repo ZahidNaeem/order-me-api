@@ -68,13 +68,25 @@ public class UserController {
     }
 
     @GetMapping("/user/checkEmailAvailability")
-    public ResponseEntity<ApiResponse<Boolean>> checkEmailAvailability(@RequestParam(value = "email") String email) {
+    public ResponseEntity<ApiResponse<Boolean>> checkEmailAvailability(@RequestParam(value = "email") final String email) {
         return ResponseEntity.ok(
                 ApiResponse
                         .<Boolean>builder()
                         .success(true)
                         .message("checkEmailAvailability response")
                         .entity(!userService.existsByEmail(email))
+                        .build()
+        );
+    }
+
+    @GetMapping("/user/checkPhoneAvailability")
+    public ResponseEntity<ApiResponse<Boolean>> checkPhoneAvailability(@RequestParam(value = "countryCode") final Long countryCode, @RequestParam(value = "phone") final String phone) {
+        return ResponseEntity.ok(
+                ApiResponse
+                        .<Boolean>builder()
+                        .success(true)
+                        .message("checkPhoneAvailability response")
+                        .entity(!userService.existsByCountryCodeAndPhone(countryCode, phone))
                         .build()
         );
     }

@@ -1,5 +1,6 @@
 package com.alfauz.orderme.repo;
 
+import com.alfauz.orderme.entity.CountryCodeEntity;
 import com.alfauz.orderme.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -20,7 +21,9 @@ public interface UserRepo extends JpaRepository<UserEntity, Long> {
 
     List<UserEntity> findByIdIn(final List<Long> userIds);
 
-    Boolean existsByUsername(final String username);
+    Boolean existsByCountryCodeAndPhone(final CountryCodeEntity countryCode, final String phone);
 
     Boolean existsByEmail(final String email);
+
+    Boolean existsByUsername(final String username);
 }
