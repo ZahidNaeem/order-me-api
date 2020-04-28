@@ -39,19 +39,42 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Zahid Naeem" id="create-table-item_categories">
+    <changeSet author="Zahid Naeem" id="create-table-main_categories">
         <preConditions onFail="MARK_RAN">
             <not>
-                <tableExists tableName="item_categories"/>
+                <tableExists tableName="main_categories"/>
             </not>
         </preConditions>
-        <comment>Creating table item_categories</comment>
-        <createTable schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" type="VARCHAR(50)">
-                <constraints primaryKey="true" primaryKeyName="item_categories_pk"/>
+        <comment>Creating table main_categories</comment>
+        <createTable schemaName="om" tableName="main_categories">
+            <column name="MAIN_CAT_ID" type="INT">
+                <constraints primaryKey="true" primaryKeyName="main_categories_pk"/>
             </column>
-            <column name="MAIN_CATEGORY" type="VARCHAR(50)">
-                <constraints nullable="false"/>
+            <column name="MAIN_CAT_NAME" type="VARCHAR(50)">
+                <constraints nullable="false"
+                             unique="true" uniqueConstraintName="main_categories_uk1"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="create-table-sub_categories">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="sub_categories"/>
+            </not>
+        </preConditions>
+        <comment>Creating table sub_categories</comment>
+        <createTable schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" type="INT">
+                <constraints primaryKey="true" primaryKeyName="sub_categories_pk"/>
+            </column>
+            <column name="SUB_CAT_NAME" type="VARCHAR(50)">
+                <constraints nullable="false"
+                             unique="true" uniqueConstraintName="sub_categories_uk1"/>
+            </column>
+            <column name="MAIN_CAT_ID" type="INT">
+                <constraints nullable="false"
+                             foreignKeyName="SUB_CATEGORIES_MAIN_CAT_ID_FK"
+                             references="main_categories(main_cat_id)"/>
             </column>
         </createTable>
     </changeSet>
@@ -178,33 +201,33 @@
         <addPrimaryKey columnNames="USER_ID, ROLE_ID" constraintName="USER_ROLES_PK" schemaName="om"
                        tableName="user_roles"/>
     </changeSet>
-    <changeSet author="Zahid Naeem" id="create-table-user_sale_item_cats">
+    <changeSet author="Zahid Naeem" id="create-table-user_main_categories">
         <preConditions onFail="MARK_RAN">
             <not>
-                <tableExists tableName="user_sale_item_cats"/>
+                <tableExists tableName="user_main_categories"/>
             </not>
         </preConditions>
-        <comment>Creating table user_sale_item_cats</comment>
-        <createTable schemaName="om" tableName="user_sale_item_cats">
+        <comment>Creating table user_main_categories</comment>
+        <createTable schemaName="om" tableName="user_main_categories">
             <column name="ID" type="INT">
-                <constraints primaryKey="true" primaryKeyName="user_sale_item_cats_pk"/>
+                <constraints primaryKey="true" primaryKeyName="user_main_categories_pk"/>
             </column>
             <column name="USER_ID" type="INT">
                 <constraints nullable="false"
-                             foreignKeyName="USR_SALE_ITM_CATS_USR_ID_FK"
+                             foreignKeyName="USR_MAIN_CATS_USR_ID_FK"
                              references="users(id)"/>
             </column>
-            <column name="ITEM_CATEGORY" type="VARCHAR(50)">
+            <column name="MAIN_CAT_ID" type="INT">
                 <constraints nullable="false"
-                             foreignKeyName="USR_SALE_ITM_CATS_ITM_CAT_FK"
-                             references="item_categories(ITEM_CATEGORY)"/>
+                             foreignKeyName="USR_MAIN_CATS_MAIN_CAT_FK"
+                             references="main_categories(main_cat_id)"/>
             </column>
             <column name="CREATED_BY" type="INT"/>
             <column name="CREATION_DATE" type="TIMESTAMP"/>
             <column name="LAST_UPDATED_BY" type="INT"/>
             <column name="LAST_UPDATE_DATE" type="TIMESTAMP"/>
         </createTable>
-        <addUniqueConstraint constraintName="user_sale_item_cats_uk1" tableName="user_sale_item_cats"
-                             columnNames="USER_ID, ITEM_CATEGORY"/>
+        <addUniqueConstraint constraintName="user_main_categories_uk1" tableName="user_main_categories"
+                             columnNames="USER_ID, MAIN_CAT_ID"/>
     </changeSet>
 </databaseChangeLog>

@@ -104,7 +104,7 @@ public class UserEntity extends Auditable<Long> {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     @Cascade(value = CascadeType.ALL)
-    private List<UserSaleItemCategoryEntity> userSaleItemCategories;
+    private List<UserMainCategoryEntity> userMainCategories;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "USER_ROLES",

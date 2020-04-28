@@ -1812,226 +1812,293 @@
             <column name="DIALING_CODE" value="263"/>
         </insert>
     </changeSet>
-    <changeSet author="Zahid Naeem" id="insert-item_categories">
+    <changeSet author="Zahid Naeem" id="insert-main_categories">
         <preConditions onFail="MARK_RAN">
-            <tableExists tableName="item_categories"/>
+            <tableExists tableName="main_categories"/>
             <and>
-                <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.item_categories;
+                <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.main_categories;
                 </sqlCheck>
             </and>
         </preConditions>
-        <comment>Insert records in item_categories table</comment>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Asian Fusion"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <comment>Insert records in main_categories table</comment>
+        <insert schemaName="om" tableName="main_categories">
+            <column name="MAIN_CAT_ID" value="1"/>
+            <column name="MAIN_CAT_NAME" value="Food"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Bagels"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+    </changeSet>
+    <changeSet author="Zahid Naeem" id="insert-sub_categories">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="sub_categories"/>
+            <and>
+                <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.sub_categories;
+                </sqlCheck>
+            </and>
+        </preConditions>
+        <comment>Insert records in sub_categories table</comment>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="1"/>
+            <column name="SUB_CAT_NAME" value="Vegetarian"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Bakery"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="2"/>
+            <column name="SUB_CAT_NAME" value="Asian Fusion"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Barbeque"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="3"/>
+            <column name="SUB_CAT_NAME" value="Bagels"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Breakfast"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="4"/>
+            <column name="SUB_CAT_NAME" value="Bakery"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="British"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="5"/>
+            <column name="SUB_CAT_NAME" value="Barbeque"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Brunch"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="6"/>
+            <column name="SUB_CAT_NAME" value="Breakfast"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Buffets"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="7"/>
+            <column name="SUB_CAT_NAME" value="British"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Burgers"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="8"/>
+            <column name="SUB_CAT_NAME" value="Brunch"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Cajun/Creole"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="9"/>
+            <column name="SUB_CAT_NAME" value="Buffets"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Caribbean"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="10"/>
+            <column name="SUB_CAT_NAME" value="Burgers"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Chinese"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="11"/>
+            <column name="SUB_CAT_NAME" value="Cajun/Creole"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Coffee / Espresso"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="12"/>
+            <column name="SUB_CAT_NAME" value="Caribbean"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Country Food"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="13"/>
+            <column name="SUB_CAT_NAME" value="Chinese"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Cuban"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="14"/>
+            <column name="SUB_CAT_NAME" value="Coffee / Espresso"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Deli"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="15"/>
+            <column name="SUB_CAT_NAME" value="Country Food"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Doughnuts"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="16"/>
+            <column name="SUB_CAT_NAME" value="Cuban"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Family Fare"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="17"/>
+            <column name="SUB_CAT_NAME" value="Deli"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Fast Food"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="18"/>
+            <column name="SUB_CAT_NAME" value="Doughnuts"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Fine Dining"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="19"/>
+            <column name="SUB_CAT_NAME" value="Family Fare"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Food Trucks"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="20"/>
+            <column name="SUB_CAT_NAME" value="Fast Food"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="French"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="21"/>
+            <column name="SUB_CAT_NAME" value="Fine Dining"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="German"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="22"/>
+            <column name="SUB_CAT_NAME" value="Food Trucks"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Gluten-free"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="23"/>
+            <column name="SUB_CAT_NAME" value="French"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Greek"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="24"/>
+            <column name="SUB_CAT_NAME" value="German"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Happy Hour"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="25"/>
+            <column name="SUB_CAT_NAME" value="Gluten-free"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Hot Dogs"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="26"/>
+            <column name="SUB_CAT_NAME" value="Greek"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Ice Cream"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="27"/>
+            <column name="SUB_CAT_NAME" value="Happy Hour"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Indian"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="28"/>
+            <column name="SUB_CAT_NAME" value="Hot Dogs"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Irish"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="29"/>
+            <column name="SUB_CAT_NAME" value="Ice Cream"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Italian"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="30"/>
+            <column name="SUB_CAT_NAME" value="Indian"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Japanese"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="31"/>
+            <column name="SUB_CAT_NAME" value="Irish"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Latin American"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="32"/>
+            <column name="SUB_CAT_NAME" value="Italian"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Live Entertainment"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="33"/>
+            <column name="SUB_CAT_NAME" value="Japanese"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Mediterranean"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="34"/>
+            <column name="SUB_CAT_NAME" value="Latin American"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Mexican"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="35"/>
+            <column name="SUB_CAT_NAME" value="Live Entertainment"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Nouvelle"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="36"/>
+            <column name="SUB_CAT_NAME" value="Mediterranean"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Pancakes/Waffles"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="37"/>
+            <column name="SUB_CAT_NAME" value="Mexican"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Pizza"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="38"/>
+            <column name="SUB_CAT_NAME" value="Nouvelle"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Polish"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="39"/>
+            <column name="SUB_CAT_NAME" value="Pancakes/Waffles"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Sandwiches"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="40"/>
+            <column name="SUB_CAT_NAME" value="Pizza"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Seafood"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="41"/>
+            <column name="SUB_CAT_NAME" value="Polish"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Soul Food"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="42"/>
+            <column name="SUB_CAT_NAME" value="Sandwiches"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Soup &amp; Salad"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="43"/>
+            <column name="SUB_CAT_NAME" value="Seafood"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Southern"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="44"/>
+            <column name="SUB_CAT_NAME" value="Soul Food"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Spanish"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="45"/>
+            <column name="SUB_CAT_NAME" value="Soup &amp; Salad"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Sports Bar"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="46"/>
+            <column name="SUB_CAT_NAME" value="Southern"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Steaks"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="47"/>
+            <column name="SUB_CAT_NAME" value="Spanish"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Sushi"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="48"/>
+            <column name="SUB_CAT_NAME" value="Sports Bar"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Tapas"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="49"/>
+            <column name="SUB_CAT_NAME" value="Steaks"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Thai"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="50"/>
+            <column name="SUB_CAT_NAME" value="Sushi"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Vegan Friendly"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="51"/>
+            <column name="SUB_CAT_NAME" value="Tapas"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
-        <insert schemaName="om" tableName="item_categories">
-            <column name="ITEM_CATEGORY" value="Vegetarian"/>
-            <column name="MAIN_CATEGORY" value="Food"/>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="52"/>
+            <column name="SUB_CAT_NAME" value="Thai"/>
+            <column name="MAIN_CAT_ID" value="1"/>
+        </insert>
+        <insert schemaName="om" tableName="sub_categories">
+            <column name="SUB_CAT_ID" value="53"/>
+            <column name="SUB_CAT_NAME" value="Vegan Friendly"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
     </changeSet>
     <changeSet author="Zahid Naeem" id="insert-role-pm">
@@ -2196,15 +2263,15 @@
     </changeSet>
     <changeSet author="Zahid Naeem" id="insert-food-category-for-user-zahid">
         <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_sale_item_cats WHERE user_id = 1 and
-                lower(ITEM_CATEGORY) = 'food';
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_main_categories WHERE user_id = 1 and
+                main_cat_id = 1;
             </sqlCheck>
         </preConditions>
         <comment>insert food category for user zahid</comment>
-        <insert schemaName="om" tableName="user_sale_item_cats">
+        <insert schemaName="om" tableName="user_main_categories">
             <column name="ID" value="1"/>
             <column name="USER_ID" value="1"/>
-            <column name="ITEM_CATEGORY" value="Barbeque"/>
+            <column name="MAIN_CAT_ID" value="1"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

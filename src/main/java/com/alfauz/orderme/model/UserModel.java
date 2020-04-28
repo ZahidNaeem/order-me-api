@@ -31,6 +31,6 @@ public class UserModel extends Auditable<Long> {
     private String activationStatus;
     private String remarks;
     private List<UserAddressModel> userAddresses;
-    private List<UserSaleItemCategoryModel> userSaleItemCategories;
+    private List<UserMainCategoryModel> userMainCategories;
     private Set<RoleModel> roles;
 }

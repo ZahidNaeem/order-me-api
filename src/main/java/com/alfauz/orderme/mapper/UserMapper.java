@@ -22,7 +22,7 @@ public interface UserMapper {
     @Mapping(target = "activationStatus", qualifiedByName = "activationStatusModelToEntity")
     @Mapping(target = "userType", qualifiedByName = "userTypeModelToEntity")
     @Mapping(target = "userAddresses", qualifiedByName = "userAddressesModelsToEntities")
-    @Mapping(target = "userSaleItemCategories", qualifiedByName = "userSaleItemCategoriesModelsToEntities")
+    @Mapping(target = "userMainCategories", qualifiedByName = "userMainCategoriesModelsToEntities")
     @Mapping(target = "roles", qualifiedByName = "rolesModelsToEntities")
     UserEntity toEntity(final UserModel model);
 
@@ -30,7 +30,7 @@ public interface UserMapper {
     @Mapping(target = "activationStatus", qualifiedByName = "activationStatusEntityToModel")
     @Mapping(target = "userType", qualifiedByName = "userTypeEntityToModel")
     @Mapping(target = "userAddresses", qualifiedByName = "userAddressesEntitiesToModels")
-    @Mapping(target = "userSaleItemCategories", qualifiedByName = "userSaleItemCategoriesEntitiesToModels")
+    @Mapping(target = "userMainCategories", qualifiedByName = "userMainCategoriesEntitiesToModels")
     @Mapping(target = "roles", qualifiedByName = "rolesEntitiesToModels")
     UserModel toModel(final UserEntity user);
 
