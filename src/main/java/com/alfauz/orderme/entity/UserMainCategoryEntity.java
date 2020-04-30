@@ -17,6 +17,7 @@ import javax.validation.constraints.NotNull;
         @UniqueConstraint(columnNames = {"USER_ID", "MAIN_CAT_ID"})})
 public class UserMainCategoryEntity extends Auditable<Long> {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Long id;
 

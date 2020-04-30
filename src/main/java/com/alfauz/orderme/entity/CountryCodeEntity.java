@@ -23,6 +23,7 @@ import java.util.List;
 public class CountryCodeEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "COUNTRY_ID", precision = 0)
     private Long id;
 
