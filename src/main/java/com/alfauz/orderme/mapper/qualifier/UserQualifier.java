@@ -3,8 +3,6 @@ package com.alfauz.orderme.mapper.qualifier;
 import com.alfauz.orderme.entity.CountryCodeEntity;
 import com.alfauz.orderme.entity.RoleEntity;
 import com.alfauz.orderme.entity.UserMainCategoryEntity;
-import com.alfauz.orderme.enumeration.ActivationStatus;
-import com.alfauz.orderme.enumeration.UserType;
 import com.alfauz.orderme.mapper.RoleMapper;
 import com.alfauz.orderme.mapper.UserMainCategoryMapper;
 import com.alfauz.orderme.model.RoleModel;
@@ -27,53 +25,33 @@ public class UserQualifier {
     private final UserMainCategoryMapper useruserMainCategoryMapper;
     private final CountryCodeService countryCodeService;
 
-    @Named("rolesModelsToEntities")
+    @Named("rolesMTE")
     public Set<RoleEntity> rolesMTE(final Set<RoleModel> models) {
         return roleMapper.toEntities(models);
     }
 
-    @Named("rolesEntitiesToModels")
+    @Named("rolesETM")
     public Set<RoleModel> rolesETM(final Set<RoleEntity> entities) {
         return roleMapper.toModels(entities);
     }
 
-    @Named("userMainCategoriesModelsToEntities")
+    @Named("userMainCategoriesMTE")
     public List<UserMainCategoryEntity> userMainCategoriesMTE(final List<UserMainCategoryModel> models) {
         return useruserMainCategoryMapper.toEntities(models);
     }
 
-    @Named("userMainCategoriesEntitiesToModels")
+    @Named("userMainCategoriesETM")
     public List<UserMainCategoryModel> userMainCategoriesETM(final List<UserMainCategoryEntity> entities) {
         return useruserMainCategoryMapper.toModels(entities);
     }
 
-    @Named("userTypeModelToEntity")
-    public UserType userType(final String value) {
-        return UserType.fromValue(value);
-    }
-
-    @Named("userTypeEntityToModel")
-    public String userType(final UserType userType) {
-        return userType.getValue();
-    }
-
-    @Named("countryCodeModelToEntity")
+    @Named("countryCodeMTE")
     public CountryCodeEntity countryCode(final Long id) {
         return countryCodeService.findById(id);
     }
 
-    @Named("countryCodeEntityToModel")
+    @Named("countryCodeETM")
     public Long countryCode(final CountryCodeEntity entity) {
         return entity.getId();
-    }
-
-    @Named("activationStatusModelToEntity")
-    public ActivationStatus activationStatus(final String value) {
-        return ActivationStatus.fromValue(value);
-    }
-
-    @Named("activationStatusEntityToModel")
-    public String activationStatus(final ActivationStatus activationStatus) {
-        return activationStatus.getValue();
     }
 }

@@ -18,10 +18,10 @@ import java.util.List;
         injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface CountryCodeMapper {
 
-    @Mapping(target = "users", qualifiedByName = "usersModelsToEntities")
+    @Mapping(target = "users", qualifiedByName = "usersMTE")
     CountryCodeEntity toEntity(final CountryCodeModel model);
 
-    @Mapping(target = "users", qualifiedByName = "usersEntitiesToModels")
+    @Mapping(target = "users", qualifiedByName = "usersETM")
     CountryCodeModel toModel(final CountryCodeEntity entity);
 
     default List<CountryCodeEntity> toEntities(final List<CountryCodeModel> models) {

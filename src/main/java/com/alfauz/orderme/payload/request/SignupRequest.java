@@ -1,5 +1,7 @@
 package com.alfauz.orderme.payload.request;
 
+import com.alfauz.orderme.enumeration.ActivationStatus;
+import com.alfauz.orderme.enumeration.UserType;
 import com.alfauz.orderme.model.RoleModel;
 import com.alfauz.orderme.model.UserMainCategoryModel;
 import com.alfauz.orderme.model.UserSaleItemCategoryModel;
@@ -68,10 +70,10 @@ public class SignupRequest {
 
     @NotBlank(message = "User type must not be blank")
     @Size(min = 1, max = 20, message = "User type should has min. 1 and max. 20 characters")
-    private String userType;
+    private UserType userType;
 
     @NotBlank
-    private String activationStatus;
+    private ActivationStatus activationStatus;
 
     @Size(max = 2000, message = "Credit card should has max. 2000 characters")
     private String remarks;

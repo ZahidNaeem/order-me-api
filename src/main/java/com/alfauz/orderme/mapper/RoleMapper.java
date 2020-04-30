@@ -16,10 +16,8 @@ import java.util.Set;
         injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface RoleMapper {
 
-    @Mapping(target = "name", qualifiedByName = "nameModelToEntity")
     RoleEntity toEntity(final RoleModel roleModel);
 
-    @Mapping(target = "name", qualifiedByName = "nameEntityToModel")
     RoleModel toModel(final RoleEntity roleEntity);
 
     default Set<RoleEntity> toEntities(final Set<RoleModel> models) {

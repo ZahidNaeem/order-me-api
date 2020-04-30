@@ -18,18 +18,14 @@ import java.util.List;
 )
 public interface UserMapper {
 
-    @Mapping(target = "countryCode", qualifiedByName = "countryCodeModelToEntity")
-    @Mapping(target = "activationStatus", qualifiedByName = "activationStatusModelToEntity")
-    @Mapping(target = "userType", qualifiedByName = "userTypeModelToEntity")
-    @Mapping(target = "userMainCategories", qualifiedByName = "userMainCategoriesModelsToEntities")
-    @Mapping(target = "roles", qualifiedByName = "rolesModelsToEntities")
+    @Mapping(target = "countryCode", qualifiedByName = "countryCodeMTE")
+    @Mapping(target = "userMainCategories", qualifiedByName = "userMainCategoriesMTE")
+    @Mapping(target = "roles", qualifiedByName = "rolesMTE")
     UserEntity toEntity(final UserModel model);
 
-    @Mapping(target = "countryCode", qualifiedByName = "countryCodeEntityToModel")
-    @Mapping(target = "activationStatus", qualifiedByName = "activationStatusEntityToModel")
-    @Mapping(target = "userType", qualifiedByName = "userTypeEntityToModel")
-    @Mapping(target = "userMainCategories", qualifiedByName = "userMainCategoriesEntitiesToModels")
-    @Mapping(target = "roles", qualifiedByName = "rolesEntitiesToModels")
+    @Mapping(target = "countryCode", qualifiedByName = "countryCodeETM")
+    @Mapping(target = "userMainCategories", qualifiedByName = "userMainCategoriesETM")
+    @Mapping(target = "roles", qualifiedByName = "rolesETM")
     UserModel toModel(final UserEntity user);
 
     default List<UserEntity> toEntities(final List<UserModel> models) {

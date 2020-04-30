@@ -1,6 +1,8 @@
 package com.alfauz.orderme.model;
 
 import com.alfauz.orderme.entity.Auditable;
+import com.alfauz.orderme.enumeration.ActivationStatus;
+import com.alfauz.orderme.enumeration.UserType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,8 +30,8 @@ public class UserModel extends Auditable<Long> {
     private String password;
     private String creditCardNo;
     private Date ccExpiryDate;
-    private String userType;
-    private String activationStatus;
+    private UserType userType;
+    private ActivationStatus activationStatus;
     private String remarks;
     private List<UserMainCategoryModel> userMainCategories;
     private Set<RoleModel> roles;
