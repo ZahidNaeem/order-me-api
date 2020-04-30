@@ -91,6 +91,7 @@ public class AuthController {
                 .activationStatus(signUpRequest.getActivationStatus())
                 .remarks(signUpRequest.getRemarks())
                 .roles(signUpRequest.getRoles())
+                .userMainCategories(signUpRequest.getUserMainCategories())
                 .build();
 
         final UserEntity userEntity = userMapper.toEntity(userModel);
