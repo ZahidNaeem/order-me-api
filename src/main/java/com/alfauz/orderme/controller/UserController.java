@@ -102,7 +102,7 @@ public class UserController {
                 .map(role -> role.getName().name())
                 .collect(Collectors.toSet());
 
-        final String name = user.getFirstName() + (user.getMiddleName() != null ? " " + user.getMiddleName() : "") + " " + user.getLastName();
+        final String name = user.getFirstName() + (user.getMiddleName() != null ? " " + user.getMiddleName() : "") + (user.getLastName() != null ? " " + user.getLastName() : "");
 
         final UserSummary userSummary = UserSummary.builder()
                 .id(user.getId())
