@@ -4,13 +4,11 @@ import com.alfauz.orderme.enumeration.ActivationStatus;
 import com.alfauz.orderme.enumeration.UserType;
 import com.alfauz.orderme.model.RoleModel;
 import com.alfauz.orderme.model.UserMainCategoryModel;
-import com.alfauz.orderme.model.UserSaleItemCategoryModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

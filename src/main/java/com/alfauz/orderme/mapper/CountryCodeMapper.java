@@ -1,10 +1,8 @@
 package com.alfauz.orderme.mapper;
 
 import com.alfauz.orderme.entity.CountryCodeEntity;
-import com.alfauz.orderme.entity.UserEntity;
 import com.alfauz.orderme.mapper.qualifier.CountryCodeQualifier;
 import com.alfauz.orderme.model.CountryCodeModel;
-import com.alfauz.orderme.model.UserModel;
 import org.apache.commons.collections.CollectionUtils;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;

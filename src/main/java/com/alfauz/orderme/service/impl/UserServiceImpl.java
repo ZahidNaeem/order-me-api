@@ -1,7 +1,6 @@
 package com.alfauz.orderme.service.impl;
 
 import com.alfauz.orderme.entity.CountryCodeEntity;
-import com.alfauz.orderme.entity.RoleEntity;
 import com.alfauz.orderme.entity.UserEntity;
 import com.alfauz.orderme.entity.UserMainCategoryEntity;
 import com.alfauz.orderme.exception.BadRequestException;
@@ -16,7 +15,6 @@ import org.apache.commons.collections.CollectionUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Set;
 
 @Service
 @RequiredArgsConstructor

@@ -1,13 +1,11 @@
 package com.alfauz.orderme.mapper.qualifier;
 
-import com.alfauz.orderme.entity.MainCategoryEntity;
 import com.alfauz.orderme.entity.SubCategoryEntity;
 import com.alfauz.orderme.entity.UserMainCategoryEntity;
 import com.alfauz.orderme.mapper.SubCategoryMapper;
 import com.alfauz.orderme.mapper.UserMainCategoryMapper;
 import com.alfauz.orderme.model.SubCategoryModel;
 import com.alfauz.orderme.model.UserMainCategoryModel;
-import com.alfauz.orderme.service.MainCategoryService;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.mapstruct.Named;

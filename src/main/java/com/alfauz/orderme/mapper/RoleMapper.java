@@ -5,7 +5,6 @@ import com.alfauz.orderme.mapper.qualifier.RoleQualifier;
 import com.alfauz.orderme.model.RoleModel;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.springframework.util.CollectionUtils;
 
 import java.util.HashSet;
