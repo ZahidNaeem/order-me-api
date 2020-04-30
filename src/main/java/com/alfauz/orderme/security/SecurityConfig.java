@@ -106,6 +106,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers(HttpMethod.GET, "/countryCodes/")
                 .permitAll()
+                .antMatchers(HttpMethod.GET, "/mainCategories/")
+                .permitAll()
                 .anyRequest()
                 .authenticated();
 

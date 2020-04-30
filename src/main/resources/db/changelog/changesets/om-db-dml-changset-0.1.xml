@@ -2147,6 +2147,7 @@
             <column name="COUNTRY_ID" value="162"/>
             <column name="PHONE" value="3222666605"/>
             <column name="EMAIL" value="abc@abc.com"/>
+            <column name="ADDRESS" value="Gajju Matta"/>
             <column name="USERNAME" value="zahid"/>
             <column name="PASSWORD" value="$2y$12$RonM07a5gzYti.hIqyiAC.fvl66hY8e/FrKqkrN5IIaOWD8ZHdd7e"/>
             <column name="USER_TYPE" value="SHOP_OWNER"/>
@@ -2167,54 +2168,13 @@
             <column name="COUNTRY_ID" value="162"/>
             <column name="PHONE" value="3222666607"/>
             <column name="EMAIL" value="abc2@abc2.com"/>
+            <column name="ADDRESS" value="Gajju Matta"/>
             <column name="USERNAME" value="abid"/>
             <column name="PASSWORD" value="$2y$12$RonM07a5gzYti.hIqyiAC.fvl66hY8e/FrKqkrN5IIaOWD8ZHdd7e"/>
             <column name="CREDIT_CARD_NO" value="123-456-789"/>
             <column name="CC_EXPIRY_DATE" valueDate="sysdate"/>
             <column name="USER_TYPE" value="CUSTOMER"/>
             <column name="ACTIVATION_STATUS" value="ACTIVE"/>
-        </insert>
-    </changeSet>
-    <changeSet author="Zahid Naeem" id="insert-home-address-for-user-zahid">
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_addresses WHERE user_id = 1 and lower(address) =
-                'gajju matta';
-            </sqlCheck>
-        </preConditions>
-        <comment>insert home address for user zahid</comment>
-        <insert schemaName="om" tableName="user_addresses">
-            <column name="ID" value="1"/>
-            <column name="USER_ID" value="1"/>
-            <column name="ADDRESS" value="Gajju Matta"/>
-            <column name="ADDRESS_TYPE" value="HOME_ADDRESS"/>
-        </insert>
-    </changeSet>
-    <changeSet author="Zahid Naeem" id="insert-office-address-for-user-zahid">
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_addresses WHERE user_id = 1 and lower(address) =
-                'g-9';
-            </sqlCheck>
-        </preConditions>
-        <comment>insert office address for user zahid</comment>
-        <insert schemaName="om" tableName="user_addresses">
-            <column name="ID" value="2"/>
-            <column name="USER_ID" value="1"/>
-            <column name="ADDRESS" value="G-9"/>
-            <column name="ADDRESS_TYPE" value="OFFICE_ADDRESS"/>
-        </insert>
-    </changeSet>
-    <changeSet author="Zahid Naeem" id="insert-office-address-for-user-abid">
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM om.user_addresses WHERE user_id = 2 and lower(address) =
-                'fc college';
-            </sqlCheck>
-        </preConditions>
-        <comment>insert office address for user abid</comment>
-        <insert schemaName="om" tableName="user_addresses">
-            <column name="ID" value="3"/>
-            <column name="USER_ID" value="2"/>
-            <column name="ADDRESS" value="FC College"/>
-            <column name="ADDRESS_TYPE" value="OFFICE_ADDRESS"/>
         </insert>
     </changeSet>
     <changeSet author="Zahid Naeem" id="insert-role-pm-for-user-zahid">

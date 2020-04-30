@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -23,6 +22,8 @@ public class UserModel extends Auditable<Long> {
     private Long countryCode;
     private String phone;
     private String email;
+    private String address;
+    private String branchName;
     private String username;
     private String password;
     private String creditCardNo;
@@ -30,7 +31,6 @@ public class UserModel extends Auditable<Long> {
     private String userType;
     private String activationStatus;
     private String remarks;
-    private List<UserAddressModel> userAddresses;
     private List<UserMainCategoryModel> userMainCategories;
     private Set<RoleModel> roles;
 }

@@ -45,8 +45,7 @@ public class UserEntity extends Auditable<Long> {
     @Column(name = "MIDDLE_NAME")
     private String middleName;
 
-    @NotBlank(message = "Last name must not be blank")
-    @Size(min = 1, max = 20, message = "Last name should has min. 1 and max. 20 characters")
+    @Size(max = 20, message = "Last name should has max. 20 characters")
     @Column(name = "LAST_NAME")
     private String lastName;
 
@@ -66,6 +65,15 @@ public class UserEntity extends Auditable<Long> {
     @Email
     @Column(name = "EMAIL", unique = true)
     private String email;
+
+    @NotBlank(message = "Address must not be blank")
+    @Size(min = 3, max = 50, message = "Address should has min. 3 and max. 500 characters")
+    @Column(name = "ADDRESS")
+    private String address;
+
+    @Size(max = 50, message = "Email should ha max. 50 characters")
+    @Column(name = "BRANCH_NAME")
+    private String branchName;
 
     @NotBlank(message = "Username must not be blank")
     @Size(min = 3, max = 50, message = "Username should has min. 3 and max. 50 characters")
@@ -97,10 +105,6 @@ public class UserEntity extends Auditable<Long> {
     @Size(max = 2000, message = "Credit card should has max. 2000 characters")
     @Column(name = "REMARKS")
     private String remarks;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-    @Cascade(value = CascadeType.ALL)
-    private List<UserAddressEntity> userAddresses;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     @Cascade(value = CascadeType.ALL)

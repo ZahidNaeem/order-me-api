@@ -1,13 +1,13 @@
 package com.alfauz.orderme.payload.request;
 
 import com.alfauz.orderme.model.RoleModel;
-import com.alfauz.orderme.model.UserAddressModel;
 import com.alfauz.orderme.model.UserSaleItemCategoryModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -30,7 +30,6 @@ public class SignupRequest {
     @Size(max = 20, message = "Middle name should has max. 20 characters")
     private String middleName;
 
-    @NotBlank(message = "Last name must not be blank")
     @Size(max = 20, message = "Last name should has max. 20 characters")
     private String lastName;
 
@@ -45,6 +44,13 @@ public class SignupRequest {
     @Size(min = 6, max = 50, message = "Email should has min. 6 and max. 50 characters")
     @Email
     private String email;
+
+    @NotBlank(message = "Address must not be blank")
+    @Size(min = 3, max = 50, message = "Address should has min. 3 and max. 500 characters")
+    private String address;
+
+    @Size(max = 50, message = "Email should ha max. 50 characters")
+    private String branchName;
 
     @NotBlank(message = "Username must not be blank")
     @Size(min = 3, max = 50, message = "Username should has min. 3 and max. 50 characters")
@@ -68,9 +74,6 @@ public class SignupRequest {
 
     @Size(max = 2000, message = "Credit card should has max. 2000 characters")
     private String remarks;
-
-    @Valid
-    private List<UserAddressModel> userAddresses;
 
     @Valid
     private List<UserSaleItemCategoryModel> userSaleItemCategories;

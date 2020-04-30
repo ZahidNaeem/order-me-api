@@ -5,12 +5,10 @@ import com.alfauz.orderme.entity.UserEntity;
 import com.alfauz.orderme.exception.BadRequestException;
 import com.alfauz.orderme.repo.UserRepo;
 import com.alfauz.orderme.service.CountryCodeService;
-import com.alfauz.orderme.service.UserAddressService;
 import com.alfauz.orderme.service.UserService;
 import com.alfauz.orderme.utils.Miscellaneous;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 
@@ -20,7 +18,6 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepo userRepo;
     private final CountryCodeService countryCodeService;
-    private final UserAddressService userAddressService;
 
     @Override
     public List<UserEntity> findAll() {
@@ -75,15 +72,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserEntity save(UserEntity userEntity) {
         Miscellaneous.constraintViolation(userEntity);
-        userAddressService.deleteInBatch(userEntity.getUserAddresses());
-        if (!CollectionUtils.isEmpty(userEntity.getUserAddresses())) {
-            userEntity.getUserAddresses()
-                    .forEach(address -> {
-                        if (address.getUser() == null) {
-                            address.setUser(userEntity);
-                        }
-                    });
-        }
         try {
             return userRepo.saveAndFlush(userEntity);
         } catch (Exception e) {

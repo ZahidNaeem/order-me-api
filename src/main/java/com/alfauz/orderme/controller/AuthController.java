@@ -81,6 +81,8 @@ public class AuthController {
                 .countryCode(signUpRequest.getCountryCode())
                 .phone(signUpRequest.getPhone())
                 .email(signUpRequest.getEmail())
+                .address(signUpRequest.getAddress())
+                .branchName(signUpRequest.getBranchName())
                 .username(signUpRequest.getUsername())
                 .password(passwordEncoder.encode(signUpRequest.getPassword()))
                 .creditCardNo(signUpRequest.getCreditCardNo())
@@ -88,7 +90,6 @@ public class AuthController {
                 .userType(signUpRequest.getUserType())
                 .activationStatus(signUpRequest.getActivationStatus())
                 .remarks(signUpRequest.getRemarks())
-                .userAddresses(signUpRequest.getUserAddresses())
                 .roles(signUpRequest.getRoles())
                 .build();
 

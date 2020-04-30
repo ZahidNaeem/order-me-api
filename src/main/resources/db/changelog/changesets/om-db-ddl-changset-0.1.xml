@@ -26,16 +26,16 @@
                 <constraints primaryKey="true" primaryKeyName="country_codes_pk"/>
             </column>
             <column name="COUNTRY" type="VARCHAR(50)">
-                <constraints nullable="false"
+                <constraints nullable="false" notNullConstraintName="COUNTRY_CODES_COUNTRY_NN"
                              uniqueConstraintName="country_codes_uk1" unique="true"/>
             </column>
             <column name="ALPHA2_CODE" type="VARCHAR(2)">
-                <constraints nullable="false"/>
+                <constraints nullable="false" notNullConstraintName="COUNTRY_CODES_ALPHA2_NN"/>
             </column>
             <column name="ALPHA3_CODE" type="VARCHAR(3)"/>
             <column name="CAPITAL_CITY" type="VARCHAR(50)"/>
             <column name="DIALING_CODE" type="VARCHAR(10)">
-                <constraints nullable="false"/>
+                <constraints nullable="false" notNullConstraintName="COUNTRY_CODES_DIALING_CODE_NN"/>
             </column>
         </createTable>
     </changeSet>
@@ -51,7 +51,7 @@
                 <constraints primaryKey="true" primaryKeyName="main_categories_pk"/>
             </column>
             <column name="MAIN_CAT_NAME" type="VARCHAR(50)">
-                <constraints nullable="false"
+                <constraints nullable="false" notNullConstraintName="MAIN_CAT_NAME_NN"
                              unique="true" uniqueConstraintName="main_categories_uk1"/>
             </column>
         </createTable>
@@ -68,11 +68,11 @@
                 <constraints primaryKey="true" primaryKeyName="sub_categories_pk"/>
             </column>
             <column name="SUB_CAT_NAME" type="VARCHAR(50)">
-                <constraints nullable="false"
+                <constraints nullable="false" notNullConstraintName="SUB_CAT_NAME_NN"
                              unique="true" uniqueConstraintName="sub_categories_uk1"/>
             </column>
             <column name="MAIN_CAT_ID" type="INT">
-                <constraints nullable="false"
+                <constraints nullable="false" notNullConstraintName="SUB_CATEGORIES_MAIN_CAT_ID_NN"
                              foreignKeyName="SUB_CATEGORIES_MAIN_CAT_ID_FK"
                              references="main_categories(main_cat_id)"/>
             </column>
@@ -90,7 +90,8 @@
                 <constraints primaryKey="true" primaryKeyName="roles_pk"/>
             </column>
             <column name="NAME" type="VARCHAR(20)">
-                <constraints nullable="false" unique="true" uniqueConstraintName="roles_name_uk"/>
+                <constraints nullable="false" notNullConstraintName="ROLES_NAME_NN"
+                             unique="true" uniqueConstraintName="roles_name_uk"/>
             </column>
             <column name="CREATED_BY" type="INT"/>
             <column name="CREATION_DATE" type="TIMESTAMP"/>
@@ -110,37 +111,42 @@
                 <constraints primaryKey="true" primaryKeyName="users_pk"/>
             </column>
             <column name="FIRST_NAME" type="VARCHAR(20)">
-                <constraints nullable="false"/>
+                <constraints nullable="false" notNullConstraintName="USERS_FIRST_NAME_NN"/>
             </column>
             <column name="MIDDLE_NAME" type="VARCHAR(20)">
             </column>
-            <column name="LAST_NAME" type="VARCHAR(20)">
-                <constraints nullable="false"/>
-            </column>
+            <column name="LAST_NAME" type="VARCHAR(20)"/>
             <column name="COUNTRY_ID" type="INT">
-                <constraints nullable="false"
+                <constraints nullable="false" notNullConstraintName="USERS_COUNTRY_ID_NN"
                              foreignKeyName="USERS_COUNTRY_ID_FK"
                              references="country_codes(country_id)"/>
             </column>
             <column name="PHONE" type="VARCHAR(50)">
-                <constraints nullable="false" unique="true" uniqueConstraintName="users_phone_uk"/>
+                <constraints nullable="false" notNullConstraintName="USERS_PHONE_NN"
+                             unique="true" uniqueConstraintName="users_phone_uk"/>
             </column>
             <column name="EMAIL" type="VARCHAR(50)">
-                <constraints nullable="false" unique="true" uniqueConstraintName="users_email_uk"/>
+                <constraints nullable="false" notNullConstraintName="USERS_EMAIL_NN"
+                             unique="true" uniqueConstraintName="users_email_uk"/>
             </column>
+            <column name="ADDRESS" type="VARCHAR(500)">
+                <constraints nullable="false" notNullConstraintName="USERS_ADDRESS_NN"/>
+            </column>
+            <column name="BRANCH_NAME" type="VARCHAR(100)"/>
             <column name="USERNAME" type="VARCHAR(50)">
-                <constraints nullable="false" unique="true" uniqueConstraintName="users_username_uk"/>
+                <constraints nullable="false" notNullConstraintName="USERS_USERNAME_NN"
+                             unique="true" uniqueConstraintName="users_username_uk"/>
             </column>
             <column name="PASSWORD" type="VARCHAR(100)">
-                <constraints nullable="false"/>
+                <constraints nullable="false" notNullConstraintName="USERS_PASSWORD_NN"/>
             </column>
             <column name="CREDIT_CARD_NO" type="VARCHAR(50)"/>
             <column name="CC_EXPIRY_DATE" type="DATE"/>
             <column name="USER_TYPE" type="VARCHAR(20)">
-                <constraints nullable="false"/>
+                <constraints nullable="false" notNullConstraintName="USERS_USER_TYPE_NN"/>
             </column>
             <column name="ACTIVATION_STATUS" type="VARCHAR(20)">
-                <constraints nullable="false"/>
+                <constraints nullable="false" notNullConstraintName="USERS_ACTIVATION_STATUS_NN"/>
             </column>
             <column name="REMARKS" type="VARCHAR(2000)"/>
             <column name="CREATED_BY" type="INT"/>
@@ -148,36 +154,7 @@
             <column name="LAST_UPDATED_BY" type="INT"/>
             <column name="LAST_UPDATE_DATE" type="TIMESTAMP"/>
         </createTable>
-    </changeSet>
-    <changeSet author="Zahid Naeem" id="create-table-user_addresses">
-        <preConditions onFail="MARK_RAN">
-            <not>
-                <tableExists tableName="user_addresses"/>
-            </not>
-        </preConditions>
-        <comment>Creating table user_addresses</comment>
-        <createTable schemaName="om" tableName="user_addresses">
-            <column name="ID" type="INT">
-                <constraints primaryKey="true" primaryKeyName="user_addresses_pk"/>
-            </column>
-            <column name="USER_ID" type="INT">
-                <constraints nullable="false"
-                             foreignKeyName="USER_ADDRESSES_USER_ID_FK"
-                             references="users(id)"/>
-            </column>
-            <column name="ADDRESS" type="VARCHAR(200)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="ADDRESS_TYPE" type="VARCHAR(20)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="CREATED_BY" type="INT"/>
-            <column name="CREATION_DATE" type="TIMESTAMP"/>
-            <column name="LAST_UPDATED_BY" type="INT"/>
-            <column name="LAST_UPDATE_DATE" type="TIMESTAMP"/>
-        </createTable>
-        <addUniqueConstraint constraintName="user_addresses_uk1" tableName="user_addresses"
-                             columnNames="USER_ID, ADDRESS"/>
+        <addUniqueConstraint tableName="users" columnNames="FIRST_NAME, BRANCH_NAME" constraintName="users_uk1"/>
     </changeSet>
     <changeSet author="Zahid Naeem" id="create-table-user_roles">
         <preConditions onFail="MARK_RAN">
@@ -188,12 +165,12 @@
         <comment>Creating table User_Roles</comment>
         <createTable schemaName="om" tableName="user_roles">
             <column name="USER_ID" type="INT">
-                <constraints nullable="false"
+                <constraints nullable="false" notNullConstraintName="USER_ROLES_USER_ID_NN"
                              foreignKeyName="USER_ROLES_USER_ID_FK"
                              references="users(id)"/>
             </column>
             <column name="ROLE_ID" type="INT">
-                <constraints nullable="false"
+                <constraints nullable="false" notNullConstraintName="USER_ROLES_ROLE_ID_NN"
                              foreignKeyName="USER_ROLES_ROLE_ID_FK"
                              references="roles(id)"/>
             </column>
@@ -213,12 +190,12 @@
                 <constraints primaryKey="true" primaryKeyName="user_main_categories_pk"/>
             </column>
             <column name="USER_ID" type="INT">
-                <constraints nullable="false"
+                <constraints nullable="false" notNullConstraintName="USR_MAIN_CATS_USR_ID_NN"
                              foreignKeyName="USR_MAIN_CATS_USR_ID_FK"
                              references="users(id)"/>
             </column>
             <column name="MAIN_CAT_ID" type="INT">
-                <constraints nullable="false"
+                <constraints nullable="false" notNullConstraintName="USR_MAIN_CATS_MAIN_CAT_NN"
                              foreignKeyName="USR_MAIN_CATS_MAIN_CAT_FK"
                              references="main_categories(main_cat_id)"/>
             </column>
