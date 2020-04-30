@@ -1,6 +1,7 @@
 package com.alfauz.orderme.payload.request;
 
 import com.alfauz.orderme.model.RoleModel;
+import com.alfauz.orderme.model.UserMainCategoryModel;
 import com.alfauz.orderme.model.UserSaleItemCategoryModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -76,7 +77,7 @@ public class SignupRequest {
     private String remarks;
 
     @Valid
-    private List<UserSaleItemCategoryModel> userSaleItemCategories;
+    private List<UserMainCategoryModel> userMainCategories;
 
     private Set<RoleModel> roles;
 }
