@@ -1,16 +1,22 @@
 package com.alfauz.orderme.service.impl;
 
 import com.alfauz.orderme.entity.CountryCodeEntity;
+import com.alfauz.orderme.entity.RoleEntity;
 import com.alfauz.orderme.entity.UserEntity;
+import com.alfauz.orderme.entity.UserMainCategoryEntity;
 import com.alfauz.orderme.exception.BadRequestException;
+import com.alfauz.orderme.repo.RoleRepo;
+import com.alfauz.orderme.repo.UserMainCategoryRepo;
 import com.alfauz.orderme.repo.UserRepo;
 import com.alfauz.orderme.service.CountryCodeService;
 import com.alfauz.orderme.service.UserService;
 import com.alfauz.orderme.utils.Miscellaneous;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -18,6 +24,8 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepo userRepo;
     private final CountryCodeService countryCodeService;
+    private final UserMainCategoryRepo userMainCategoryRepo;
+    private final RoleRepo roleRepo;
 
     @Override
     public List<UserEntity> findAll() {
@@ -72,7 +80,19 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserEntity save(UserEntity userEntity) {
         Miscellaneous.constraintViolation(userEntity);
+        final List<UserMainCategoryEntity> userMainCategories = userEntity.getUserMainCategories();
+        if (CollectionUtils.isNotEmpty(userMainCategories)) {
+            userMainCategories.forEach(cat -> cat.setUser(userEntity));
+        }
         try {
+            final Long id = userEntity.getId();
+            if (id != null) {
+                final UserEntity entity = userRepo.findById(id).orElse(null);
+                if (entity != null) {
+                    userMainCategoryRepo.deleteInBatch(entity.getUserMainCategories());
+                    roleRepo.deleteInBatch(entity.getRoles());
+                }
+            }
             return userRepo.saveAndFlush(userEntity);
         } catch (Exception e) {
             e.printStackTrace();
