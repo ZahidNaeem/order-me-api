@@ -1825,6 +1825,50 @@
             <column name="MAIN_CAT_ID" value="1"/>
             <column name="MAIN_CAT_NAME" value="Food"/>
         </insert>
+        <insert schemaName="om" tableName="main_categories">
+            <column name="MAIN_CAT_ID" value="2"/>
+            <column name="MAIN_CAT_NAME" value="Medicine"/>
+        </insert>
+        <insert schemaName="om" tableName="main_categories">
+            <column name="MAIN_CAT_ID" value="3"/>
+            <column name="MAIN_CAT_NAME" value="Electronics"/>
+        </insert>
+        <insert schemaName="om" tableName="main_categories">
+            <column name="MAIN_CAT_ID" value="4"/>
+            <column name="MAIN_CAT_NAME" value="Grocery"/>
+        </insert>
+        <insert schemaName="om" tableName="main_categories">
+            <column name="MAIN_CAT_ID" value="5"/>
+            <column name="MAIN_CAT_NAME" value="Clothes"/>
+        </insert>
+        <insert schemaName="om" tableName="main_categories">
+            <column name="MAIN_CAT_ID" value="6"/>
+            <column name="MAIN_CAT_NAME" value="Sanitary Items"/>
+        </insert>
+        <insert schemaName="om" tableName="main_categories">
+            <column name="MAIN_CAT_ID" value="7"/>
+            <column name="MAIN_CAT_NAME" value="Hardware Items"/>
+        </insert>
+        <insert schemaName="om" tableName="main_categories">
+            <column name="MAIN_CAT_ID" value="8"/>
+            <column name="MAIN_CAT_NAME" value="Fruits"/>
+        </insert>
+        <insert schemaName="om" tableName="main_categories">
+            <column name="MAIN_CAT_ID" value="9"/>
+            <column name="MAIN_CAT_NAME" value="Vegetables"/>
+        </insert>
+        <insert schemaName="om" tableName="main_categories">
+            <column name="MAIN_CAT_ID" value="10"/>
+            <column name="MAIN_CAT_NAME" value="Meat"/>
+        </insert>
+        <insert schemaName="om" tableName="main_categories">
+            <column name="MAIN_CAT_ID" value="11"/>
+            <column name="MAIN_CAT_NAME" value="Books"/>
+        </insert>
+        <insert schemaName="om" tableName="main_categories">
+            <column name="MAIN_CAT_ID" value="12"/>
+            <column name="MAIN_CAT_NAME" value="Shoes"/>
+        </insert>
     </changeSet>
     <changeSet author="Zahid Naeem" id="insert-sub_categories">
         <preConditions onFail="MARK_RAN">
@@ -2144,7 +2188,7 @@
             <column name="ID" value="1"/>
             <column name="FIRST_NAME" value="Zahid"/>
             <column name="LAST_NAME" value="Naeem"/>
-            <column name="COUNTRY_ID" value="162"/>
+            <column name="COUNTRY_ID" value="152"/>
             <column name="PHONE" value="3222666605"/>
             <column name="EMAIL" value="abc@abc.com"/>
             <column name="ADDRESS" value="Gajju Matta"/>
@@ -2165,7 +2209,7 @@
             <column name="ID" value="2"/>
             <column name="FIRST_NAME" value="Abid"/>
             <column name="LAST_NAME" value="Naeem"/>
-            <column name="COUNTRY_ID" value="162"/>
+            <column name="COUNTRY_ID" value="152"/>
             <column name="PHONE" value="3222666607"/>
             <column name="EMAIL" value="abc2@abc2.com"/>
             <column name="ADDRESS" value="Gajju Matta"/>
@@ -2173,6 +2217,7 @@
             <column name="PASSWORD" value="$2y$12$RonM07a5gzYti.hIqyiAC.fvl66hY8e/FrKqkrN5IIaOWD8ZHdd7e"/>
             <column name="CREDIT_CARD_NO" value="123-456-789"/>
             <column name="CC_EXPIRY_DATE" valueDate="sysdate"/>
+            <column name="CVC" value="123"/>
             <column name="USER_TYPE" value="CUSTOMER"/>
             <column name="ACTIVATION_STATUS" value="ACTIVE"/>
         </insert>

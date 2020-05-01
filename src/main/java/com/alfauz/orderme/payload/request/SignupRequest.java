@@ -1,6 +1,7 @@
 package com.alfauz.orderme.payload.request;
 
 import com.alfauz.orderme.enumeration.ActivationStatus;
+import com.alfauz.orderme.enumeration.RoleName;
 import com.alfauz.orderme.enumeration.UserType;
 import com.alfauz.orderme.model.RoleModel;
 import com.alfauz.orderme.model.UserMainCategoryModel;
@@ -9,6 +10,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -66,11 +70,16 @@ public class SignupRequest {
 
     private Date ccExpiryDate;
 
-    @NotBlank(message = "User type must not be blank")
-    @Size(min = 1, max = 20, message = "User type should has min. 1 and max. 20 characters")
+    @Size(max = 10, message = "CVC should has max. 10 characters")
+    @Column(name = "CVC")
+    private String cvc;
+
+    @NotNull(message = "User type must not be null")
+    @Enumerated(EnumType.STRING)
     private UserType userType;
 
-    @NotBlank
+    @NotNull(message = "activation status must not be null")
+    @Enumerated(EnumType.STRING)
     private ActivationStatus activationStatus;
 
     @Size(max = 2000, message = "Credit card should has max. 2000 characters")
@@ -79,5 +88,5 @@ public class SignupRequest {
     @Valid
     private List<UserMainCategoryModel> userMainCategories;
 
-    private Set<RoleModel> roles;
+    private Set<RoleName> roles;
 }

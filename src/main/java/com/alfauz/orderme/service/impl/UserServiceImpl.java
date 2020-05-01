@@ -94,7 +94,7 @@ public class UserServiceImpl implements UserService {
             return userRepo.saveAndFlush(userEntity);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new BadRequestException(e.getMessage());
+            throw new BadRequestException(Miscellaneous.getNestedException(e).getMessage());
         }
     }
 }

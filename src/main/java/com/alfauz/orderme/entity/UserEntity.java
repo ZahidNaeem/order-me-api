@@ -92,13 +92,17 @@ public class UserEntity extends Auditable<Long> {
     @Column(name = "CC_EXPIRY_DATE")
     private Date ccExpiryDate;
 
-    @Enumerated(EnumType.STRING)
+    @Size(max = 10, message = "CVC should has max. 10 characters")
+    @Column(name = "CVC")
+    private String cvc;
+
     @NotNull
+    @Enumerated(EnumType.STRING)
     @Column(name = "USER_TYPE")
     private UserType userType;
 
-    @Enumerated(EnumType.STRING)
     @NotNull
+    @Enumerated(EnumType.STRING)
     @Column(name = "ACTIVATION_STATUS")
     private ActivationStatus activationStatus;
 

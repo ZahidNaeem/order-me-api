@@ -1,6 +1,8 @@
 package com.alfauz.orderme.enumeration;
 
 import com.alfauz.orderme.exception.RoleNameNotFoundException;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.Arrays;
 
@@ -15,10 +17,12 @@ public enum RoleName {
         this.value = value;
     }
 
+    @JsonValue
     public String getValue() {
         return value;
     }
 
+    @JsonCreator
     public static RoleName fromValue(final String value) {
         return Arrays.stream(RoleName.values())
                 .filter(role -> value.equals(role.getValue()))

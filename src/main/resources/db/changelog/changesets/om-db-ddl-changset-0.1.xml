@@ -142,6 +142,7 @@
             </column>
             <column name="CREDIT_CARD_NO" type="VARCHAR(50)"/>
             <column name="CC_EXPIRY_DATE" type="DATE"/>
+            <column name="CVC" type="VARCHAR(10)"/>
             <column name="USER_TYPE" type="VARCHAR(20)">
                 <constraints nullable="false" notNullConstraintName="USERS_USER_TYPE_NN"/>
             </column>

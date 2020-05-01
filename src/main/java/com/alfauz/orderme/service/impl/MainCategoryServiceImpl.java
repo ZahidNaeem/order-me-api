@@ -4,6 +4,7 @@ import com.alfauz.orderme.entity.MainCategoryEntity;
 import com.alfauz.orderme.exception.BadRequestException;
 import com.alfauz.orderme.repo.MainCategoryRepo;
 import com.alfauz.orderme.service.MainCategoryService;
+import com.alfauz.orderme.utils.Miscellaneous;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,7 +34,7 @@ public class MainCategoryServiceImpl implements MainCategoryService {
         try {
             return mainCategoryRepo.saveAndFlush(entity);
         } catch (Exception e) {
-            throw new BadRequestException(e.getMessage());
+            throw new BadRequestException(Miscellaneous.getNestedException(e).getMessage());
         }
     }
 }

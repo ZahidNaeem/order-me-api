@@ -1,15 +1,19 @@
 package com.alfauz.orderme.controller;
 
+import com.alfauz.orderme.entity.RoleEntity;
 import com.alfauz.orderme.entity.UserEntity;
+import com.alfauz.orderme.enumeration.RoleName;
 import com.alfauz.orderme.exception.BadRequestException;
 import com.alfauz.orderme.exception.InternalServerErrorException;
 import com.alfauz.orderme.mapper.UserMapper;
+import com.alfauz.orderme.model.RoleModel;
 import com.alfauz.orderme.model.UserModel;
 import com.alfauz.orderme.payload.request.LoginRequest;
 import com.alfauz.orderme.payload.request.SignupRequest;
 import com.alfauz.orderme.payload.response.ApiResponse;
 import com.alfauz.orderme.payload.response.JwtAuthenticationResponse;
 import com.alfauz.orderme.security.jwt.JwtProvider;
+import com.alfauz.orderme.service.RoleService;
 import com.alfauz.orderme.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +27,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/auth")
@@ -34,10 +40,10 @@ public class AuthController {
     private final UserMapper userMapper;
     private final PasswordEncoder passwordEncoder;
     private final JwtProvider tokenProvider;
+    private final RoleService roleService;
 
     @PostMapping("/signin")
     public ResponseEntity<ApiResponse<JwtAuthenticationResponse>> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
-
         try {
             final Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
@@ -90,11 +96,17 @@ public class AuthController {
                 .userType(signUpRequest.getUserType())
                 .activationStatus(signUpRequest.getActivationStatus())
                 .remarks(signUpRequest.getRemarks())
-                .roles(signUpRequest.getRoles())
                 .userMainCategories(signUpRequest.getUserMainCategories())
                 .build();
 
+        final Set<RoleEntity> roles = signUpRequest.getRoles()
+                .stream()
+                .map(role -> roleService.findByName(role))
+                .collect(Collectors.toSet());
+
         final UserEntity userEntity = userMapper.toEntity(userModel);
+        userEntity.setRoles(roles);
+
         final UserEntity result = userService.save(userEntity);
 
         final URI location = ServletUriComponentsBuilder

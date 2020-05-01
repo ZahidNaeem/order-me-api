@@ -8,6 +8,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -30,7 +32,12 @@ public class UserModel extends Auditable<Long> {
     private String password;
     private String creditCardNo;
     private Date ccExpiryDate;
+    private String cvc;
+
+    @Enumerated(EnumType.STRING)
     private UserType userType;
+
+    @Enumerated(EnumType.STRING)
     private ActivationStatus activationStatus;
     private String remarks;
     private List<UserMainCategoryModel> userMainCategories;

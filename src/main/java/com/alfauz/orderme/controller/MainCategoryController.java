@@ -24,16 +24,11 @@ public class MainCategoryController {
 
     private final MainCategoryService mainCategoryService;
     private final MainCategoryMapper mainCategoryMapper;
-    private List<MainCategoryModel> models = new ArrayList<>();
-
-    @PostConstruct
-    public void init() {
-        models = mainCategoryMapper.toModels(mainCategoryService.findAll());
-    }
 
     @GetMapping
     public ResponseEntity<ApiResponse<List<MainCategoryModel>>> findAll() {
-        final Stream<MainCategoryModel> modelStream = models.stream().sorted(Comparator.comparing(MainCategoryModel::getMainCatName));
+        final List<MainCategoryModel> models = mainCategoryMapper.toModels(mainCategoryService.findAll());
+        final Stream<MainCategoryModel> modelStream = models.stream().sorted(Comparator.comparing(MainCategoryModel::getId));
         final List<MainCategoryModel> sortedModels = modelStream.collect(Collectors.toList());
         return ResponseEntity.ok(
                 ApiResponse
