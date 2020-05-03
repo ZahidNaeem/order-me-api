@@ -1,5 +1,6 @@
 package com.alfauz.orderme.payload.request;
 
+import com.alfauz.orderme.entity.BankEntity;
 import com.alfauz.orderme.enumeration.ActivationStatus;
 import com.alfauz.orderme.enumeration.RoleName;
 import com.alfauz.orderme.enumeration.UserType;
@@ -56,6 +57,11 @@ public class SignupRequest {
 
     @Size(max = 50, message = "Email should ha max. 50 characters")
     private String branchName;
+
+    private Long bank;
+
+    @Size(max = 24, message = "Bank Acc. No. should has max. 50 characters")
+    private String bankAccountNo;
 
     @NotBlank(message = "Username must not be blank")
     @Size(min = 3, max = 50, message = "Username should has min. 3 and max. 50 characters")

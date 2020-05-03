@@ -16,6 +16,7 @@ import com.alfauz.orderme.security.jwt.JwtProvider;
 import com.alfauz.orderme.service.RoleService;
 import com.alfauz.orderme.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -79,6 +80,12 @@ public class AuthController {
             throw new BadRequestException("Email Address already in use!");
         }
 
+        if(signUpRequest.getBank() != null && StringUtils.isBlank(signUpRequest.getBankAccountNo())){
+            throw new BadRequestException("Bank account number can't be empty while bank is provided");
+        } else if(StringUtils.isNotBlank(signUpRequest.getBankAccountNo()) && signUpRequest.getBank() == null){
+            throw new BadRequestException("Bank can't be empty while bank account number is provided");
+        }
+
         // Creating userModel's account
         final UserModel userModel = UserModel.builder()
                 .firstName(signUpRequest.getFirstName())
@@ -89,6 +96,8 @@ public class AuthController {
                 .email(signUpRequest.getEmail())
                 .address(signUpRequest.getAddress())
                 .branchName(signUpRequest.getBranchName())
+                .bank(signUpRequest.getBank())
+                .bankAccountNo(signUpRequest.getBankAccountNo())
                 .username(signUpRequest.getUsername())
                 .password(passwordEncoder.encode(signUpRequest.getPassword()))
                 .creditCardNo(signUpRequest.getCreditCardNo())
