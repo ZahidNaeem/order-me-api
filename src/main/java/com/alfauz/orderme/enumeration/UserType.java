@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
 
 public enum UserType {
-    SHOP_OWNER("shop owner"),
+    BUSINESS("business"),
     CUSTOMER("customer");
 
     private String value;
