@@ -39,6 +39,26 @@
             </column>
         </createTable>
     </changeSet>
+    <changeSet author="Zahid Naeem" id="create-table-banks">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="banks"/>
+            </not>
+        </preConditions>
+        <comment>Creating table banks</comment>
+        <createTable schemaName="om" tableName="banks">
+            <column name="BANK_ID" type="INT">
+                <constraints primaryKey="true" primaryKeyName="banks_pk"/>
+            </column>
+            <column name="BANK" type="VARCHAR(50)">
+                <constraints nullable="false" notNullConstraintName="BANKS_BANK_NN"
+                             uniqueConstraintName="banks_uk1" unique="true"/>
+            </column>
+            <column name="LOGO" type="VARCHAR(50)">
+                <constraints uniqueConstraintName="banks_uk2" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
     <changeSet author="Zahid Naeem" id="create-table-main_categories">
         <preConditions onFail="MARK_RAN">
             <not>
@@ -140,6 +160,11 @@
             <column name="PASSWORD" type="VARCHAR(100)">
                 <constraints nullable="false" notNullConstraintName="USERS_PASSWORD_NN"/>
             </column>
+            <column name="BANK_ID" type="INT">
+                <constraints foreignKeyName="USERS_BANK_ID_FK"
+                             references="banks(bank_id)"/>
+            </column>
+            <column name="BANK_ACCOUNT_NO" type="VARCHAR(24)"/>
             <column name="CREDIT_CARD_NO" type="VARCHAR(50)"/>
             <column name="CC_EXPIRY_DATE" type="DATE"/>
             <column name="CVC" type="VARCHAR(10)"/>

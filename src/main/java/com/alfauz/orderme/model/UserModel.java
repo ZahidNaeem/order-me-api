@@ -28,6 +28,8 @@ public class UserModel extends Auditable<Long> {
     private String email;
     private String address;
     private String branchName;
+    private Long bank;
+    private String bankAccountNo;
     private String username;
     private String password;
     private String creditCardNo;

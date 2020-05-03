@@ -75,6 +75,14 @@ public class UserEntity extends Auditable<Long> {
     @Column(name = "BRANCH_NAME")
     private String branchName;
 
+    @ManyToOne
+    @JoinColumn(name = "BANK_ID")
+    private BankEntity bank;
+
+    @Size(max = 24, message = "Bank Acc. No. should has max. 50 characters")
+    @Column(name = "BANK_ACCOUNT_NO")
+    private String bankAccountNo;
+
     @NotBlank(message = "Username must not be blank")
     @Size(min = 3, max = 50, message = "Username should has min. 3 and max. 50 characters")
     @Column(name = "USERNAME", unique = true)
@@ -106,7 +114,7 @@ public class UserEntity extends Auditable<Long> {
     @Column(name = "ACTIVATION_STATUS")
     private ActivationStatus activationStatus;
 
-    @Size(max = 2000, message = "Credit card should has max. 2000 characters")
+    @Size(max = 2000, message = "Remarks should has max. 2000 characters")
     @Column(name = "REMARKS")
     private String remarks;
 
