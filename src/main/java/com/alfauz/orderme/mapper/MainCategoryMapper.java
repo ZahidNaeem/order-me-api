@@ -16,12 +16,8 @@ import java.util.List;
         injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface MainCategoryMapper {
 
-    @Mapping(target = "subCategories", qualifiedByName = "subCategoriesMTE")
-    @Mapping(target = "userMainCategories", qualifiedByName = "userMainCategoriesMTE")
     MainCategoryEntity toEntity(final MainCategoryModel model);
 
-    @Mapping(target = "subCategories", qualifiedByName = "subCategoriesETM")
-    @Mapping(target = "userMainCategories", qualifiedByName = "userMainCategoriesETM")
     MainCategoryModel toModel(final MainCategoryEntity entity);
 
     default List<MainCategoryEntity> toEntities(final List<MainCategoryModel> models) {

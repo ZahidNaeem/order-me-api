@@ -153,6 +153,11 @@
                 <constraints nullable="false" notNullConstraintName="USERS_ADDRESS_NN"/>
             </column>
             <column name="BRANCH_NAME" type="VARCHAR(100)"/>
+            <column name="FREE_DELIVERY_RADIUS_KM" type="INT"/>
+            <column name="PAID_DELIVERY_RADIUS_KM" type="INT"/>
+            <column name="DELIVERY_CHARGES" type="INT"/>
+<!--            <column name="DELIVERY_CHARGES" type="INT"/>-->
+            <column name="AVG_DELIVERY_MINUTES" type="INT"/>
             <column name="USERNAME" type="VARCHAR(50)">
                 <constraints nullable="false" notNullConstraintName="USERS_USERNAME_NN"
                              unique="true" uniqueConstraintName="users_username_uk"/>

@@ -21,22 +21,18 @@ public class MainCategoryQualifier {
     private final UserMainCategoryMapper userMainCategoryMapper;
     private final SubCategoryMapper subCategoryMapper;
 
-    @Named("userMainCategoriesMTE")
     public List<UserMainCategoryEntity> userMainCategoriesMTE(final List<UserMainCategoryModel> models) {
         return userMainCategoryMapper.toEntities(models);
     }
 
-    @Named("userMainCategoriesETM")
     public List<UserMainCategoryModel> userMainCategoriesETM(final List<UserMainCategoryEntity> entities) {
         return userMainCategoryMapper.toModels(entities);
     }
 
-    @Named("subCategoriesMTE")
     public List<SubCategoryEntity> subCategoriesMTE(final List<SubCategoryModel> models) {
         return subCategoryMapper.toEntities(models);
     }
 
-    @Named("subCategoriesETM")
     public List<SubCategoryModel> subCategoriesETM(final List<SubCategoryEntity> entities) {
         return subCategoryMapper.toModels(entities);
     }

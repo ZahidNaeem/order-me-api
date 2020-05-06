@@ -14,15 +14,15 @@ import java.io.IOException;
 @Component
 public class JwtAuthEntryPoint implements AuthenticationEntryPoint {
 
-  private static final Logger LOG = LogManager.getLogger(JwtAuthEntryPoint.class);
+    private static final Logger LOG = LogManager.getLogger(JwtAuthEntryPoint.class);
 
-  @Override
-  public void commence(HttpServletRequest request,
-      HttpServletResponse response,
-      AuthenticationException e)
-      throws IOException, ServletException {
+    @Override
+    public void commence(HttpServletRequest request,
+                         HttpServletResponse response,
+                         AuthenticationException e)
+            throws IOException {
 
-    LOG.error("Unauthorized error. Message - {}", e.getMessage());
-    response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Error -> Unauthorized");
-  }
+        LOG.error("Unauthorized access. Message - {}", e.getMessage());
+        response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Error -> Unauthorized");
+    }
 }

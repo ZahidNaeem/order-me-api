@@ -17,22 +17,18 @@ public class UserMainCategoryQualifier {
     private final MainCategoryService mainCategoryService;
     private final UserService userService;
 
-    @Named("mainCategoryMTE")
     public MainCategoryEntity mainCategory(final Long id) {
         return id != null ? mainCategoryService.findById(id) : null;
     }
 
-    @Named("mainCategoryETM")
     public Long mainCategory(final MainCategoryEntity entity) {
         return entity != null ? entity.getId() : null;
     }
 
-    @Named("userMTE")
     public UserEntity user(final Long id) {
         return id != null ? userService.findById(id) : null;
     }
 
-    @Named("userETM")
     public Long user(final UserEntity entity) {
         return entity != null ? entity.getId() : null;
     }

@@ -15,12 +15,10 @@ public class CountryCodeQualifier {
 
     private final UserMapper userMapper;
 
-    @Named(value = "usersMTE")
     public List<UserEntity> usersMTE(final List<UserModel> models) {
         return userMapper.toEntities(models);
     }
 
-    @Named(value = "usersETM")
     public List<UserModel> usersETM(final List<UserEntity> entities) {
         return userMapper.toModels(entities);
     }

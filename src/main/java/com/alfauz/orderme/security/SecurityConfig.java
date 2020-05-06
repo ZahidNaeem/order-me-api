@@ -29,10 +29,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-//  @Autowired
-//  @Qualifier("userDetailsServiceImpl")
-//  private UserDetailsService userDetailsService;
-
     private final JwtAuthEntryPoint unauthorizedHandler;
 
     private final JwtProvider tokenProvider;
@@ -98,17 +94,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers("/auth/**")
                 .permitAll()
-//                .antMatchers("/**")
-//                .permitAll()
                 .antMatchers("/user/checkUsernameAvailability", "/user/checkEmailAvailability", "/user/checkPhoneAvailability")
                 .permitAll()
                 .antMatchers(HttpMethod.GET, "/users/**")
-                .permitAll()
-                .antMatchers(HttpMethod.GET, "/countryCodes")
-                .permitAll()
-                .antMatchers(HttpMethod.GET, "/banks")
-                .permitAll()
-                .antMatchers(HttpMethod.GET, "/mainCategories")
                 .permitAll()
                 .anyRequest()
                 .authenticated();

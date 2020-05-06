@@ -16,11 +16,9 @@ import java.util.List;
         injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface BankMapper {
 
-    @Mapping(target = "users", qualifiedByName = "usersMTE")
-    BankEntity toEntity(final BankModel model);
+        BankEntity toEntity(final BankModel model);
 
-    @Mapping(target = "users", qualifiedByName = "usersETM")
-    BankModel toModel(final BankEntity entity);
+        BankModel toModel(final BankEntity entity);
 
     default List<BankEntity> toEntities(final List<BankModel> models) {
         final List<BankEntity> entities = new ArrayList<>();

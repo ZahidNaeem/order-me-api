@@ -28,42 +28,34 @@ public class UserQualifier {
     private final CountryCodeService countryCodeService;
     private final BankService bankService;
 
-    @Named("rolesMTE")
     public Set<RoleEntity> rolesMTE(final Set<RoleModel> models) {
         return roleMapper.toEntities(models);
     }
 
-    @Named("rolesETM")
     public Set<RoleModel> rolesETM(final Set<RoleEntity> entities) {
         return roleMapper.toModels(entities);
     }
 
-    @Named("userMainCategoriesMTE")
     public List<UserMainCategoryEntity> userMainCategoriesMTE(final List<UserMainCategoryModel> models) {
         return userMainCategoryMapper.toEntities(models);
     }
 
-    @Named("userMainCategoriesETM")
     public List<UserMainCategoryModel> userMainCategoriesETM(final List<UserMainCategoryEntity> entities) {
         return userMainCategoryMapper.toModels(entities);
     }
 
-    @Named("countryCodeMTE")
     public CountryCodeEntity countryCode(final Long id) {
         return id != null ? countryCodeService.findById(id) : null;
     }
 
-    @Named("countryCodeETM")
     public Long countryCode(final CountryCodeEntity entity) {
         return entity != null ? entity.getId() : null;
     }
 
-    @Named("bankMTE")
     public BankEntity bank(final Long id) {
         return id != null ? bankService.findById(id) : null;
     }
 
-    @Named("bankETM")
     public Long bank(final BankEntity entity) {
         return entity != null ? entity.getId() : null;
     }

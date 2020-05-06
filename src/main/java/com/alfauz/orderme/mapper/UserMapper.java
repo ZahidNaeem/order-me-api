@@ -18,16 +18,8 @@ import java.util.List;
 )
 public interface UserMapper {
 
-    @Mapping(target = "countryCode", qualifiedByName = "countryCodeMTE")
-    @Mapping(target = "bank", qualifiedByName = "bankMTE")
-    @Mapping(target = "userMainCategories", qualifiedByName = "userMainCategoriesMTE")
-    @Mapping(target = "roles", qualifiedByName = "rolesMTE")
     UserEntity toEntity(final UserModel model);
 
-    @Mapping(target = "countryCode", qualifiedByName = "countryCodeETM")
-    @Mapping(target = "bank", qualifiedByName = "bankETM")
-    @Mapping(target = "userMainCategories", qualifiedByName = "userMainCategoriesETM")
-    @Mapping(target = "roles", qualifiedByName = "rolesETM")
     UserModel toModel(final UserEntity user);
 
     default List<UserEntity> toEntities(final List<UserModel> models) {
